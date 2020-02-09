@@ -53,7 +53,6 @@ ul.posts li {
 header{
     margin: 0 !important;
     padding: 40px !important;
-    width: 100%;
     height: 100vh;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 1.0)), url("https://thomasfugier.github.io/images/Background_1.gif");
     background-repeat: no-repeat;
