@@ -64,7 +64,7 @@ header{
 div.picture1 {
    width:100%; /*width of your image*/
    height:100%; /*height of your image*/
-   background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 1.0)), url("https://thomasfugier.github.io/images/Background_1.gif");
+   background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 1.0)), url("https://thomasfugier.github.io/images/Background_1.gif");
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
