@@ -1,6 +1,6 @@
 body
 {
-    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)), url("https://thomasfugier.github.io/images/Background_1.gif");
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 1.0)), url("https://thomasfugier.github.io/images/Background_1.gif");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
