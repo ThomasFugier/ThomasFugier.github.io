@@ -62,8 +62,8 @@ header{
 }
 
 div.picture1 {
-   width:100px; /*width of your image*/
-   height:100px; /*height of your image*/
+   width:100%; /*width of your image*/
+   height:100%; /*height of your image*/
    background-image:url("https://thomasfugier.github.io/images/Background_1.gif");
    margin:0; /* If you want no margin */
    padding:0; /*if your want to padding */
