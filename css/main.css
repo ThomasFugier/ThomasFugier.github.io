@@ -1,7 +1,7 @@
 
 
 body {
-    background-image: linear-gradient(red, blue);
+    background-image: linear-gradient(red, blue) no repeat center fixed;
     margin: 60px auto;
     width: 70%;
 }
