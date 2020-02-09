@@ -75,5 +75,7 @@ div.picture1 {
 
 .PageTitle
 {
-    color:pink;
+    color:black;
+    vertical-align:middle;
+    horizontal-align:middle;
 }
