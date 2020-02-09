@@ -1,6 +1,6 @@
 body
 {
-    background-color: rgba(40,40,40,1.0);
+    background-color: white;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -54,7 +54,7 @@ header{
     margin: 0 !important;
     padding: 0 !important;
     height: 100vh;
-    background-color: rgba(40,40,40,1.0);
+    background-color: white;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -64,9 +64,8 @@ header{
 div.picture1 {
    width:100%; /*width of your image*/
    height:100%; /*height of your image*/
-   background-image:linear-gradient(to bottom, rgba(40, 40, 40, 0.3), rgba(40, 40, 40, 1.0)), url("https://thomasfugier.github.io/images/Background_1.gif");
+   background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 1.0)), url("https://thomasfugier.github.io/images/Background_1.gif");
    background-repeat: no-repeat;
-   background-attachment: fixed;
    background-size: cover;
    background-position: center;
    margin: 0 !important;
