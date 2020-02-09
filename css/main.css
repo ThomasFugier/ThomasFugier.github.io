@@ -5,8 +5,8 @@ body
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    margin: 60px auto;
-    width: 70%;
+    margin: 0px auto;
+    width: 100vh%;
 }
 
 nav ul, footer ul {
