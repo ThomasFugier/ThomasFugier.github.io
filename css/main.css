@@ -1,6 +1,7 @@
-background-image: linear-gradient(red, blue);
+
 
 body {
+    background-image: linear-gradient(red, blue);
     margin: 60px auto;
     width: 70%;
 }
