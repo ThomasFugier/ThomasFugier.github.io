@@ -51,6 +51,6 @@ ul.posts li {
 
 header{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: url("https://thomasfugier.github.io/images/Background_1.gif");
 }
