@@ -1,7 +1,7 @@
 
 
 body {
-    background-image: linear-gradient(red, blue) no repeat center fixed;
+    background-image: url(/images/BG_Hexarena2.gif);
     margin: 60px auto;
     width: 70%;
 }
