@@ -2,6 +2,9 @@
 
 body {
     background-image: url(/images/BG_Hexarena2.gif);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     margin: 60px auto;
     width: 70%;
 }
