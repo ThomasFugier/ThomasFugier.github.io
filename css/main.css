@@ -11,7 +11,7 @@ body
     z-index:100;
 }
 
-whiteMask
+.whiteMask
 {
     font-size:0px;
     font-color:black;
