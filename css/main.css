@@ -75,10 +75,8 @@ div.picture1 {
 
 .PageTitle
 {
-    display: block;
-    font-family: Helvetica;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 100px;
-    text-align: center;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
 }
