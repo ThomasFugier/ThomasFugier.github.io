@@ -120,6 +120,7 @@ div.picture1 {
 
 .PageTitle
 {
+    z-index:200;
     width:80%;
     text-align:center;
     position:fixed;
@@ -130,6 +131,7 @@ div.picture1 {
 
 .HeaderDescription
 {
+    z-index:200;
     color:black;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
      width:80%;
