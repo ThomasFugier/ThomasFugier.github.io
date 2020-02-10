@@ -99,6 +99,7 @@ div.picture1 {
 .iFrameDiv {
     background: #eee;
     width:100vw;
+    max-width:1920px;
     height: 56.25vw;
     overflow: hidden;
     padding: 0;
