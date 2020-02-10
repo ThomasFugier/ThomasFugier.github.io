@@ -8,46 +8,65 @@ body
     margin: 0 !important;
     padding: 0 !important;
     width: 100vh%;
+    z-index:100;
 }
 
 nav ul, footer ul {
+    background-color:white;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
     list-style: none;
     font-weight: bold;
+    z-index:100;
 }
 nav ul li, footer ul li {
+    background-color:white;
     display: inline;
     margin-right: 20px;
+    z-index:100;
 }
 a {
+    background-color:white;
     text-decoration: none;
     color: #999;
+    z-index:100;
 }
 a:hover {
+    background-color:white;
     text-decoration: underline;
+    z-index:100;
 }
 h1 {
+    background-color:white;
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    z-index:100;
 }
 p {
+    background-color:white;
     font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
+    z-index:100;
 }
 footer {
+    background-color:white;
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
+    z-index:100;
 }
 
 ul.posts { 
+    background-color:white;
     margin: 20px auto 40px; 
     font-size: 1.5em;
+    z-index:100;
 }
 
 ul.posts li {
+    background-color:white;
     list-style: none;
+    z-index:100;
 }
 
 header{
@@ -60,6 +79,7 @@ header{
     background-size: cover;
     background-position: center;
     transform:translate(0,-40px);
+    z-index:-50;
 }
 
 div.picture1 {
@@ -109,4 +129,5 @@ iframe
 {
     height:calc(1920 * 0.56282051282051);
     position: absolute;  
+    overflow:hidden;
 }
