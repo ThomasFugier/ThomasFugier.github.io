@@ -59,6 +59,7 @@ header{
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    translate(0,-40px)
 }
 
 div.picture1 {
