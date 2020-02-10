@@ -52,7 +52,7 @@ ul.posts li {
 
 header{
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 40 !important;
     height: 100vh;
     background-color: white;
     background-repeat: no-repeat;
