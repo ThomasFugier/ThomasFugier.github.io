@@ -146,7 +146,7 @@ div.picture1 {
 }
 iframe 
 {
-    height:calc(1920 * 0.56282051282051);
+    height:1080px;
     position: absolute;  
     overflow:hidden;
 }
