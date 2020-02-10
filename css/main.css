@@ -93,24 +93,19 @@ div.picture1 {
     position:fixed;
     top:70%;
     left:50%;
-    transform:translate(-50%, -50%);
+    transform:translate(0, 0);
 }
 
 .iFrameDiv {
     background: #eee;
-    height: 100%;
+    width:100vw;
+    height: 56.25vw;
     overflow: hidden;
     padding: 0;
     position: relative;
 }
-iframe {
-    box-sizing: border-box;
-    height: 56.25vw;
-    left: 50%;
-    min-height: 100%;
-    min-width: 100%;
-    transform: translate(50%, 50%);
-    position: absolute;
-    top: 50%;
-    width: 177.77777778vh;
+iframe 
+{
+    height:calc(1920 * 0.56282051282051);
+    position: absolute;  
 }
