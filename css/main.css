@@ -88,18 +88,17 @@ div.picture1 {
 {
     color:black;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    width:80%;
+     width:80%;
     text-align:center;
     position:fixed;
     top:70%;
     left:50%;
-    transform:translate(0, 0);
+    transform:translate(-50%, -50%);
 }
 
 .iFrameDiv {
     background: #eee;
     width:100vw;
-    max-width:1920px;
     height: 56.25vw;
     overflow: hidden;
     padding: 0;
