@@ -123,13 +123,12 @@ div.picture1 {
 {
     background-color:rgba(125,0,125,0.8);
     z-index:200;
-    width:80%;
+    width:70%;
     text-align:center;
     position:fixed;
     top:40%;
     left:50%;
     transform:translate(-50%, -50%);
-    font-size:3.5vw;
 }
 
 .HeaderDescription
@@ -138,13 +137,12 @@ div.picture1 {
     z-index:200;
     color:black;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    width:80%;
+    width:70%;
     text-align:center;
     position:fixed;
-    top:70%;
+    top:60%;
     left:50%;
     transform:translate(-50%, -50%);
-    font-size:2.5vw;
 }
 
 .iFrameDiv {
