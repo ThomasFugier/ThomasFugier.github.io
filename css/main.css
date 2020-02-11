@@ -173,7 +173,7 @@ iframe
      margin:3%;
      display: grid;
      grid-template-rows: calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px);
-     background-color: #2196F3;
+     background-color: rgba(0,0,0,0.0);
      padding: 10px;
      height:90% !important;
      grid-gap:10px;
@@ -182,19 +182,19 @@ iframe
 
 #gridElementDescription
 {
-    background-color:rgba(125,125,0,0.5);   
+    background-color:rgba(125,125,0,0.0);   
 }
 
 #gridElementEmpty
 {
-    background-color:rgba(125,125,0,0.5);   
+    background-color:rgba(125,125,0,0.0);   
 }
 
 #gridElementTitle
 {
     text-align:center;
     font-size:3vh;
-    background-color:rgba(125,125,0,0.5);
+    background-color:rgba(125,125,0,0.0);
     margin-top: auto;
     margin-bottom: auto;
 }
