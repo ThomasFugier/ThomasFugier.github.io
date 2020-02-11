@@ -44,7 +44,7 @@ a:hover {
     z-index:100;
 }
 h1 {
-    background-color:white;
+    background-color:rgba(0,0,0,0.0);
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     z-index:100;
@@ -190,5 +190,6 @@ iframe
 
 #gridElementTitle
 {
+    font-size:4vw;
     background-color:rgba(125,125,0,0.5);
 }
