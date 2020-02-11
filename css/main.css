@@ -168,13 +168,11 @@ iframe
 
 #grid
 {
-    display:grid;
-    background-color:rgba(125,125,125,0.5);
-    margin:10%;
-    margin-top:5%;
-    margin-bottom:5%;
-    grid-template-columns: 200px;
-    grid-template-rows: repeat(6, 1fr);
+     margin:3%;
+     display: grid;
+     grid-template-columns: auto auto auto;
+     background-color: #2196F3;
+     padding: 10px;
 }
 
 #item1
