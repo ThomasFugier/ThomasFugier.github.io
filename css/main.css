@@ -166,7 +166,7 @@ iframe
     z-index:-60;
 }
 
-.grid
+#grid
 {
     display:grid;
     background-color:rgba(125,125,125,0.5);
@@ -176,17 +176,17 @@ iframe
     gris-template-rows:repeat(6,1fr);
 }
 
-.item1
+#item1
 {
     background-color:rgba(125,125,0,0.5);   
 }
 
-.item2
+#item2
 {
     background-color:rgba(125,125,0,0.5);   
 }
 
-.item3
+#item3
 {
     background-color:rgba(125,125,0,0.5);   
 }
