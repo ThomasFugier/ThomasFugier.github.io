@@ -175,6 +175,7 @@ iframe
      padding: 10px;
      height:90% !important;
      grid-gap:10px;
+    overflow:hidden;
 }
 
 #item1
