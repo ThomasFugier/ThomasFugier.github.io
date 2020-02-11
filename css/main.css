@@ -170,7 +170,7 @@ iframe
 {
      margin:3%;
      display: grid;
-     grid-template-rows: calc(20% - 8px) calc(20% - 8px) calc(20% - 8px) calc(20% - 8px) calc(20% - 8px);
+     grid-template-rows: calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px) calc(20% - 10px);
      background-color: #2196F3;
      padding: 10px;
      height:90% !important;
