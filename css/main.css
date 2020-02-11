@@ -48,6 +48,8 @@ h1 {
     font-size: 3em;
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     z-index:100;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 p {
     background-color:rgba(0,0,0,0.0);
