@@ -178,17 +178,17 @@ iframe
     overflow:hidden;
 }
 
-#item1
+#gridElementDescription
 {
     background-color:rgba(125,125,0,0.5);   
 }
 
-#item2
+#gridElementEmpty
 {
     background-color:rgba(125,125,0,0.5);   
 }
 
-#item3
+#gridElementTitle
 {
     background-color:rgba(125,125,0,0.5);
 }
