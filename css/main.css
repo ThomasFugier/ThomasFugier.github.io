@@ -170,7 +170,7 @@ iframe
 {
      margin:3%;
      display: grid;
-     grid-template-rows: 20% 20% 20% 20% 20%;
+     grid-template-rows: cacl(20% - 10px) cacl(20% - 10px) cacl(20% - 10px) cacl(20% - 10px) cacl(20% - 10px);
      background-color: #2196F3;
      padding: 10px;
      height:90% !important;
