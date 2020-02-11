@@ -190,6 +190,7 @@ iframe
 
 #gridElementTitle
 {
-    font-size:4vw;
+    text-align:center;
+    font-size:2vw;
     background-color:rgba(125,125,0,0.5);
 }
