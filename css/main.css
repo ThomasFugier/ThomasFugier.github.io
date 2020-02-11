@@ -191,6 +191,8 @@ iframe
 #gridElementTitle
 {
     text-align:center;
-    font-size:2vw;
+    display: inline-block;
+    max-width: 250px;
+    padding: 10px;
     background-color:rgba(125,125,0,0.5);
 }
