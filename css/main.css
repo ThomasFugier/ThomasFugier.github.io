@@ -173,6 +173,8 @@ iframe
     margin:10%;
     margin-top:5%;
     margin-bottom:5%;
+    grid-template-columns: 200px;
+    grid-template-rows: repeat(6, 1fr);
 }
 
 #item1
