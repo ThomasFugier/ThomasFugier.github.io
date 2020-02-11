@@ -170,7 +170,7 @@ iframe
 {
      margin:3%;
      display: grid;
-     grid-template-rows: auto auto auto;
+     grid-template-rows: 33% 33% 33%;
      background-color: #2196F3;
      padding: 10px;
      height:90% !important;
