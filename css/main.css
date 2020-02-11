@@ -103,7 +103,7 @@ header{
 }
 
 div.picture1 {
-    background: #eee;
+    background: rgba(0,0,0,0.0);
     height: 100%;
     overflow: hidden;
     padding: 0;
