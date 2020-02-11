@@ -50,7 +50,7 @@ h1 {
     z-index:100;
 }
 p {
-    background-color:white;
+    background-color:rgba(0,0,0,0.0);
     font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
@@ -170,10 +170,8 @@ iframe
 {
     display:grid;
     background-color:rgba(125,125,125,0.5);
-    width:80%;
-    height:80%;
-    grid-template-columns:200px;
-    gris-template-rows:repeat(6,1fr);
+    width:100%;
+    height:100%;
 }
 
 #item1
