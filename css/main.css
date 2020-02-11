@@ -180,14 +180,17 @@ iframe
 #item1
 {
     background-color:rgba(125,125,0,0.5);   
+    margin:10%;
 }
 
 #item2
 {
     background-color:rgba(125,125,0,0.5);   
+    margin:10%;
 }
 
 #item3
 {
-    background-color:rgba(125,125,0,0.5);   
+    background-color:rgba(125,125,0,0.5);
+    margin:10%;
 }
