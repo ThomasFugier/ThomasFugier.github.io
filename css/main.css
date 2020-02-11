@@ -185,6 +185,8 @@ iframe
     background-color:rgba(0,0,0,0.0); 
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
     font-color:rgba(0,0,0,1.0);
+    text-aligment:center;
+    text-align:justify;
 }
 
 #gridElementEmpty
