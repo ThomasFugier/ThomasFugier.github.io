@@ -173,7 +173,8 @@ iframe
      grid-template-rows: auto auto auto;
      background-color: #2196F3;
      padding: 10px;
-     height:90% !important
+     height:90% !important;
+     grid-gap:1%;
 }
 
 #item1
