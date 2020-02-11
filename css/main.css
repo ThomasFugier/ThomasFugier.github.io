@@ -174,7 +174,7 @@ iframe
      background-color: #2196F3;
      padding: 10px;
      height:90% !important;
-     grid-gap:1%;
+     grid-gap:10px;
 }
 
 #item1
