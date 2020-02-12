@@ -103,7 +103,7 @@ div.picture1 {
    background-position: center;
    margin: 0 !important;
    padding: 0 !important;
-    
+   animation: gradientAnimation 4s ease-in 0;
 }
 
 
