@@ -166,7 +166,7 @@ iframe
     margin: 0 !important;
     padding: 0 !important;
     z-index:-60;
-    animation: 4s ease-in 0s infinite alternate gradientAnimation;
+    animation: 10s ease-in 4s infinite alternate gradientAnimation;
 }
 
 #grid
