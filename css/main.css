@@ -204,6 +204,12 @@ iframe
     margin-bottom: auto;
 }
 
+.TopBar
+{
+    background-color:rgba(255,0,255,0.8);
+    
+}
+
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
