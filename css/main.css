@@ -235,15 +235,15 @@ iframe
         text-decoration:none;
         text-align:center;
         width:100%;
-        font-size:5px;
+        font-size:12px;
         border-radius: 5px;
         border-color:white;
         border-style:solid;
         border-width:2px;
         margin:5px;
-        max-width:80px;
+        max-width:90px;
         height:80%;
-        line-height:4.8;
+        line-height:4.3;
 }
 
 .TopBarButton:hover {
@@ -273,15 +273,15 @@ iframe
         font-family:helvetica;
         text-align:center;
         width:100%;
-        font-size:5px;
+        font-size:12px;
         border-radius: 5px;
         border-color:white;
         border-style:solid;
         border-width:2px;
         margin:5px;
-        max-width:80px;
+        max-width:90px;
         height:80%;
-        line-height:4.8;
+        line-height:4.3;
 }
 
 .TopBarBlank
