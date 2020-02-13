@@ -212,19 +212,16 @@ iframe
     position:absolute;
     z-index:400;
     transform:translate(10px,10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .SiteName
 {
         color:white;
         font-family:helvetica;
-    background-color:rgba(0,255,255,1.0);
-        display: table-cell;
-        width: 250px;
-        height: 200px;
-        padding: 10px;
-        border: 3px dashed #1c87c9;
-        vertical-align: middle;
+        background-color:rgba(0,255,255,1.0);
     
 text-align:center
 }
