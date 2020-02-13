@@ -220,7 +220,7 @@ iframe
 
 .SiteName
 {
-        background-color:rgba(125,125,125,0.8);
+        background-color:rgba(125,125,0,0.8);
         color:white;
         font-family:helvetica;
         text-align:left;
@@ -237,6 +237,17 @@ iframe
         width:100%;
         font-size:10px;
 }
+
+.TopBarBlank
+{
+        background-color:rgba(125,0,125,0.8);
+        color:rgba(0,0,0,0.0);
+        font-family:helvetica;
+        text-align:right;
+        width:100%;
+        font-size:10px;
+}
+
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
