@@ -207,7 +207,11 @@ iframe
 .TopBar
 {
     background-color:rgba(255,0,255,0.8);
-    
+    width: calc(100% - 20px);
+    height:60px;
+    position:absolute;
+    z-index:400;
+    transform:translate(10px,10px);
 }
 
 @-webkit-keyframes fadeInDown {
