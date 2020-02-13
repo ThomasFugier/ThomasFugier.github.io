@@ -235,7 +235,7 @@ iframe
         text-decoration:none;
         text-align:center;
         width:100%;
-        font-size:10px;
+        font-size:5px;
         border-radius: 5px;
         border-color:white;
         border-style:solid;
@@ -243,6 +243,7 @@ iframe
         margin:5px;
         max-width:80px;
         height:80%
+        line-height:4.8;
 }
 
 .TopBarButton:hover {
@@ -253,7 +254,7 @@ iframe
         font-family:helvetica;
         text-align:center;
         width:100%;
-        font-size:10px;
+        font-size:5px;
         border-radius: 5px;
         border-color:white;
         border-style:solid;
@@ -261,6 +262,7 @@ iframe
         margin:5px;
         max-width:80px;
         height:80%
+        line-height:4.8;
 }
 
 .TopBarButton:active {
@@ -271,7 +273,7 @@ iframe
         font-family:helvetica;
         text-align:center;
         width:100%;
-        font-size:10px;
+        font-size:5px;
         border-radius: 5px;
         border-color:white;
         border-style:solid;
@@ -279,6 +281,7 @@ iframe
         margin:5px;
         max-width:80px;
         height:80%
+        line-height:4.8;
 }
 
 .TopBarBlank
