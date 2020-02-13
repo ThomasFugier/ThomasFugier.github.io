@@ -295,6 +295,14 @@ iframe
         font-size:10px;
 }
 
+.ProjectBloc
+{
+    background-color:rgba(200,200,0,0,5);
+    width:90%;
+    height:400px;
+}
+
+
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
