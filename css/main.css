@@ -219,6 +219,7 @@ iframe
 
 .SiteName
 {
+        background-color:rgba(125,125,125,0.8);
         color:white;
         font-family:helvetica;
         text-align:left;
