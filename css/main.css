@@ -33,10 +33,7 @@ nav ul li, footer ul li {
     z-index:100;
 }
 a {
-    background-color:white;
     text-decoration: none;
-    color: #999;
-    z-index:100;
 }
 a:hover {
     background-color:white;
