@@ -221,11 +221,9 @@ iframe
 {
         color:white;
         font-family:helvetica;
-        background-color:rgba(0,255,255,1.0);
         text-align:left;
         width:100%;
-    
-text-align:center
+        font-size:25px;
 }
 @-webkit-keyframes fadeInDown {
   from {
