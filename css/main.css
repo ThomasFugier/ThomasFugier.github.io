@@ -239,6 +239,7 @@ iframe
         font-size:10px;
         border-radius: 10px;
         border-color:white;
+        border-style:solid;
 }
 
 .TopBarBlank
