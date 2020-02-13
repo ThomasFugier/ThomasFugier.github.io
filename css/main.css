@@ -302,9 +302,16 @@ iframe
 }
 
 .ProjectImage{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .ProjectImageContainer{
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
 }
 
 @-webkit-keyframes fadeInDown {
