@@ -231,11 +231,11 @@ iframe
         z-index:400;
         background-color:rgba(125,125,125,0.0);
         color:white;
-        font-family:helvetica;
+        font-family: Verdana, Geneva, sans-serif;
         text-decoration:none;
         text-align:center;
         width:100%;
-        font-size:12px;
+        font-size:14px;
         border-radius: 5px;
         border-color:white;
         border-style:solid;
