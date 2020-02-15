@@ -185,7 +185,6 @@ iframe
     font-size:1.8vh;
     animation-duration: 6s;
     animation-name: fadeInDescription;
-    animation-delay:3s;
 }
 
 #gridElementEmpty
