@@ -184,7 +184,10 @@ iframe
     font-color:rgba(0,0,0,1.0);
     text-align:justify;
     font-size:1.8vh;
-    
+	
+    animation-duration: 3s;
+    animation-name: fadeInDown;
+    animation-delay:3s;
 }
 
 #gridElementEmpty
@@ -201,8 +204,8 @@ iframe
     margin-bottom: auto;
     font-family:helvetica;
 	
-	  animation-duration: 3s;
-  animation-name: FadeInDown;
+    animation-duration: 3s;
+    animation-name: fadeInDown;
 }
 
 .TopBar
@@ -315,6 +318,20 @@ iframe
     width: 40%;
     height: 100%;
     overflow: hidden;
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @-webkit-keyframes fadeInDown {
