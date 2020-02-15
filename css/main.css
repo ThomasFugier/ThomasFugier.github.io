@@ -184,8 +184,8 @@ iframe
     text-align:justify;
     font-size:1.8vh;
     opacity:0;
-    animation-duration: 3s;
-    animation-name: fadeInDown;
+    animation-duration: 6s;
+    animation-name: fadeInDescription;
     animation-delay:3s;
 }
 
@@ -205,7 +205,7 @@ iframe
     font-family:helvetica;
 	
     animation-duration: 3s;
-    animation-name: fadeInDown;
+    animation-name: fadeInTitle;
 }
 
 .TopBar
@@ -334,7 +334,7 @@ iframe
   }
 }
 
-@-webkit-keyframes fadeInDown {
+@-webkit-keyframes fadeInDownTitle {
   from {
     opacity: 0;
     -webkit-transform: translate3d(0, -100%, 0);
@@ -345,5 +345,21 @@ iframe
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeInDescription
+{
+  0%
+  {
+    opacity: 0;
+  }
+  50%
+  {
+	  opacity:0%;
+  }
+  100%
+  {
+    opacity: 1;
   }
 }
