@@ -320,7 +320,7 @@ iframe
     overflow: hidden;
 }
 
-.cards
+.ProjetBlocMainDivider
 {
   text-align:center;
   background-color: rgba(125,125,0,0.2);
@@ -333,12 +333,12 @@ iframe
 }
 
 @media (min-width: 600px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
+  .ProjetBlocMainDivider { grid-template-columns: repeat(2, 1fr); }
   .ProjectBloc { height:400px;}
 }
 
 @media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
+  .ProjetBlocMainDivider { grid-template-columns: repeat(2, 1fr); }
 }
 
 @-webkit-keyframes fadeInDown {
