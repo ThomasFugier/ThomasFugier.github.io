@@ -383,7 +383,7 @@ iframe
 }
 
 @media (min-width: 800px) {
-  .Content{margin:100px;}
+  .content{margin:100px;}
 }
 
 @-webkit-keyframes fadeInDown {
