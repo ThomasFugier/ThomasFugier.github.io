@@ -332,6 +332,18 @@ iframe
   height:100%;
 }
 
+.TextPart
+{
+    text-align:center;
+    background-color: rgba(125,0,0,0.5);
+    color: white;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    height:100%;
+    width:100%;
+}
+
 .PicturePart
 {
     text-align:center;
