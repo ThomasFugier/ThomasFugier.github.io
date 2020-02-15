@@ -345,6 +345,21 @@ iframe
     width:100%;
 }
 
+.PicturePartSub
+{
+    text-align:center;
+    background-color: rgba(125,125,0,0.2);
+    color: white;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    height:100%;
+    width:100%;
+
+    repeat(2, 1fr)
+}
+
 @media (min-width: 600px) {
   .ProjetBlocMainDivider { grid-template-columns: repeat(2, 1fr); }
   .ProjectBloc { height:400px;}
