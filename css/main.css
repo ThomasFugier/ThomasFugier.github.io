@@ -373,9 +373,6 @@ iframe
   .ProjectImageContainer{height: 400px;}
   .TextPart{height:800px;}
   .PicturePart{height:800px;}
-  .ProjectImageContainer{height:300px;}
-
-
 }
 
 @media (min-width: 900px) {
