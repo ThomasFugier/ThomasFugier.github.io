@@ -319,15 +319,17 @@ iframe
     overflow: hidden;
 }
 
-.cards {
+.cards
+{
+  text-align:center;
   background-color: dodgerblue;
   color: white;
   padding: 1rem;
-  height: 4rem;
-  max-width: 1200px;
+  height: 100%;
   margin: 0 auto;
   display: grid;
   grid-gap: 1rem;
+  height:100%;
 }
 
 @media (min-width: 600px) {
