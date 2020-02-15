@@ -340,7 +340,6 @@ iframe
     height: 100%;
     margin: 0 auto;
     display: grid;
-    grid-gap: 1rem;
     height:100%;
     width:100%;
 }
@@ -353,7 +352,6 @@ iframe
     height: 100%;
     margin: 0 auto;
     display: grid;
-    grid-gap: 1rem;
     height:100%;
     width:100%;
 
@@ -370,6 +368,10 @@ iframe
 
 @media (min-width: 900px) {
   .ProjetBlocMainDivider { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1000px) {
+  .Content{margin:20px;}
 }
 
 @-webkit-keyframes fadeInDown {
