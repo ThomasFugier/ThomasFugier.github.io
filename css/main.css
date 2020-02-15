@@ -243,7 +243,7 @@ iframe
         margin:5px;
         max-width:90px;
         height:80%;
-        line-height:4.3;
+        line-height:3.5;
 }
 
 .TopBarButton:hover {
@@ -251,7 +251,7 @@ iframe
         z-index:400;
         background-color:rgba(255,255,255,0.6);
         color:white;
-        font-family:helvetica;
+	    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
         text-align:center;
         width:100%;
         font-size:12px;
@@ -262,7 +262,7 @@ iframe
         margin:5px;
         max-width:90px;
         height:80%;
-        line-height:4.3;
+        line-height:3.5;
 }
 
 .TopBarButton:active {
@@ -270,7 +270,7 @@ iframe
         z-index:400;
         background-color:rgba(255,255,255,1.0);
         color:white;
-        font-family:helvetica;
+	    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
         text-align:center;
         width:100%;
         font-size:12px;
@@ -281,7 +281,7 @@ iframe
         margin:5px;
         max-width:90px;
         height:80%;
-        line-height:4.3;
+        line-height:3.5;
 }
 
 .TopBarBlank
