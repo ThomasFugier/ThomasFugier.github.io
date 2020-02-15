@@ -302,6 +302,8 @@ iframe
 {
     background-color:rgba(200,200,0,0.5);
     height:400px;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
 .ProjectImage{
@@ -318,6 +320,10 @@ iframe
 }
 
 .cards {
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+  height: 4rem;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
