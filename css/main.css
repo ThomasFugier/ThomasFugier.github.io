@@ -342,6 +342,7 @@ iframe
     display: grid;
     grid-gap: 1rem;
     height:100%;
+    width:100%;
 }
 
 @media (min-width: 600px) {
