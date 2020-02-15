@@ -317,36 +317,6 @@ iframe
     overflow: hidden;
 }
 
-.spotlight.accent1 {
-    background-color: #51CCA8;
-}
-
-@media screen and (max-width: 980px)
-.spotlight {
-    padding: 0;
-    text-align: center;
-}
-
-@media screen and (max-width: 1280px)
-.spotlight {
-    padding: 5.5rem 0;
-}
-
-.spotlight {
-    padding: 7rem 0;
-    position: relative;
-}
-
-article, aside, details, figcaption, figure, hgroup, menu{
-    display: block;
-}
-
-@media screen and (max-width: 980px)
-.spotlight > .inner {
-    display: block;
-    max-width: none;
-    width: 100%;
-}
 
 
 @-webkit-keyframes fadeInDown {
