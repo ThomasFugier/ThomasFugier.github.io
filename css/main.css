@@ -381,7 +381,7 @@ iframe
   .ProjetBlocMainDivider { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .Content{margin:100px;}
 }
 
