@@ -322,9 +322,8 @@ iframe
 .cards
 {
   text-align:center;
-  background-color: dodgerblue;
+  background-color: rgba(125,125,0,0.2);
   color: white;
-  padding: 1rem;
   height: 100%;
   margin: 0 auto;
   display: grid;
@@ -337,7 +336,7 @@ iframe
 }
 
 @media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
+  .cards { grid-template-columns: repeat(2, 1fr); }
 }
 
 @-webkit-keyframes fadeInDown {
