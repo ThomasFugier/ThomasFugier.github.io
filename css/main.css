@@ -200,6 +200,9 @@ iframe
     margin-top: auto;
     margin-bottom: auto;
     font-family:helvetica;
+	
+	  animation-duration: 3s;
+  animation-name: FadeInDown;
 }
 
 .TopBar
