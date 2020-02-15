@@ -338,7 +338,7 @@ iframe
     color: white;
     margin: 0 auto;
     display: grid;
-    height:800px;
+    height:600px;
     width:100%;
 }
 
@@ -347,7 +347,7 @@ iframe
     text-align:center;
     background-color: rgba(125,125,0,0.2);
     color: white;
-    height: 800%;
+    height: 600%;
     margin: 0 auto;
     display: grid;
     width:100%;
@@ -371,8 +371,8 @@ iframe
   .ProjetBlocMainDivider { grid-template-columns: repeat(2, 1fr); }
   .ProjectBloc { height:800px;}
   .ProjectImageContainer{height: 400px;}
-  .TextPart{height:600px;}
-  .PicturePart{height:600px;}
+  .TextPart{height:400px;}
+  .PicturePart{height:400px;}
 
 
 }
