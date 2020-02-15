@@ -317,7 +317,12 @@ iframe
     overflow: hidden;
 }
 
-
+.card {
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+  height: 4rem;
+}
 
 @-webkit-keyframes fadeInDown {
   from {
