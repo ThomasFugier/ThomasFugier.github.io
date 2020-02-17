@@ -371,8 +371,9 @@ iframe
 }
 
 .ProjectTitle
-{
-        font-size: 7vh;
+{ 
+    position:absolute;
+    font-size: 7vh;
     font-family: helvetica;
     font-weight: 700;
 
