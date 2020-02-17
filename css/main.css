@@ -370,6 +370,14 @@ iframe
     grid-template-columns : repeat(2, 1fr);
 }
 
+.ProjectTitle
+{
+        font-size: 7vh;
+    font-family: helvetica;
+    font-weight: 700;
+
+}
+
 @media (min-width: 600px)
 {
   .ProjetBlocMainDivider { grid-template-columns: 3fr 1fr; }
