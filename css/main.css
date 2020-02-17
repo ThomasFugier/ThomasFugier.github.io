@@ -318,7 +318,7 @@ iframe
     width: 100%;
     height: calc(300px - 5px);
     overflow: hidden;
-    
+    border-radius:2px;
 }
 
 .ProjetBlocMainDivider
