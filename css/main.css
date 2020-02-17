@@ -316,8 +316,9 @@ iframe
 
 .ProjectImageContainer{
     width: 100%;
-    height: 300px;
+    height: calc(300px - 5px);
     overflow: hidden;
+    
 }
 
 .ProjetBlocMainDivider
@@ -351,6 +352,7 @@ iframe
     margin: 0 auto;
     display: grid;
     width:100%;
+	grid-gap:10px;
 }
 
 .PicturePartSub
@@ -363,6 +365,7 @@ iframe
     display: grid;
     height:100%;
     width:100%;
+    grid-gap:10px;
 
     grid-template-columns : repeat(2, 1fr);
 }
@@ -371,7 +374,7 @@ iframe
 {
   .ProjetBlocMainDivider { grid-template-columns: repeat(2, 1fr); }
   .ProjectBloc { height:800px;}
-  .ProjectImageContainer{height: 400px;}
+  .ProjectImageContainer{height: calc(400px - 5px);}
   .TextPart{height:800px;}
   .PicturePart{height:800px;}
 }
