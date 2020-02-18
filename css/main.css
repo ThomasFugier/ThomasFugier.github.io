@@ -353,7 +353,16 @@ iframe
     border-radius: 2px;
     height: 80%;
     align-content: center;
-    transform: translateY(10%);
+}
+
+.ProjectTextOnRight
+{
+    transform: translate(calc(-67%), 20%);
+}
+
+.ProjectTextOnLeft
+{
+    transform: translate(calc(-67%), 20%);
 }
 
 .PicturePart
