@@ -55,8 +55,7 @@ p {
     color: rgb(20, 20, 20);
     z-index:100;
     font-family: helvetica;
-
-  }
+}
 
 footer {
     background-color:white;
@@ -147,6 +146,7 @@ div.picture1 {
     width: 177.77777778vh;
     z-index:-100;
 }
+
 iframe 
 {
     position: absolute;  
