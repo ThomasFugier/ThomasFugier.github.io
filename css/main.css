@@ -364,6 +364,7 @@ iframe
     height: 80%;
     align-content: center;
     width:303%;
+    z-index:800;
 }
 
 .ProjectTextOnRight
