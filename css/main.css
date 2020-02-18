@@ -374,7 +374,7 @@ iframe
 
 .ProjectTextOnLeft
 {
-    transform: translate(calc(-67%), 20%);
+    transform: translate(0px, 20%);
 }
 
 .PicturePart
