@@ -334,11 +334,19 @@ iframe
 .TextPart
 {
     text-align:center;
-    background-color: rgba(125,0,0,0.5);
+    background-color: rgba(125,0,0,0.0);
     color: white;
     margin: 0 auto;
     display: grid;
     height:600px;
+    width:100%;
+}
+
+.TextPart
+{
+    text-align:center;
+    background-color: rgba(0,0,0,0.5);
+    height:100%;
     width:100%;
 }
 
@@ -380,7 +388,7 @@ iframe
 }
 
 @media (min-width: 800px) {
-  .content{margin:100px;}
+  .content{margin:15%;}
 }
 
 @-webkit-keyframes fadeInDown {
