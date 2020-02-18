@@ -301,29 +301,30 @@ iframe
 
 .ProjectBloc
 {
-    background-color:rgba(200,200,0,0.5);
+    background-color:rgba(200,200,0,0.0);
     height:1200px;
-    margin-top:10px;
-    margin-bottom:10px;
+    margin-top:100px;
+    margin-bottom:100px;
 }
 
 .ProjectImage{
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    object-fit:cover;
+    width:100%;
+    height:100%;
 }
 
 .ProjectImageContainer{
     width: 100%;
-    height: 300px;
+    height: calc(300px - 5px);
     overflow: hidden;
+    border-radius:2px;
 }
 
 .ProjetBlocMainDivider
 {
   text-align:center;
-  background-color: rgba(125,125,0,0.2);
+  background-color: rgba(125,125,0,0.0);
   color: white;
   height: 100%;
   margin: 0 auto;
@@ -334,7 +335,7 @@ iframe
 .TextPart
 {
     text-align:center;
-    background-color: rgba(125,0,0,0.0);
+    background-color: rgba(125,0,0,0.5);
     color: white;
     margin: 0 auto;
     display: grid;
@@ -342,53 +343,54 @@ iframe
     width:100%;
 }
 
-.TextPart
-{
-    text-align:center;
-    background-color: rgba(0,0,0,0.5);
-    height:100%;
-    width:100%;
-}
-
 .PicturePart
 {
     text-align:center;
-    background-color: rgba(125,125,0,0.2);
+    background-color: rgba(125,125,0,0.0);
     color: white;
     height: 600px;
     margin: 0 auto;
     display: grid;
     width:100%;
+	grid-gap:10px;
 }
 
 .PicturePartSub
 {
     text-align:center;
-    background-color: rgba(125,125,0,0.2);
+    background-color: rgba(125,125,0,0.0);
     color: white;
     height: 100%;
     margin: 0 auto;
     display: grid;
     height:100%;
     width:100%;
+    grid-gap:10px;
 
     grid-template-columns : repeat(2, 1fr);
 }
 
-@media (min-width: 600px) {
-  .ProjetBlocMainDivider { grid-template-columns: repeat(2, 1fr); }
+.ProjectTitle
+{ 
+    position:absolute;
+    font-size: 7vh;
+    font-family: helvetica;
+    font-weight: 700;
+
+}
+
+@media (min-width: 600px)
+{
+  .ProjetBlocMainDivider { grid-template-columns: 3fr 1fr; }
   .ProjectBloc { height:800px;}
-  .ProjectImageContainer{height: 400px;}
+  .ProjectImageContainer{height: calc(400px - 5px);}
   .TextPart{height:800px;}
   .PicturePart{height:800px;}
 }
 
-@media (min-width: 900px) {
-  .ProjetBlocMainDivider { grid-template-columns: repeat(2, 1fr); }
-}
-
 @media (min-width: 800px) {
-  .content{margin:15%;}
+  
+  .content{margin:100px;}
 }
 
 @-webkit-keyframes fadeInDown {
