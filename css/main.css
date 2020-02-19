@@ -415,11 +415,11 @@ iframe
 {
   .ProjetBlocMainDivider {  }
   .ProjectBloc { height:800px;}
-  .TextContent{height: 75%; width:303%;}
+  .TextContent{height: 75%; width:200%;}
   .ProjectImageContainer{height: calc(400px - 5px);}
   .TextPart{height:800px;}
   .PicturePart{height:800px;}
-	.ProjectTextOnRight{    transform: translate(calc(-67%), calc(calc(100% * 1.333) - calc(100% * 1.16)));}
+	.ProjectTextOnRight{    transform: translate(calc(-50%), calc(calc(100% * 1.333) - calc(100% * 1.16)));}
 	.ProjectTextOnLeft{    transform: translate(0px, calc(calc(100% * 1.333) - calc(100% * 1.16)));}
   .ProjectImagesOnRight{grid-template-columns: 1fr 3fr;}
   .ProjectImagesOnLeft{grid-template-columns: 3fr 1fr;}
