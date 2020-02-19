@@ -361,9 +361,10 @@ iframe
     background-color:
     rgba(0,0,0,0.7);
     border-radius: 2px;
-    height: 75%;
+    height: 100%;
+    width: 100%;
     align-content: center;
-    width:303%;
+
     z-index:800;
 }
 
@@ -417,6 +418,7 @@ iframe
 {
   .ProjetBlocMainDivider {  }
   .ProjectBloc { height:800px;}
+  .TextContent{height: 75%; width:303%;}
   .ProjectImageContainer{height: calc(400px - 5px);}
   .TextPart{height:800px;}
   .PicturePart{height:800px;}
