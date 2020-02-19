@@ -341,6 +341,7 @@ iframe
   margin: 0 auto;
   display: grid;
   height:100%;
+  grid-gap:10px;
 }
 
 .TextPart
@@ -383,7 +384,7 @@ iframe
     margin: 0 auto;
     display: grid;
     width:100%;
-	grid-gap:10px;
+	grid-gap:0px;
 }
 
 .PicturePartSub
@@ -396,7 +397,7 @@ iframe
     display: grid;
     height:100%;
     width:100%;
-    grid-gap:10px;
+    grid-gap:6px;
 
     grid-template-columns : repeat(2, 1fr);
 }
