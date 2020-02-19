@@ -428,7 +428,7 @@ iframe
 
 
 
-@media (min-width: 600px)
+@media (min-width: 1200px)
 {
   .ProjetBlocMainDivider {  }
   .ProjectBloc { height:800px;}
@@ -445,7 +445,7 @@ iframe
 
 }
 
-@media (min-width: 800px) 
+@media (min-width: 1400px) 
 {
   .ProjectTitleLeft{transform: translate(-50px, 95px);}
   .ProjectTitleRight{transform: translate(Calc(110%), 95px);}
