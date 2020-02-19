@@ -370,12 +370,10 @@ iframe
 
 .ProjectTextOnRight
 {
-    transform: translate(calc(-67%), calc(calc(100% * 1.333) - calc(100% * 1.16)));
 }
 
 .ProjectTextOnLeft
 {
-    transform: translate(0px, calc(calc(100% * 1.333) - calc(100% * 1.16)));
 }
 
 .PicturePart
@@ -422,6 +420,8 @@ iframe
   .ProjectImageContainer{height: calc(400px - 5px);}
   .TextPart{height:800px;}
   .PicturePart{height:800px;}
+	.ProjectTextOnRight{    transform: translate(calc(-67%), calc(calc(100% * 1.333) - calc(100% * 1.16)));}
+	.ProjectTextOnLeft{    transform: translate(0px, calc(calc(100% * 1.333) - calc(100% * 1.16)));}
 }
 
 @media (min-width: 800px) {
