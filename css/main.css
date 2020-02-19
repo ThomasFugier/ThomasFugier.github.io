@@ -361,7 +361,7 @@ iframe
     background-color:
     rgba(0,0,0,0.7);
     border-radius: 2px;
-    height: 80%;
+    height: 75%;
     align-content: center;
     width:303%;
     z-index:800;
@@ -369,12 +369,12 @@ iframe
 
 .ProjectTextOnRight
 {
-    transform: translate(calc(-67%), 20%);
+    transform: translate(calc(-67%), calc(calc(100% * 1.333) - calc(100% * 1.16)));
 }
 
 .ProjectTextOnLeft
 {
-    transform: translate(0px, 20%);
+    translate(0px, calc(calc(100% * 1.333) - calc(100% * 1.16)))
 }
 
 .PicturePart
