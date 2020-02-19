@@ -436,17 +436,19 @@ iframe
   .ProjectImageContainer{height: calc(400px - 5px);}
   .TextPart{height:800px;}
   .PicturePart{height:800px;}
-	.ProjectTextOnRight{    transform: translate(calc(-50%), calc(calc(100% * 1.333) - calc(100% * 1.16)));}
-	.ProjectTextOnLeft{    transform: translate(0px, calc(calc(100% * 1.333) - calc(100% * 1.16)));}
+  .ProjectTextOnRight{    transform: translate(calc(-50%), calc(calc(100% * 1.333) - calc(100% * 1.16)));}
+  .ProjectTextOnLeft{    transform: translate(0px, calc(calc(100% * 1.333) - calc(100% * 1.16)));}
   .ProjectImagesOnRight{grid-template-columns: 1fr 3fr;}
   .ProjectImagesOnLeft{grid-template-columns: 3fr 1fr;}
-  .ProjectTitleLeft{transform: translate(-50px, 95px);}
-  .ProjectTitleRight{transform: translate(Calc(110%), 95px);}
-}
-
-@media (min-width: 800px) {
   .ProjectTitleLeft{transform: translate(10px, 95px);}
   .ProjectTitleLeft{transform: translate(165%, 95px);}
+
+}
+
+@media (min-width: 800px) 
+{
+  .ProjectTitleLeft{transform: translate(-50px, 95px);}
+  .ProjectTitleRight{transform: translate(Calc(110%), 95px);}
   .content{margin:15%;}
 }
 
