@@ -434,7 +434,7 @@ iframe
 	height: 100%;
 	width: 90%;
 	transform: translate(0%,0%);
-	font-size: 2vh;
+	font-size: 20px;
 	overflow: hidden;
 	display: table-caption;
 	padding: 5%;
