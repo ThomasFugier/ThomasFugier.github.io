@@ -466,8 +466,8 @@ iframe
   .ProjectTextOnLeft{    transform: translate(0px, 250%);}
   .ProjectImagesOnRight{grid-template-columns: 1fr 3fr;}
   .ProjectImagesOnLeft{grid-template-columns: 3fr 1fr;}
-  .ProjectTitleLeft{transform: translate(10px, 95px);}
-  .ProjectTitleRight{transform: translate(270%, 95px);}
+  .ProjectTitleLeft{transform: translate(-40px, 95px);}
+  .ProjectTitleRight{transform: translate(365%, 95px);}
   .content{margin:5%;}
 }
 
