@@ -351,7 +351,7 @@ iframe
     z-index: 800;
     color: black;
     background-color: white;
-    width: 35%;
+    width: 20%;
 }
 
 .ProjetBlocMainDivider
@@ -467,7 +467,7 @@ iframe
   .ProjectImagesOnRight{grid-template-columns: 1fr 3fr;}
   .ProjectImagesOnLeft{grid-template-columns: 3fr 1fr;}
   .ProjectTitleLeft{transform: translate(10px, 95px);}
-  .ProjectTitleRight{transform: translate(165%, 95px);}
+  .ProjectTitleRight{transform: translate(270%, 95px);}
 
 }
 
