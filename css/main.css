@@ -426,6 +426,17 @@ iframe
     grid-template-columns : repeat(2, 1fr);
 }
 
+.MargedText
+{
+	color:black;
+        font-family: helvetica;
+	text-align: justify;
+	height: 90%;
+	width: 90%;
+	transform: translate(5%,5%);
+	font-size: 2vh;
+	overflow: hidden;
+}
 
 
 @media (min-width: 1200px)
