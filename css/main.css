@@ -450,6 +450,7 @@ iframe
 
 .Role
 {
+	writing-mode: vertical-rl;
 }
 
 @media (min-width: 1200px)
