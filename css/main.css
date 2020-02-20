@@ -347,11 +347,11 @@ iframe
     position: absolute;
     font-size: 5vh;
     font-family: helvetica;
-    font-weight: 700;
+    font-weight: 900;
     z-index: 800;
-    color: #bcefff;
-    text-shadow: 3px 3px 0px rgba(0,128,255,0.6);
-
+    color: black;
+    background-color:white:
+	   
 
     width: 35%;
 }
