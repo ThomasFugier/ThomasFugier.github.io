@@ -3376,7 +3376,7 @@ input, select, textarea {
 			}
 
 			#wrapper > section:last-of-type > header:after {
-				background: white;
+				background: black;
 				border-radius: 0.5rem;
 				bottom: -1.5rem;
 				content: '';
