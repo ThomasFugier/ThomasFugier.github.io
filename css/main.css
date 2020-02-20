@@ -443,6 +443,9 @@ iframe
 
 .Roles
 {
+	color: black;
+        display: grid;
+        position: absolute;
 }
 
 .Role
