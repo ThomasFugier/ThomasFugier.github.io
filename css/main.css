@@ -468,13 +468,13 @@ iframe
   .ProjectImagesOnLeft{grid-template-columns: 3fr 1fr;}
   .ProjectTitleLeft{transform: translate(10px, 95px);}
   .ProjectTitleRight{transform: translate(270%, 95px);}
-
+  .content{margin:5%;}
 }
 
 @media (min-width: 1400px) 
 {
   .ProjectTitleLeft{transform: translate(-50px, 95px);}
-  .ProjectTitleRight{transform: translate(Calc(110%), 95px);}
+  .ProjectTitleRight{transform: translate(Calc(270%), 95px);}
   .content{margin:15%;}
 }
 
