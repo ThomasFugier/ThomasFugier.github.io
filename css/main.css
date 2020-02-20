@@ -440,10 +440,13 @@ iframe
 
 .Roles
 {
-	color: black;
-        display: grid;
-        position: absolute;
+	color: rgba(255,255,0,0.7);
+    position: absolute;
 	grid-gap:10px;
+    display: flex;
+    background-color: black;
+    width: 22%;
+    height: 795px;
 }
 
 .Role
