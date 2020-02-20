@@ -431,11 +431,14 @@ iframe
 	color:black;
         font-family: helvetica;
 	text-align: justify;
-	height: 90%;
+	height: 100%;
 	width: 90%;
-	transform: translate(5%,5%);
+	transform: translate(0%,0%);
 	font-size: 2vh;
 	overflow: hidden;
+	display: table-caption;
+	padding: 5%;
+	color:
 }
 
 
