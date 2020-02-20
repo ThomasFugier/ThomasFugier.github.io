@@ -446,11 +446,15 @@ iframe
 	color: black;
         display: grid;
         position: absolute;
+	grid-gap:10px;
 }
 
 .Role
 {
 	writing-mode: vertical-rl;
+	font-size:50px;
+	font-family:helvetica;
+	background-color:rgba(125,125,255,0.8);
 }
 
 @media (min-width: 1200px)
