@@ -3236,12 +3236,12 @@ input, select, textarea {
 			left: 0;
 			position: absolute;
 			top: 0;
-			width: 45%;
+			width: 20%;
 			z-index: -1;
 			background: linear-gradient(rgba(121, 100, 249, 0.5), rgba(253, 123, 182, 1.0));
 			height: calc(100% - 100px);
 			margin-top: 50px;
-			transform: translate(5%,0px);
+			transform: translate(15%,0px);
 		}
 
 		#wrapper section {
