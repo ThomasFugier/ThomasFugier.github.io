@@ -3221,6 +3221,7 @@ input, select, textarea {
 /* Wrapper */
 
 	#wrapper {
+		transform: translate(-8%,0px);
 		position: relative;
 		width: 100vw;
 		padding: 0 0 10rem 0;
@@ -3550,7 +3551,6 @@ input, select, textarea {
 
 			#wrapper {
 				padding: 0;
-				transform: translate(-8%,0px);
 			}
 
 				#wrapper:before {
