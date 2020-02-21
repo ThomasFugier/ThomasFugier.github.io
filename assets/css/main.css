@@ -133,7 +133,8 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 1152px) {
-
+                        
+			
 			html {
 				font-size: 14pt;
 			}
@@ -3549,6 +3550,7 @@ input, select, textarea {
 
 			#wrapper {
 				padding: 0;
+				transform: translate(-8%,0px);
 			}
 
 				#wrapper:before {
