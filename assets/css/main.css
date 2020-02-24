@@ -3239,7 +3239,7 @@ input, select, textarea {
 			top: 0;
 			width: 50%;
 			z-index: -1;
-			background: linear-gradient(rgba(121, 100, 249, 0.5), rgba(253, 123, 182, 1.0));
+			background-color:rgba(19, 21, 33, 1.0);
 			/*height: calc(100% - 100px);*/
 			/*margin-top: 50px; */
 			/*transform: translate(400%,0px);*/
