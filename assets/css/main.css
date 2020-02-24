@@ -159,11 +159,11 @@ input, select, textarea {
 
 	body {
 		background-color: rgb(242,243,248);
-		color: #ffffff;
+		color: #000000;
 	}
 
 	body, input, select, textarea {
-		color: #ffffff;
+		color: #000000;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 1rem;
 		font-weight: 300;
@@ -188,7 +188,7 @@ input, select, textarea {
 
 	strong, b {
 		font-weight: 600;
-		color: #ffffff;
+		color: #000000;
 	}
 
 	em, i {
@@ -200,7 +200,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
+		color: #000000;
 		font-family: "Raleway", Helvetica, sans-serif;
 		font-weight: 600;
 		letter-spacing: 0.175em;
@@ -3283,6 +3283,7 @@ input, select, textarea {
 				grid-area: content;
 				max-width: 60rem;
 				position: relative;
+				color:#ffffff;
 			}
 
 			#wrapper section > footer {
