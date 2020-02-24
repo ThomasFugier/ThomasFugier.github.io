@@ -3907,4 +3907,9 @@ input, select, textarea {
 .darkColor
 {
 	color:#494b4e;
+	.strong
+	{
+		color:#494b4e;
+	}
+	
 }
