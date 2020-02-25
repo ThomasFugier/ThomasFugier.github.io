@@ -3897,6 +3897,13 @@ input, select, textarea {
 
 .projectDate
 {
+	writing-mode: vertical-rl;
+	font-size: 200px;
+	-webkit-text-stroke: 2px rgba(255,255,255,0.3);
+	color: rgba(0,0,0,0);
+	font-family: helvetica;
+	font-weight: 900;
+	transform: translate(0,-60%);
 }
 
 .workPlace
