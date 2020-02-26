@@ -3549,7 +3549,12 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 1152px) {
-
+			
+			.projectDate
+			{
+				visibility:none;
+			}
+			
 			#wrapper {
 				transform: translate(-0%,0px);
 				padding: 0;
