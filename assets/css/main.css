@@ -3593,6 +3593,12 @@ input, select, textarea {
 			                #projectTitle{
 						color:#424242;
 			                }
+			
+					#getInTouch
+					{
+						width:80%;
+						Transform:Translate(10%,0px);
+					}
 					#wrapper section > footer {
 						padding: 0;
 						text-align: left;
