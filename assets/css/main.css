@@ -3457,6 +3457,10 @@ input, select, textarea {
 			#wrapper > section.intro > header:before {
 				margin-left: 0;
 			}
+			
+			#wrapper > section.content{
+				color:#1e1e1e;
+			}
 
 		}
 
