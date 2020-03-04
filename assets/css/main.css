@@ -3458,9 +3458,7 @@ input, select, textarea {
 				margin-left: 0;
 			}
 			
-			#wrapper > section.content{
-				color:#1e1e1e;
-			}
+			
 
 		}
 
@@ -3589,6 +3587,7 @@ input, select, textarea {
 						padding: 0;
 						width: 100%;
 						overflow-x: hidden;
+						color:#1e1e1e;
 					}
 
 					#wrapper section > footer {
