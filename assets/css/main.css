@@ -3590,6 +3590,9 @@ input, select, textarea {
 						color:#1e1e1e;
 					}
 
+			                #projectTitle{
+						color:#424242;
+			                }
 					#wrapper section > footer {
 						padding: 0;
 						text-align: left;
