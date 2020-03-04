@@ -3566,6 +3566,11 @@ input, select, textarea {
 				width:80%;
 				Transform:Translate(10%,0px);
 			}
+			
+			.getInTouchTitle
+			{
+				color:#424242;
+			}
 		
 			#wrapper {
 				transform: translate(-0%,0px);
