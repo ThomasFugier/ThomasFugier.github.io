@@ -3557,6 +3557,16 @@ input, select, textarea {
 				visibility:hidden;
 			}
 			
+			#projectTitle{
+				color:#424242;
+			}
+			
+			#getInTouch
+			{
+				width:80%;
+				Transform:Translate(10%,0px);
+			}
+		
 			#wrapper {
 				transform: translate(-0%,0px);
 				padding: 0;
@@ -3590,15 +3600,7 @@ input, select, textarea {
 						color:#1e1e1e;
 					}
 
-			                #projectTitle{
-						color:#424242;
-			                }
-			
-					#getInTouch
-					{
-						width:80%;
-						Transform:Translate(10%,0px);
-					}
+			                
 					#wrapper section > footer {
 						padding: 0;
 						text-align: left;
