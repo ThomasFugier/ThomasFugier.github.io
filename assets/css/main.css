@@ -3557,11 +3557,11 @@ input, select, textarea {
 				visibility:hidden;
 			}
 			
-			#projectTitle{
+			.projectTitle{
 				color:#424242;
 			}
 			
-			#getInTouch
+			.getInTouch
 			{
 				width:80%;
 				Transform:Translate(10%,0px);
