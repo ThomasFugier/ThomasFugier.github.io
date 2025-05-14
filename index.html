@@ -12,6 +12,8 @@
             --accent-color: #3498db;
             --text-color: #333333;
             --transition-speed: 0.5s;
+            --dark-bg: #0a0a0a;
+            --light-text: #ffffff;
         }
 
         /* Reset */
@@ -23,8 +25,8 @@
         }
 
         body {
-            background-color: var(--secondary-color);
-            color: var(--text-color);
+            background-color: var(--dark-bg);
+            color: var(--light-text);
             font-size: 16px;
             line-height: 1.6;
             overflow-x: hidden;
@@ -37,15 +39,24 @@
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 4.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        h3 {
+            font-size: 2rem;
+            letter-spacing: -0.01em;
         }
 
         a {
-            color: var(--primary-color);
+            color: var(--light-text);
             text-decoration: none;
             transition: all var(--transition-speed);
         }
@@ -56,22 +67,35 @@
 
         p {
             margin-bottom: 1rem;
+            font-weight: 300;
+            font-size: 1.1rem;
         }
 
         /* Layout */
         .container {
             width: 100%;
-            max-width: 1200px;
+            padding: 0 5vw;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 0 2rem;
         }
 
         section {
-            padding: 6rem 0;
+            padding: 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
+        }
+
+        .fullscreen-section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
 
         /* Navigation */
@@ -79,18 +103,17 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
             z-index: 1000;
             transition: all var(--transition-speed);
+            padding: 2rem 0;
+            mix-blend-mode: difference;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
-            padding: 0 2rem;
+            padding: 0 5vw;
         }
 
         .logo {
@@ -108,16 +131,17 @@
             position: relative;
             padding: 0.5rem 0;
             font-weight: 500;
+            letter-spacing: 0.05em;
         }
 
         .nav-link::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
+            height: 1px;
             bottom: 0;
             left: 0;
-            background-color: var(--accent-color);
+            background-color: var(--light-text);
             transition: width var(--transition-speed);
         }
 
@@ -136,8 +160,8 @@
 
         .menu-toggle span {
             width: 100%;
-            height: 3px;
-            background-color: var(--primary-color);
+            height: 2px;
+            background-color: var(--light-text);
             transition: all var(--transition-speed);
         }
 
@@ -148,49 +172,118 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
+            background-color: var(--dark-bg);
+            text-align: left;
+            padding-left: 5vw;
         }
 
         .home-content {
             z-index: 2;
+            max-width: 1000px;
         }
 
         .home-content h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+            font-size: 6vw;
+            font-weight: 400;
         }
 
         .baseline {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 300;
-            letter-spacing: 1px;
+            letter-spacing: 0.05em;
             opacity: 0.8;
+            margin-bottom: 2rem;
         }
 
-        .scroll-down {
+        .home-image {
             position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
+            right: 0;
+            top: 0;
+            width: 40%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
+        .home-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 5vw;
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+            z-index: 3;
+        }
+
+        .scroll-line {
+            width: 60px;
+            height: 1px;
+            background-color: var(--light-text);
+            margin-right: 1rem;
+            animation: scrollLine 2s infinite;
+        }
+
+        @keyframes scrollLine {
+            0% {
+                width: 0;
             }
-            40% {
-                transform: translateY(-30px) translateX(-50%);
-            }
-            60% {
-                transform: translateY(-15px) translateX(-50%);
+            100% {
+                width: 60px;
             }
         }
 
-        /* Sections */
+        /* Section Layouts */
+        .split-section {
+            display: flex;
+            height: 100vh;
+        }
+
+        .split-left, .split-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .split-image {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .split-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .split-content {
+            padding: 5vw;
+        }
+
+        .dark-section {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+        }
+
+        .light-section {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        /* Section Titles */
         .section-title {
             margin-bottom: 3rem;
             position: relative;
@@ -200,38 +293,39 @@
         .section-title::after {
             content: '';
             position: absolute;
-            width: 50%;
-            height: 3px;
+            width: 40%;
+            height: 1px;
             bottom: -10px;
             left: 0;
             background-color: var(--accent-color);
         }
 
+        .section-title.right::after {
+            left: auto;
+            right: 0;
+        }
+
         /* Works Grid */
         .works-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            width: 100%;
+            height: 100vh;
         }
 
         .work-item {
             position: relative;
             overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all var(--transition-speed);
-        }
-
-        .work-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            height: 100%;
+            cursor: pointer;
         }
 
         .work-item img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
-            transition: all var(--transition-speed);
+            transition: all 1s cubic-bezier(.19,1,.22,1);
         }
 
         .work-item:hover img {
@@ -243,125 +337,222 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 1.5rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            padding: 3rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
             color: white;
-            transform: translateY(100px);
-            transition: all var(--transition-speed);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(.19,1,.22,1);
         }
 
         .work-item:hover .work-info {
+            opacity: 1;
             transform: translateY(0);
         }
 
         .work-title {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
 
         .work-category {
-            font-size: 0.9rem;
+            font-size: 1rem;
             opacity: 0.8;
         }
 
-        /* About */
-        .about-content {
-            display: flex;
-            gap: 4rem;
-            align-items: center;
+        /* Interactive Experience Section */
+        #interactive {
+            background-color: var(--dark-bg);
         }
 
-        .about-image {
-            flex: 1;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        .interactive-header {
+            position: absolute;
+            top: 20vh;
+            left: 5vw;
+            z-index: 2;
         }
 
-        .about-image img {
+        /* Marketing Section */
+        #marketing {
+            background-color: var(--dark-bg);
+        }
+
+        .marketing-content {
+            padding: 5vw;
+            max-width: 50%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .marketing-background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .marketing-background img {
             width: 100%;
-            height: auto;
-            transition: all var(--transition-speed);
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
         }
 
-        .about-text {
+        /* AI Tools Section */
+        #ai {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .ai-content {
+            display: flex;
+            height: 100%;
+        }
+
+        .ai-text {
             flex: 1;
+            padding: 5vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ai-carousel {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ai-carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Thinking Section */
+        #thinking {
+            background-color: var(--dark-bg);
+        }
+
+        .methodology-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .method-step {
+            flex-basis: 22%;
+            position: relative;
+            padding-top: 2rem;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 200;
+            position: absolute;
+            top: -2rem;
+            left: 0;
+            opacity: 0.4;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
         }
 
         /* Contact */
+        #contact {
+            background-color: var(--dark-bg);
+        }
+
+        .contact-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+
+        .contact-left {
+            flex: 1;
+            padding-right: 5vw;
+        }
+
         .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+            flex: 1;
+            max-width: 500px;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
         }
 
         label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            transform: translateY(-1.5rem);
+            transition: all var(--transition-speed);
         }
 
         input, textarea {
             width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
+            padding: 0.7rem 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--light-text);
+            font-size: 1.1rem;
             transition: all var(--transition-speed);
         }
 
         input:focus, textarea:focus {
-            border-color: var(--accent-color);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            border-bottom: 1px solid var(--accent-color);
         }
 
         textarea {
-            min-height: 150px;
+            min-height: 100px;
             resize: vertical;
         }
 
         button {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
+            background-color: transparent;
+            color: var(--light-text);
+            border: 1px solid var(--light-text);
             padding: 1rem 2rem;
-            font-size: 1rem;
-            border-radius: 4px;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
             cursor: pointer;
             transition: all var(--transition-speed);
         }
 
         button:hover {
-            background-color: var(--accent-color);
+            background-color: var(--light-text);
+            color: var(--dark-bg);
         }
 
         /* Footer */
         footer {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 2rem 0;
-            text-align: center;
+            padding: 5vw 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-content {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            gap: 1rem;
         }
 
-        .back-to-top {
-            margin-top: 1rem;
-            cursor: pointer;
-            transition: all var(--transition-speed);
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-5px);
+        .footer-links {
+            display: flex;
+            gap: 2rem;
         }
 
         /* Animation Classes */
@@ -376,49 +567,166 @@
             transform: translateY(0);
         }
 
+        .reveal-text {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .reveal-text span {
+            display: block;
+            transform: translateY(100%);
+            transition: transform 1.2s cubic-bezier(.19,1,.22,1);
+        }
+
+        .reveal-text.visible span {
+            transform: translateY(0);
+        }
+
+        /* Cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background-color 0.3s;
+            mix-blend-mode: difference;
+        }
+
+        .custom-cursor.hover {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
         /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                transform: translateY(-150%);
-                transition: transform var(--transition-speed);
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3rem;
             }
-
-            .nav-links.active {
-                transform: translateY(0);
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .about-content {
-                flex-direction: column;
+            
+            h2 {
+                font-size: 2.5rem;
             }
 
             .works-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .split-section {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .split-left, .split-right {
+                min-height: 50vh;
+            }
+            
+            .methodology-steps {
+                flex-direction: column;
+                gap: 3rem;
+            }
+            
+            .method-step {
+                flex-basis: 100%;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .contact-left, .contact-form {
+                width: 100%;
+                padding: 5vw 0;
+            }
+            
+            .home-image {
+                display: none;
+            }
+        }
 
-            h1 {
-                font-size: 2.5rem;
+        @media (max-width: 768px) {
+            nav {
+                background-color: rgba(10, 10, 10, 0.95);
+                padding: 1rem 0;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--dark-bg);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                transform: translateX(-100%);
+                transition: transform var(--transition-speed);
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+            }
+
+            .menu-toggle {
+                display: flex;
+                z-index: 1001;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
             }
 
             .home-content h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
+            }
+            
+            .baseline {
+                font-size: 1.2rem;
+            }
+
+            .marketing-content {
+                max-width: 100%;
+            }
+            
+            .marketing-background {
+                position: relative;
+                width: 100%;
+                height: 50vh;
+            }
+            
+            .ai-content {
+                flex-direction: column;
+            }
+            
+            .ai-text, .ai-carousel {
+                width: 100%;
+            }
+            
+            .ai-carousel {
+                height: 50vh;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -430,176 +738,171 @@
             </div>
             <div class="nav-links">
                 <a href="#about" class="nav-link">À propos</a>
-                <a href="#interactive" class="nav-link">Interactive Experiences</a>
-                <a href="#marketing" class="nav-link">Creative Marketing</a>
+                <a href="#interactive" class="nav-link">Interactive</a>
+                <a href="#marketing" class="nav-link">Marketing</a>
                 <a href="#ai" class="nav-link">AI Tools</a>
-                <a href="#thinking" class="nav-link">Creative Thinking</a>
+                <a href="#thinking" class="nav-link">Methodology</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Home -->
-    <section id="home">
+    <section id="home" class="fullscreen-section">
         <div class="home-content">
-            <h1>THOMAS YVON FUGIER</h1>
+            <div class="reveal-text">
+                <h1><span>THOMAS YVON FUGIER</span></h1>
+            </div>
             <p class="baseline">Creative Thinker</p>
         </div>
-        <div class="scroll-down">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <polyline points="19 12 12 19 5 12"></polyline>
-            </svg>
+        <div class="home-image">
+            <img src="/api/placeholder/800/1200" alt="Creative Background" />
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>SCROLL DOWN</span>
         </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="fade-in">
-        <div class="container">
-            <h2 class="section-title">À propos</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="images/AirVR_1.jpg" alt="Thomas Yvon Fugier" />
-                </div>
-                <div class="about-text">
-                    <p>Je suis Thomas Yvon Fugier, un Creative Thinker passionné par l'innovation et l'expérience utilisateur. Mon approche créative se situe à l'intersection de l'art, de la technologie et de l'intelligence artificielle.</p>
-                    <p>Avec plus de dix ans d'expérience dans la conception d'expériences interactives, je combine une vision stratégique avec une exécution technique précise pour créer des projets qui résonnent émotionnellement et intellectuellement avec leur audience.</p>
-                    <p>Ma philosophie de travail repose sur l'idée que la créativité est un processus méthodique qui peut être cultivé, exploré et appliqué de manière systématique pour résoudre des problèmes complexes et inspirer l'innovation.</p>
-                </div>
+    <section id="about" class="fullscreen-section split-section">
+        <div class="split-left">
+            <div class="split-image">
+                <img src="/api/placeholder/800/1200" alt="Thomas Yvon Fugier" />
+            </div>
+        </div>
+        <div class="split-right dark-section">
+            <div class="split-content fade-in">
+                <h2 class="section-title">À propos</h2>
+                <p>Je suis Thomas Yvon Fugier, un Creative Thinker passionné par l'innovation et l'expérience utilisateur. Mon approche créative se situe à l'intersection de l'art, de la technologie et de l'intelligence artificielle.</p>
+                <p>Avec plus de dix ans d'expérience dans la conception d'expériences interactives, je combine une vision stratégique avec une exécution technique précise pour créer des projets qui résonnent émotionnellement et intellectuellement avec leur audience.</p>
+                <p>Ma philosophie de travail repose sur l'idée que la créativité est un processus méthodique qui peut être cultivé, exploré et appliqué de manière systématique pour résoudre des problèmes complexes et inspirer l'innovation.</p>
             </div>
         </div>
     </section>
 
     <!-- Interactive Experiences & VR -->
-    <section id="interactive" class="fade-in">
-        <div class="container">
-            <h2 class="section-title">Interactive Experiences & VR</h2>
-            <div class="works-grid">
-                <div class="work-item">
-                    <img src="/api/placeholder/400/320" alt="VR Experience" />
-                    <div class="work-info">
-                        <h3 class="work-title">Immersion VR</h3>
-                        <p class="work-category">Expérience Virtuelle</p>
-                    </div>
+    <section id="interactive" class="fullscreen-section">
+        <div class="interactive-header fade-in">
+            <h2 class="section-title">Interactive Experiences</h2>
+        </div>
+        <div class="works-grid">
+            <div class="work-item">
+                <img src="/api/placeholder/800/800" alt="VR Experience" />
+                <div class="work-info">
+                    <h3 class="work-title">Immersion VR</h3>
+                    <p class="work-category">Expérience Virtuelle</p>
                 </div>
-                <div class="work-item">
-                    <img src="/api/placeholder/400/320" alt="Interactive Installation" />
-                    <div class="work-info">
-                        <h3 class="work-title">Réactivité</h3>
-                        <p class="work-category">Installation Interactive</p>
-                    </div>
+            </div>
+            <div class="work-item">
+                <img src="/api/placeholder/800/800" alt="Interactive Installation" />
+                <div class="work-info">
+                    <h3 class="work-title">Réactivité</h3>
+                    <p class="work-category">Installation Interactive</p>
                 </div>
-                <div class="work-item">
-                    <img src="/api/placeholder/400/320" alt="3D Experience" />
-                    <div class="work-info">
-                        <h3 class="work-title">Spatialité</h3>
-                        <p class="work-category">Navigation 3D</p>
-                    </div>
+            </div>
+            <div class="work-item">
+                <img src="/api/placeholder/800/800" alt="3D Experience" />
+                <div class="work-info">
+                    <h3 class="work-title">Spatialité</h3>
+                    <p class="work-category">Navigation 3D</p>
+                </div>
+            </div>
+            <div class="work-item">
+                <img src="/api/placeholder/800/800" alt="User Experience" />
+                <div class="work-info">
+                    <h3 class="work-title">Immersive UX</h3>
+                    <p class="work-category">Experience Design</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Mobile Ads & Creative Marketing -->
-    <section id="marketing" class="fade-in">
-        <div class="container">
-            <h2 class="section-title">Mobile Ads & Creative Marketing</h2>
-            <div class="works-grid">
-                <div class="work-item">
-                    <img src="/api/placeholder/400/320" alt="Mobile Campaign" />
-                    <div class="work-info">
-                        <h3 class="work-title">Engagement Mobile</h3>
-                        <p class="work-category">Campagne Interactive</p>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <img src="/api/placeholder/400/320" alt="Brand Experience" />
-                    <div class="work-info">
-                        <h3 class="work-title">Identité Narrative</h3>
-                        <p class="work-category">Expérience de Marque</p>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <img src="/api/placeholder/400/320" alt="Digital Campaign" />
-                    <div class="work-info">
-                        <h3 class="work-title">Résonance</h3>
-                        <p class="work-category">Stratégie Digitale</p>
-                    </div>
-                </div>
-            </div>
+    <section id="marketing" class="fullscreen-section">
+        <div class="marketing-content fade-in">
+            <h2 class="section-title">Creative Marketing</h2>
+            <p>Des stratégies créatives qui captent l'attention et engagent l'audience à travers des expériences mémorables et des campagnes innovantes sur tous les canaux.</p>
+            <p>Mon approche du marketing créatif se concentre sur la création d'un lien émotionnel fort entre les marques et leur public, en utilisant des concepts originaux qui résonnent et inspirent l'action.</p>
+        </div>
+        <div class="marketing-background">
+            <img src="/api/placeholder/1200/800" alt="Creative Marketing" />
         </div>
     </section>
 
     <!-- AI Tools -->
-    <section id="ai" class="fade-in">
-        <div class="container">
-            <h2 class="section-title">Artificial Intelligence & Creative Tools</h2>
-            <div class="works-grid">
-                <div class="work-item">
-                    <img src="/api/placeholder/400/320" alt="AI Generated Art" />
-                    <div class="work-info">
-                        <h3 class="work-title">Génération Créative</h3>
-                        <p class="work-category">IA Artistique</p>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <img src="/api/placeholder/400/320" alt="Creative Tool" />
-                    <div class="work-info">
-                        <h3 class="work-title">Augmentation</h3>
-                        <p class="work-category">Outil Créatif</p>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <img src="/api/placeholder/400/320" alt="AI System" />
-                    <div class="work-info">
-                        <h3 class="work-title">Symbiose</h3>
-                        <p class="work-category">Interface IA/Humain</p>
-                    </div>
-                </div>
+    <section id="ai" class="fullscreen-section">
+        <div class="ai-content">
+            <div class="ai-text fade-in">
+                <h2 class="section-title">AI & Creative Tools</h2>
+                <p>L'intelligence artificielle comme extension de la créativité humaine. J'explore les nouvelles frontières où la technologie amplifie nos capacités créatives plutôt que de les remplacer.</p>
+                <p>Mes projets intègrent des systèmes d'IA qui collaborent avec les créateurs humains, établissant une symbiose qui ouvre de nouvelles possibilités d'expression et d'innovation.</p>
+            </div>
+            <div class="ai-carousel">
+                <img src="/api/placeholder/800/1200" alt="AI Creative Tools" />
             </div>
         </div>
     </section>
 
     <!-- Creative Thinking -->
-    <section id="thinking" class="fade-in">
-        <div class="container">
-            <h2 class="section-title">Creative Thinking / Methodology</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Ma méthodologie créative est ancrée dans un processus cyclique de quatre phases : Divergence, Convergence, Synthèse et Itération.</p>
-                    <p>La <strong>Divergence</strong> est l'exploration sans limites des possibilités, où chaque idée mérite d'être considérée.</p>
-                    <p>La <strong>Convergence</strong> est la phase analytique où les idées sont évaluées selon leur faisabilité et leur impact potentiel.</p>
-                    <p>La <strong>Synthèse</strong> combine les meilleures idées en concepts cohérents et structurés.</p>
-                    <p>L'<strong>Itération</strong> affine ces concepts à travers des tests, des retours et des améliorations continues.</p>
+    <section id="thinking" class="fullscreen-section">
+        <div class="container fade-in">
+            <h2 class="section-title">Methodology</h2>
+            <p>Ma méthodologie créative est ancrée dans un processus cyclique qui transforme systématiquement les idées en innovations tangibles.</p>
+            
+            <div class="methodology-steps">
+                <div class="method-step">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Divergence</h3>
+                    <p>L'exploration sans limites des possibilités, où chaque idée mérite d'être considérée et où l'imagination est encouragée à franchir les frontières conventionnelles.</p>
                 </div>
-                <div class="about-image">
-                    <img src="/api/placeholder/400/320" alt="Creative Methodology" />
+                
+                <div class="method-step">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Convergence</h3>
+                    <p>La phase analytique où les idées sont évaluées selon leur faisabilité et leur impact potentiel, permettant d'identifier les plus prometteuses.</p>
+                </div>
+                
+                <div class="method-step">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Synthèse</h3>
+                    <p>La combinaison des meilleures idées en concepts cohérents et structurés qui répondent aux objectifs définis et créent une vision unifiée.</p>
+                </div>
+                
+                <div class="method-step">
+                    <div class="step-number">04</div>
+                    <h3 class="step-title">Itération</h3>
+                    <p>L'affinement des concepts à travers des tests, des retours et des améliorations continues pour obtenir la meilleure version possible de l'idée.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="fade-in">
+    <section id="contact" class="fullscreen-section">
         <div class="container">
-            <h2 class="section-title">The Threshold</h2>
-            <div class="contact-form">
-                <p>Franchissez le seuil et entrons en contact pour explorer ensemble de nouvelles possibilités créatives.</p>
-                <form>
-                    <div class="form-group">
-                        <label for="name">Nom</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit">Envoyer</button>
-                </form>
+            <div class="contact-content fade-in">
+                <div class="contact-left">
+                    <h2 class="section-title">The Threshold</h2>
+                    <p>Franchissez le seuil et entrons en contact pour explorer ensemble de nouvelles possibilités créatives.</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit">ENVOYER</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -608,19 +911,35 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>Creative Thinking by Thomas Yvon Fugier – Crafted with code & concept</p>
-                <div class="back-to-top">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="16 12 12 8 8 12" />
-                        <line x1="12" y1="16" x2="12" y2="8" />
-                    </svg>
+                <p>© 2025 Thomas Yvon Fugier – Creative Thinker</p>
+                <div class="footer-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Behance</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
+        // Custom cursor
+        const cursor = document.querySelector('.custom-cursor');
+        const links = document.querySelectorAll('a, button');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
         // Mobile Navigation
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
@@ -630,31 +949,29 @@
             menuToggle.classList.toggle('active');
         });
 
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
+        });
+
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
-                navLinks.classList.remove('active');
-
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
 
-        // Back To Top
-        document.querySelector('.back-to-top').addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
         // Fade In Animation
         const fadeElements = document.querySelectorAll('.fade-in');
+        const revealElements = document.querySelectorAll('.reveal-text');
 
-        const fadeInObserver = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -663,7 +980,11 @@
         }, { threshold: 0.1 });
 
         fadeElements.forEach(element => {
-            fadeInObserver.observe(element);
+            observer.observe(element);
+        });
+        
+        revealElements.forEach(element => {
+            observer.observe(element);
         });
 
         // Change nav background on scroll
@@ -671,11 +992,11 @@
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                nav.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                nav.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+                nav.style.padding = '1rem 0';
             } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.9)';
-                nav.style.boxShadow = 'none';
+                nav.style.backgroundColor = 'transparent';
+                nav.style.padding = '2rem 0';
             }
         });
     </script>
