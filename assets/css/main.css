@@ -173,20 +173,25 @@ nav.scrolled {
     align-items: center;
     justify-content: center;
     background-color: var(--dark-bg);
-    text-align: left;
+    text-align: center;
     padding-left: 5vw;
 }
 
 .home-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
+    text-align: center;
     max-width: 1000px;
 }
 
     .home-content h1 {
         margin-bottom: 2rem;
         letter-spacing: -0.03em;
-        font-size: 6vw;
-        font-weight: 400;
+        font-size: 4vw;
+        font-weight: 300;
     }
 
 .baseline {
@@ -224,7 +229,7 @@ nav.scrolled {
     letter-spacing: 0.1em;
     opacity: 0.7;
     z-index: 3;
-    color:white;
+    color: white;
 }
 
 .scroll-line {
@@ -233,7 +238,7 @@ nav.scrolled {
     background-color: var(--light-text);
     margin-right: 1rem;
     animation: scrollLine 2s infinite;
-    color:white;
+    color: white;
 }
 
 @keyframes scrollLine {
@@ -768,7 +773,6 @@ footer {
 
 /* Contenu centré sur la vidéo */
 .home-content {
-    position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -795,4 +799,130 @@ footer {
 
 #home .nav-link::after {
     background-color: white !important;
+}
+
+
+/* ===============================
+   ABOUT SECTION
+=============================== */
+.about-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+    background-color: #ebebeb;
+    overflow: hidden;
+}
+
+    .about-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom right, rgba(235, 235, 235, 0.4), rgba(235, 235, 235, 0.9));
+        z-index: 1;
+        mix-blend-mode: lighten;
+    }
+
+.about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 0 2rem;
+    text-align: left; /* justification à gauche */
+    background-color: transparent; /* si tu ne veux plus de fond */
+    backdrop-filter: none;
+    box-shadow: none;
+    opacity: 0;
+    transform: translateY(0px); /* anciennement 20px, plus bas maintenant */
+    transition: opacity 1s ease, transform 1s ease;
+    margin-top: 8vh; /* ajout d’un espace supérieur */
+}
+
+    .about-content.visible {
+        opacity: 1;
+        transform: translateY(100px);
+    }
+
+    .about-content h2 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+        .about-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+    .about-content p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+
+.about-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+    .about-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+    }
+}
+
+.parallax-image {
+    position: absolute;
+    top: 300;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    object-position: top;
+    z-index: 0;
+    will-change: transform;
+    pointer-events: none;
 }
