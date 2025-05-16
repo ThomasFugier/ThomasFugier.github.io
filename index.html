@@ -35,7 +35,7 @@
     <section id="home">
         <div class="background-video">
             <div class="video-wrapper">
-                <iframe src="https://player.vimeo.com/video/392653641?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+                <iframe src="https://player.vimeo.com/video/1084764674?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
                         frameborder="0"
                         allow="autoplay; fullscreen"
                         allowfullscreen></iframe>
@@ -48,11 +48,14 @@
             <p class="baseline">Creative Thinker</p>
         </div>
 
-        <!-- Scroll Indicator ici, mais en dehors de .home-content -->
+        <!-- Scroll indicator -->
         <div class="scroll-indicator">
             <div class="scroll-line"></div>
             <span>SCROLL DOWN</span>
         </div>
+
+        <!-- Dégradé superposé -->
+        <div class="video-gradient-overlay"></div>
     </section>
 
 
@@ -278,6 +281,44 @@
             }
         });
     </script>
+
+    <script>
+        const gradientOverlay = document.querySelector('.video-gradient-overlay');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+
+            // On commence à rendre visible à partir de 10px de scroll
+            if (scrollY > 10) {
+                gradientOverlay.style.opacity = '1';
+            } else {
+                gradientOverlay.style.opacity = '0';
+            }
+        });
+    </script>
+
+    <script>
+        const gradientOverlay = document.querySelector('.video-gradient-overlay');
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+
+        console.log("✅ Script chargé"); // <- test simple
+
+        window.addEventListener('scroll', () => {
+            const maxScroll = 150;
+            const scrollY = Math.min(window.scrollY, maxScroll);
+            const opacity = scrollY / maxScroll;
+
+            console.log("ScrollY:", window.scrollY);
+            if (gradientOverlay) gradientOverlay.style.opacity = opacity;
+
+            if (scrollY > 10) {
+                scrollIndicator.classList.add('scrolled');
+            } else {
+                scrollIndicator.classList.remove('scrolled');
+            }
+        });
+    </script>
+
 
 </body>
 </html>
