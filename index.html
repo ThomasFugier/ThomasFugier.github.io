@@ -72,38 +72,67 @@
     </section>
 
     <!-- Interactive Experiences & VR -->
-  <section id="interactive" class="fullscreen-section">
+ <section id="interactive" class="fullscreen-section">
   <div class="container fade-in interactive-experiences">
     <h2 class="section-title centered">Interactive Experiences</h2>
     <div class="interactive-grid">
-      <div class="interactive-item">
-        <img src="images/AirVR_1.jpg" alt="VR Experience" />
-        <div class="interactive-caption">
-          <h3>Immersion VR</h3>
-          <p>Expérience Virtuelle</p>
+
+      <div class="interactive-item" onclick="toggleDetails(this)">
+        <img src="images/fitnessvr_1.png" alt="VR Experience" />
+        <div class="interactive-details">
+          <div class="interactive-summary">
+            <h3 class="details-title">Fitness VR</h3>
+          </div>
+          <div class="interactive-description">
+            <p class="details-category">Expérience Virtuelle Sportive</p>
+            <p>Un entraînement interactif en réalité virtuelle, alliant rythme et mouvement, piloté par un coach via tablette, conçu en partenariat avec la Ville d’Angers et le Ministère des Sports.<br>
+            <a href="#"></a></p>
+          </div>
         </div>
       </div>
-      <div class="interactive-item">
-        <img src="/api/placeholder/800/800" alt="Interactive Installation" />
-        <div class="interactive-caption">
-          <h3>Réactivité</h3>
-          <p>Installation Interactive</p>
+
+      <div class="interactive-item" onclick="toggleDetails(this)">
+        <img src="images/2030_1.png" alt="Interactive Installation" />
+        <div class="interactive-details">
+          <div class="interactive-summary">
+            <h3 class="details-title">Life in 2030</h3>
+          </div>
+          <div class="interactive-description">
+            <p class="details-category">Expérience Virtuelle</p>
+            <p>Conçue pour le groupe mutualiste Vyv, cette expérience VR projette l’utilisateur en 2030 dans un habitat intelligent, centré sur les innovations en santé et qualité de vie.<br>
+            <a href="#"></a></p>
+          </div>
         </div>
       </div>
-      <div class="interactive-item">
+
+      <div class="interactive-item" onclick="toggleDetails(this)">
         <img src="images/AirVR_1.jpg" alt="3D Experience" />
-        <div class="interactive-caption">
-          <h3>Spatialité</h3>
-          <p>Navigation 3D</p>
+        <div class="interactive-details">
+          <div class="interactive-summary">
+            <h3 class="details-title">Spatialité</h3>
+          </div>
+          <div class="interactive-description">
+            <p class="details-category">Navigation 3D</p>
+            <p>Une carte spatiale interactive explorée à la première personne pour visualiser des récits non-linéaires.<br>
+            <a href="#">→ Explorer</a></p>
+          </div>
         </div>
       </div>
-      <div class="interactive-item">
+
+      <div class="interactive-item" onclick="toggleDetails(this)">
         <img src="/api/placeholder/800/800" alt="User Experience" />
-        <div class="interactive-caption">
-          <h3>Immersive UX</h3>
-          <p>Experience Design</p>
+        <div class="interactive-details">
+          <div class="interactive-summary">
+            <h3 class="details-title">Immersive UX</h3>
+          </div>
+          <div class="interactive-description">
+            <p class="details-category">Experience Design</p>
+            <p>Une interface multisensorielle pensée pour des parcours utilisateur intuitifs, immersifs et émotionnels.<br>
+            <a href="#">→ Étude de cas</a></p>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -319,6 +348,14 @@
         });
     </script>
 
+ <script>
+  function toggleDetails(el) {
+    document.querySelectorAll('.interactive-item').forEach(item => {
+      if (item !== el) item.classList.remove('active');
+    });
+    el.classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>

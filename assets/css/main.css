@@ -949,7 +949,7 @@ footer {
         background-color: black !important;
     }
 
-/* === INTERACTIVE EXPERIENCE REFINEMENT === */
+/* === INTERACTIVE EXPERIENCE COMPLETE SECTION === */
 
 .interactive-experiences {
   width: 100%;
@@ -992,6 +992,7 @@ footer {
   height: 30vw;
   min-height: 250px;
   transition: transform 0.4s ease;
+  cursor: pointer;
 }
 
 .interactive-item img {
@@ -1006,28 +1007,74 @@ footer {
   transform: scale(1.05);
 }
 
-.interactive-caption {
+.interactive-details {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  padding: 1.2rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  left: 0;
+  right: 0;
+  background-color: transparent; /* par défaut transparent */
   color: white;
-  z-index: 2;
+  padding: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: auto;
+  transition: background-color 0.3s ease;
 }
 
-.interactive-caption h3 {
+/* Fond noir actif seulement si la description est visible */
+.interactive-item:hover .interactive-details,
+.interactive-item.active .interactive-details {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.interactive-summary {
+  margin-bottom: 0.5rem;
+}
+
+.details-title {
   margin: 0;
   font-size: 1.3rem;
+  font-weight: 500;
 }
 
-.interactive-caption p {
-  margin: 0;
-  font-size: 1rem;
+/* Bloc caché par défaut */
+.interactive-description {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.details-category {
+  font-size: 0.95rem;
+  font-weight: 300;
+  margin: 0 0 0.5rem 0;
   opacity: 0.8;
 }
 
-/* === RESPONSIVE — Mobile Portrait === */
+.interactive-description a {
+  color: var(--accent-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Hover (desktop) */
+.interactive-item:hover .interactive-description {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Clic (mobile) */
+.interactive-item.active .interactive-description {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .fullscreen-section {
     height: auto !important;
@@ -1062,5 +1109,15 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
+  }
+
+  .interactive-item:hover .interactive-description {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .interactive-item.active .interactive-description {
+    max-height: 200px;
+    opacity: 1;
   }
 }
