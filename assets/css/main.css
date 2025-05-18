@@ -1006,25 +1006,27 @@ footer {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  aspect-ratio: 1 / 1;
+  height: 70vw; /* ✅ Fixe une hauteur uniforme */
+  max-height: 800px;
+  min-height: 250px;
   transition: transform 0.4s ease;
   cursor: pointer;
 }
 
-/* Ligne 1 : 3 colonnes */
+/* Ligne 1 : 3 blocs (4 + 4 + 4 = 12 colonnes) */
 .interactive-item:nth-child(1),
 .interactive-item:nth-child(2),
 .interactive-item:nth-child(3) {
   grid-column: span 4;
 }
 
-/* Ligne 2 : 2 colonnes centrées */
+/* Ligne 2 : 2 blocs (6 + 6 = 12 colonnes = même largeur totale) */
 .interactive-item:nth-child(4) {
-  grid-column: 2 / span 5;
+  grid-column: 1 / span 6;
 }
 
 .interactive-item:nth-child(5) {
-  grid-column: 7 / span 5;
+  grid-column: 7 / span 6;
 }
 
 .interactive-item img {
