@@ -948,3 +948,119 @@ footer {
     .scroll-indicator.scrolled .scroll-line {
         background-color: black !important;
     }
+
+/* === INTERACTIVE EXPERIENCE REFINEMENT === */
+
+.interactive-experiences {
+  width: 100%;
+  max-width: 100%;
+  padding: 5vh 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title.centered {
+  text-align: center;
+  font-size: 3.2rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title.centered::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+.interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5vw;
+  width: 100%;
+}
+
+.interactive-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 30vw;
+  min-height: 250px;
+  transition: transform 0.4s ease;
+}
+
+.interactive-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.interactive-item:hover img {
+  transform: scale(1.05);
+}
+
+.interactive-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: white;
+  z-index: 2;
+}
+
+.interactive-caption h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.interactive-caption p {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* === RESPONSIVE — Mobile Portrait === */
+@media (max-width: 768px) {
+  .fullscreen-section {
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+  }
+
+  #interactive {
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+  }
+
+  .interactive-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .interactive-item {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+
+  .section-title.centered {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-title.centered::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+  }
+}
