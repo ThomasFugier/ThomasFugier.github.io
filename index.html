@@ -77,20 +77,25 @@
     <div class="interactive-grid">
 
       <div class="interactive-item" onclick="toggleDetails(this)">
-        <img src="images/fitnessvr_1.png" alt="VR Experience" onclick="openLightbox(this)" />
-        <div class="interactive-details">
-          <div class="interactive-summary">
-            <h3 class="details-title">Fitness VR</h3>
-          </div>
-          <div class="interactive-description">
-            <p class="details-category">Expérience Virtuelle Sportive</p>
-            <p>Un entraînement interactif en réalité virtuelle, alliant rythme et mouvement, piloté par un coach via tablette, conçu en partenariat avec la Ville d’Angers et le Ministère des Sports.</p>
-          </div>
-        </div>
-      </div>
+  <!-- Image cliquable qui ouvre la vidéo -->
+  <div class="interactive-thumb video-clickable" onclick="openLightbox(this)" data-video="https://player.vimeo.com/video/1085499588">
+    <img src="images/fitnessvr_1.png" alt="Fitness VR Preview" />
+  </div>
+
+  <!-- Détails affichés au survol -->
+  <div class="interactive-details">
+    <div class="interactive-summary">
+      <h3 class="details-title">Fitness VR</h3>
+    </div>
+    <div class="interactive-description">
+      <p class="details-category">Expérience Virtuelle Sportive</p>
+      <p>Un entraînement interactif en réalité virtuelle, alliant rythme et mouvement, piloté par un coach via tablette, conçu en partenariat avec la Ville d’Angers et le Ministère des Sports.</p>
+    </div>
+  </div>
+</div>
 
       <div class="interactive-item" onclick="toggleDetails(this)">
-        <img src="images/2030_1.png" alt="Interactive Installation" onclick="openLightbox(this)" />
+        <img src="images/2030_1.png" alt="Life in 2030" onclick="openLightbox(this)" />
         <div class="interactive-details">
           <div class="interactive-summary">
             <h3 class="details-title">Life in 2030</h3>
@@ -103,41 +108,46 @@
       </div>
 
       <div class="interactive-item" onclick="toggleDetails(this)">
-        <img src="images/Hexarena_2.gif" alt="3D Experience" onclick="openLightbox(this)" />
+        <img src="images/Hexarena_2.gif" alt="Hexarena 2" onclick="openLightbox(this)" />
         <div class="interactive-details">
           <div class="interactive-summary">
-            <h3 class="details-title">Spatialité</h3>
+            <h3 class="details-title">Hexarena 2</h3>
           </div>
           <div class="interactive-description">
-            <p class="details-category">Navigation 3D</p>
-            <p>Une carte spatiale interactive explorée à la première personne pour visualiser des récits non-linéaires.</p>
+            <p class="details-category">Arcade VR</p>
+            <p>Hexarena 2 est un jeu VR multijoueur conçu pour les salles d’arcade Eydolon, où 4 joueurs défendent une base contre des vagues de robots avec des pistolets laser. Les avatars sont visibles en temps réel pour une immersion totale.</p>
           </div>
         </div>
       </div>
 
-      <div class="interactive-item" onclick="toggleDetails(this)">
-        <img src="/api/placeholder/800/800" alt="User Experience" onclick="openLightbox(this)" />
-        <div class="interactive-details">
-          <div class="interactive-summary">
-            <h3 class="details-title">Immersive UX</h3>
-          </div>
-          <div class="interactive-description">
-            <p class="details-category">Experience Design</p>
-            <p>Une interface multisensorielle pensée pour des parcours utilisateur intuitifs, immersifs et émotionnels.</p>
-          </div>
-        </div>
-      </div>
+           <div class="interactive-item" onclick="toggleDetails(this)">
+  <!-- Image cliquable qui ouvre la vidéo -->
+  <div class="interactive-thumb video-clickable" onclick="openLightbox(this)" data-video="https://player.vimeo.com/video/1085506480">
+    <img src="images/CroixRouge.jpg" alt="INOND’ACTION" />
+  </div>
+
+  <!-- Détails affichés au survol -->
+  <div class="interactive-details">
+    <div class="interactive-summary">
+      <h3 class="details-title">INOND’ACTION</h3>
+    </div>
+    <div class="interactive-description">
+      <p class="details-category">Formation Sécurité</p>
+      <p>INOND’ACTION est une simulation VR développée par VR Connection pour la Croix-Rouge, qui enseigne les gestes clés à adopter en cas d’inondation. L’utilisateur prépare un kit de survie et apprend à se mettre en sécurité dans une situation immersive.</p>
+    </div>
+  </div>
+</div>
 
       <!-- ✅ NOUVELLE EXPERIENCE -->
       <div class="interactive-item" onclick="toggleDetails(this)">
-        <img src="images/livepainting_1.png" alt="Live Painting XR" onclick="openLightbox(this)" />
+        <img src="images/H_1.jpg" alt="Heineken Forklift Driving & Working At Heights" onclick="openLightbox(this)" />
         <div class="interactive-details">
           <div class="interactive-summary">
-            <h3 class="details-title">Live Painting XR</h3>
+            <h3 class="details-title">Heineken Forklift Driving & Working At Heights</h3>
           </div>
           <div class="interactive-description">
-            <p class="details-category">Performance Immersive</p>
-            <p>Une peinture en direct dans l’espace XR, où les gestes de l’artiste génèrent des formes en temps réel dans un environnement mixte. Présenté à la Nuit Blanche Paris.</p>
+            <p class="details-category">Simulation & Formation</p>
+            <p>Heineken VR est une simulation immersive développée pour former les ouvriers aux règles de sécurité en réalité virtuelle, autour du travail en hauteur et de la conduite de chariots élévateurs. L’expérience intègre un système de free roaming intelligent et évolutif pour une immersion réaliste.</p>
           </div>
         </div>
       </div>
@@ -146,9 +156,9 @@
   </div>
 
   <!-- ✅ LIGHTBOX -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img" src="" alt="Agrandissement">
-  </div>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <div id="lightbox-content" style="max-width: 90%; max-height: 90%;"></div>
+</div>
 </section>
 
     <!-- Mobile Ads & Creative Marketing -->
@@ -379,17 +389,41 @@
     el.classList.toggle('active');
   }
 
-  function openLightbox(img) {
-    event.stopPropagation(); // Évite conflit avec toggleDetails
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = img.src;
-    lightbox.style.display = 'flex';
+  function openLightbox(element) {
+  event.stopPropagation();
+  const lightbox = document.getElementById('lightbox');
+  const content = document.getElementById('lightbox-content');
+  content.innerHTML = '';
+
+  const videoSrc = element.getAttribute('data-video');
+  if (videoSrc) {
+    const iframe = document.createElement('iframe');
+    iframe.src = `${videoSrc}?autoplay=1&title=0&byline=0&portrait=0`;
+    iframe.allow = "autoplay; fullscreen";
+    iframe.frameBorder = "0";
+    iframe.style.width = '80vw';
+    iframe.style.height = '80vh';
+    content.appendChild(iframe);
+  } else if (element.tagName === 'IMG') {
+    const img = document.createElement('img');
+    img.src = element.src;
+    img.style.maxWidth = '80vw';
+    img.style.maxHeight = '80vh';
+    img.style.borderRadius = '12px';
+    img.style.boxShadow = '0 0 40px rgba(0,0,0,0.8)';
+    content.appendChild(img);
   }
 
-  function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
-  }
+  lightbox.style.display = 'flex';
+  document.body.classList.add('lightbox-open'); // ✅ Désactive le scroll
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.style.display = 'none';
+  document.getElementById('lightbox-content').innerHTML = '';
+  document.body.classList.remove('lightbox-open'); // ✅ Réactive le scroll
+}
 </script>
 
 
