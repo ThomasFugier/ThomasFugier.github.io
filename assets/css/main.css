@@ -951,11 +951,16 @@ footer {
 
 /* === INTERACTIVE EXPERIENCE COMPLETE SECTION === */
 
+#interactive {
+  position: relative;
+  z-index: 1;
+}
+
 #interactive.fullscreen-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 10vh;
+  padding-top: 12vh;
   padding-bottom: 10vh;
   min-height: 100vh;
 }
@@ -1099,8 +1104,10 @@ footer {
 }
 
 @media (min-width: 1500px) {
-  #interactive {
-    margin-top: 60vh;
+  #interactive.fullscreen-section {
+    padding-top: 80vh; /* doux mais visible */
+    padding-bottom: 50vh;
+    min-height: auto;  /* on enlève le verrou */
   }
 }
 
