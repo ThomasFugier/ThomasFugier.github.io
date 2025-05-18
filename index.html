@@ -71,69 +71,83 @@
         </div>
     </section>
 
-    <!-- Interactive Experiences & VR -->
- <section id="interactive" class="fullscreen-section">
+   <section id="interactive" class="fullscreen-section">
   <div class="container fade-in interactive-experiences">
     <h2 class="section-title centered">Interactive Experiences</h2>
     <div class="interactive-grid">
 
       <div class="interactive-item" onclick="toggleDetails(this)">
-        <img src="images/fitnessvr_1.png" alt="VR Experience" />
+        <img src="images/fitnessvr_1.png" alt="VR Experience" onclick="openLightbox(this)" />
         <div class="interactive-details">
           <div class="interactive-summary">
             <h3 class="details-title">Fitness VR</h3>
           </div>
           <div class="interactive-description">
             <p class="details-category">Expérience Virtuelle Sportive</p>
-            <p>Un entraînement interactif en réalité virtuelle, alliant rythme et mouvement, piloté par un coach via tablette, conçu en partenariat avec la Ville d’Angers et le Ministère des Sports.<br>
-            <a href="#"></a></p>
+            <p>Un entraînement interactif en réalité virtuelle, alliant rythme et mouvement, piloté par un coach via tablette, conçu en partenariat avec la Ville d’Angers et le Ministère des Sports.</p>
           </div>
         </div>
       </div>
 
       <div class="interactive-item" onclick="toggleDetails(this)">
-        <img src="images/2030_1.png" alt="Interactive Installation" />
+        <img src="images/2030_1.png" alt="Interactive Installation" onclick="openLightbox(this)" />
         <div class="interactive-details">
           <div class="interactive-summary">
             <h3 class="details-title">Life in 2030</h3>
           </div>
           <div class="interactive-description">
             <p class="details-category">Expérience Virtuelle</p>
-            <p>Conçue pour le groupe mutualiste Vyv, cette expérience VR projette l’utilisateur en 2030 dans un habitat intelligent, centré sur les innovations en santé et qualité de vie.<br>
-            <a href="#"></a></p>
+            <p>Conçue pour le groupe mutualiste Vyv, cette expérience VR projette l’utilisateur en 2030 dans un habitat intelligent, centré sur les innovations en santé et qualité de vie.</p>
           </div>
         </div>
       </div>
 
       <div class="interactive-item" onclick="toggleDetails(this)">
-        <img src="images/AirVR_1.jpg" alt="3D Experience" />
+        <img src="images/AirVR_1.jpg" alt="3D Experience" onclick="openLightbox(this)" />
         <div class="interactive-details">
           <div class="interactive-summary">
             <h3 class="details-title">Spatialité</h3>
           </div>
           <div class="interactive-description">
             <p class="details-category">Navigation 3D</p>
-            <p>Une carte spatiale interactive explorée à la première personne pour visualiser des récits non-linéaires.<br>
-            <a href="#">→ Explorer</a></p>
+            <p>Une carte spatiale interactive explorée à la première personne pour visualiser des récits non-linéaires.</p>
           </div>
         </div>
       </div>
 
       <div class="interactive-item" onclick="toggleDetails(this)">
-        <img src="/api/placeholder/800/800" alt="User Experience" />
+        <img src="/api/placeholder/800/800" alt="User Experience" onclick="openLightbox(this)" />
         <div class="interactive-details">
           <div class="interactive-summary">
             <h3 class="details-title">Immersive UX</h3>
           </div>
           <div class="interactive-description">
             <p class="details-category">Experience Design</p>
-            <p>Une interface multisensorielle pensée pour des parcours utilisateur intuitifs, immersifs et émotionnels.<br>
-            <a href="#">→ Étude de cas</a></p>
+            <p>Une interface multisensorielle pensée pour des parcours utilisateur intuitifs, immersifs et émotionnels.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ✅ NOUVELLE EXPERIENCE -->
+      <div class="interactive-item" onclick="toggleDetails(this)">
+        <img src="images/livepainting_1.png" alt="Live Painting XR" onclick="openLightbox(this)" />
+        <div class="interactive-details">
+          <div class="interactive-summary">
+            <h3 class="details-title">Live Painting XR</h3>
+          </div>
+          <div class="interactive-description">
+            <p class="details-category">Performance Immersive</p>
+            <p>Une peinture en direct dans l’espace XR, où les gestes de l’artiste génèrent des formes en temps réel dans un environnement mixte. Présenté à la Nuit Blanche Paris.</p>
           </div>
         </div>
       </div>
 
     </div>
+  </div>
+
+  <!-- ✅ LIGHTBOX -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Agrandissement">
   </div>
 </section>
 
@@ -356,6 +370,29 @@
     el.classList.toggle('active');
   }
 </script>
+
+<script>
+  function toggleDetails(el) {
+    document.querySelectorAll('.interactive-item').forEach(item => {
+      if (item !== el) item.classList.remove('active');
+    });
+    el.classList.toggle('active');
+  }
+
+  function openLightbox(img) {
+    event.stopPropagation(); // Évite conflit avec toggleDetails
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = img.src;
+    lightbox.style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
+
+
 
 </body>
 </html>

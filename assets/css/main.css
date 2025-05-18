@@ -951,9 +951,19 @@ footer {
 
 /* === INTERACTIVE EXPERIENCE COMPLETE SECTION === */
 
+#interactive.fullscreen-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  min-height: 100vh;
+}
+
 .interactive-experiences {
   width: 100%;
-  max-width: 100%;
+  max-width: 2500px;
+  margin: 0 auto;
   padding: 5vh 4vw;
   display: flex;
   flex-direction: column;
@@ -978,9 +988,11 @@ footer {
   background-color: var(--accent-color);
 }
 
+/* === GRILLE 3 + 2 === */
 .interactive-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
   gap: 1.5vw;
   width: 100%;
 }
@@ -989,10 +1001,25 @@ footer {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  height: 30vw;
-  min-height: 250px;
+  aspect-ratio: 1 / 1;
   transition: transform 0.4s ease;
   cursor: pointer;
+}
+
+/* Ligne 1 : 3 colonnes */
+.interactive-item:nth-child(1),
+.interactive-item:nth-child(2),
+.interactive-item:nth-child(3) {
+  grid-column: span 4;
+}
+
+/* Ligne 2 : 2 colonnes centrées */
+.interactive-item:nth-child(4) {
+  grid-column: 2 / span 5;
+}
+
+.interactive-item:nth-child(5) {
+  grid-column: 7 / span 5;
 }
 
 .interactive-item img {
@@ -1007,12 +1034,13 @@ footer {
   transform: scale(1.05);
 }
 
+/* === DETAILS PANEL === */
 .interactive-details {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: transparent; /* par défaut transparent */
+  background-color: transparent;
   color: white;
   padding: 1rem;
   font-size: 0.95rem;
@@ -1025,7 +1053,6 @@ footer {
   transition: background-color 0.3s ease;
 }
 
-/* Fond noir actif seulement si la description est visible */
 .interactive-item:hover .interactive-details,
 .interactive-item.active .interactive-details {
   background-color: rgba(0, 0, 0, 0.9);
@@ -1041,7 +1068,6 @@ footer {
   font-weight: 500;
 }
 
-/* Bloc caché par défaut */
 .interactive-description {
   max-height: 0;
   overflow: hidden;
@@ -1062,19 +1088,23 @@ footer {
   text-decoration: none;
 }
 
-/* Hover (desktop) */
 .interactive-item:hover .interactive-description {
   max-height: 200px;
   opacity: 1;
 }
 
-/* Clic (mobile) */
 .interactive-item.active .interactive-description {
   max-height: 200px;
   opacity: 1;
 }
 
-/* === RESPONSIVE === */
+@media (min-width: 1500px) {
+  #interactive {
+    margin-top: 60vh;
+  }
+}
+
+/* === RESPONSIVE MOBILE === */
 @media (max-width: 768px) {
   .fullscreen-section {
     height: auto !important;
@@ -1096,8 +1126,11 @@ footer {
 
   .interactive-item {
     width: 100%;
-    height: auto;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
+  }
+
+  .interactive-item:nth-child(n) {
+    grid-column: auto;
   }
 
   .section-title.centered {
@@ -1120,4 +1153,26 @@ footer {
     max-height: 200px;
     opacity: 1;
   }
+}
+
+/* === LIGHTBOX FULLSCREEN === */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
 }
