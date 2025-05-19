@@ -1208,6 +1208,10 @@ body.lightbox-open {
     overflow: hidden;
 }
 
+#marketing .container {
+  max-width: 2500px;
+}
+
 .video-clickable {
   cursor: pointer;
   width: 100%;
@@ -1223,3 +1227,82 @@ body.lightbox-open {
 .video-clickable:hover img {
   transform: scale(1.05);
 }
+
+.marketing-text {
+  padding: 5vw;
+  max-width: 45%;
+}
+
+.marketing-videos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 55%;
+  padding: 5vw;
+}
+
+.video-player-container {
+  width: 100%;
+  max-width: 400px;       /* Optionnel : largeur max pour garder le format téléphone */
+  aspect-ratio: 9 / 16;   /* ✅ Force le ratio vertical */
+  background-color: black;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+}
+
+.video-player-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-thumbnails {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: none; /* Firefox */
+}
+
+.thumbnail {
+  flex: 0 0 auto;
+  width: 100px;
+  aspect-ratio: 9 / 16;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #000;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+}
+
+.video-thumbnails-container {
+  margin-top: 2rem;
+}
+
+
+
+.video-thumbnails::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+@media (max-width: 768px) {
+  .video-thumbnails-container {
+    display: none;
+  }
+}
+
+

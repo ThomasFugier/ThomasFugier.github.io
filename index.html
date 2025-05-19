@@ -165,17 +165,88 @@
 </div>
 </section>
 
-    <!-- Mobile Ads & Creative Marketing -->
-    <section id="marketing" class="fullscreen-section">
-        <div class="marketing-content fade-in">
-            <h2 class="section-title">Creative Marketing</h2>
-            <p>Des stratégies créatives qui captent l'attention et engagent l'audience à travers des expériences mémorables et des campagnes innovantes sur tous les canaux.</p>
-            <p>Mon approche du marketing créatif se concentre sur la création d'un lien émotionnel fort entre les marques et leur public, en utilisant des concepts originaux qui résonnent et inspirent l'action.</p>
-        </div>
-        <div class="marketing-background">
-            <img src="images/AirVR_1.jpg" alt="Creative Marketing" />
-        </div>
-    </section>
+
+
+   <section id="marketing" class="fullscreen-section">
+  <div class="container split-section">
+
+    <!-- Colonne gauche -->
+    <div class="split-left marketing-text">
+      <h2 class="section-title">Creative Marketing</h2>
+      <p>Des stratégies créatives qui captent l'attention et engagent l'audience à travers des expériences mémorables et des campagnes innovantes sur tous les canaux.</p>
+      <p>Mon approche du marketing créatif se concentre sur la création d'un lien émotionnel fort entre les marques et leur public, en utilisant des concepts originaux qui résonnent et inspirent l'action.</p>
+    </div>
+
+    <!-- Colonne droite -->
+    <div class="split-right marketing-videos">
+      <div class="video-player-container">
+        <iframe id="mainVideo" src="https://player.vimeo.com/video/1084764674?autoplay=1&title=0&byline=0&portrait=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ligne des thumbnails EN DESSOUS de la section split -->
+  <div class="container video-thumbnails-container">
+    <div class="video-thumbnails">
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1084764674">
+        <img src="images/thumb1.jpg" alt="Video 1">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085499588">
+        <img src="images/thumb2.jpg" alt="Video 2">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+      <div class="thumbnail" data-video="https://player.vimeo.com/video/1085794808">
+        <img src="images/thumb3.jpg" alt="Video 3">
+      </div>
+
+      <!-- Ajoute d'autres thumbnails si besoin -->
+    </div>
+  </div>
+</section>
 
     <!-- AI Tools -->
     <section id="ai" class="fullscreen-section">
@@ -430,7 +501,15 @@ function closeLightbox() {
 }
 </script>
 
-
+<script>
+  document.querySelectorAll('.thumbnail').forEach(thumbnail => {
+    thumbnail.addEventListener('click', function () {
+      const videoUrl = this.getAttribute('data-video');
+      const iframe = document.getElementById('mainVideo');
+      iframe.src = `${videoUrl}?autoplay=1&title=0&byline=0&portrait=0`;
+    });
+  });
+</script>
 
 </body>
 </html>
