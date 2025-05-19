@@ -933,7 +933,7 @@ footer {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 400px;
+    height: 200px;
     width: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #ebebeb 100%);
     opacity: 0;
@@ -1113,7 +1113,25 @@ footer {
   }
 }
 
+/* === MARGES EXPÉRIENCE POUR TABLETTES & MOYENS ÉCRANS === */
+@media (min-width: 768px) and (max-width: 1500px) {
+  .fullscreen-section {
+    height: auto !important;
+    min-height: auto !important;
+    padding-top: 20vw !important;
+    padding-bottom: 20vw !important;
+  }
+
+  .interactive-experiences {
+    padding-top: 10vw !important;
+    padding-bottom: 10vw !important;
+  }
+}
+
 /* === RESPONSIVE MOBILE === */
+
+
+
 @media (max-width: 768px) {
   .fullscreen-section {
     height: auto !important;
