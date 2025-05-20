@@ -35,10 +35,13 @@
     <section id="home">
         <div class="background-video">
             <div class="video-wrapper">
-                <iframe src="https://player.vimeo.com/video/1084764674?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+                <iframe src="https://player.vimeo.com/video/1084764674?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&dnt=1&autopause=0"
                         frameborder="0"
-                        allow="autoplay; fullscreen"
-                        allowfullscreen></iframe>
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen
+                        loading="eager"
+                        playsinline
+                        title="Background Video"></iframe>
             </div>
         </div>
         <div class="overlay"></div>
@@ -546,6 +549,7 @@
         }
     </script>
 
+
     <script>
         document.querySelectorAll('.thumbnail').forEach((thumbnail, index) => {
             thumbnail.addEventListener('click', function () {
@@ -567,21 +571,44 @@
             if (first) first.click();
         });</script>
 
-    <script>src = "https://player.vimeo.com/api/player.js" ></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const iframe = document.getElementById('mainVideo');
-            const player = new Vimeo.Player(iframe);
 
-            // On s’assure que la vidéo est muette
-            player.setMuted(true).then(() => {
-                // On tente de lire la vidéo (autoplay réel ici)
-                return player.play();
-            }).catch(function (error) {
-                console.warn("❌ Autoplay bloqué :", error.name);
-            });
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const iframe = document.getElementById('mainVideo');
+
+            if (iframe) {
+                try {
+                    const player = new Vimeo.Player(iframe);
+
+                    // Configuration initiale du player
+                    player.ready().then(() => {
+                        // S'assurer que la vidéo est muette avant de tenter la lecture
+                        return player.setMuted(true);
+                    }).then(() => {
+                        // Tentative de lecture automatique
+                        return player.play();
+                    }).catch((error) => {
+                        console.warn(`Erreur lors de l'initialisation de la vidéo : ${error.name}`, error);
+                    });
+
+                    // Écouter les événements du player pour un meilleur suivi
+                    player.on('play', () => {
+                        console.log('Lecture vidéo démarrée');
+                    });
+
+                    player.on('error', (error) => {
+                        console.error('Erreur de lecture vidéo :', error);
+                    });
+                } catch (error) {
+                    console.error('Impossible d\'initialiser le player Vimeo :', error);
+                }
+            } else {
+                console.warn('Élément vidéo #mainVideo non trouvé dans le document');
+            }
         });
     </script>
+
 
     <script>
         const videoData = [
