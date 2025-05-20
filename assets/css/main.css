@@ -71,6 +71,11 @@ p {
     font-size: 1.1rem;
 }
 
+b, strong {
+    font-weight: 700;
+}
+
+
 /*==========================================================================
   LAYOUT DE BASE
 ==========================================================================*/
@@ -727,6 +732,7 @@ body.lightbox-open {
     #marketing .container {
         max-width: 1200px;
         margin: 0 auto;
+
     }
 
     #marketing .section-title {
@@ -734,6 +740,7 @@ body.lightbox-open {
         display: block;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 8rem;
     }
 
         #marketing .section-title::after {
@@ -749,8 +756,6 @@ body.lightbox-open {
     margin-bottom: 1rem;
     color: var(--primary-color);
 }
-
-
 
 .marketing-container {
     display: flex;
@@ -819,6 +824,18 @@ body.lightbox-open {
         margin-bottom: 1rem;
     }
 
+.category-label {
+    display: inline-block;
+    background: var(--accent-color); /* Couleur de fond vive, modifiable selon vos préférences */
+    color: var(--light-text); /* Couleur du texte pour le contraste */
+    font-weight: bold; /* Texte en gras */
+    border-radius: 16px; /* Coins arrondis pour l'effet "étiquette" */
+    padding: 4px 14px; /* Espacement interne */
+    font-size: 0.95em; /* Taille du texte adaptée */
+    letter-spacing: 0.02em; /* Espacement léger des lettres */
+    margin-top: 8px; /* Espacement au-dessus si besoin */
+}
+
 /* Galerie vidéo */
 .video-gallery {
     margin-top: 5rem;
@@ -832,8 +849,8 @@ body.lightbox-open {
 
 .video-thumbnails {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-    gap: 0.8rem;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 0.5rem;
     width: 100%;
 }
 
@@ -871,10 +888,47 @@ body.lightbox-open {
     }
 
 /* Ajustements responsifs pour les vignettes plus petites */
+@media (min-width: 1500px) {
+    .video-thumbnails {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+    .video-thumbnails {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .video-thumbnails {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .video-thumbnails {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .video-thumbnails {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: 0.4rem;
+    }
+}
+
 @media (max-width: 480px) {
     .video-thumbnails {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.6rem;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.3rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .video-thumbnails {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -1058,8 +1112,6 @@ footer {
   ANIMATIONS ET EFFETS
 ==========================================================================*/
 
-
-
 /* Animation Classes */
 .fade-in {
     opacity: 0;
@@ -1127,10 +1179,6 @@ footer {
     .video-gallery {
         margin-top: 6rem;
     }
-
-    .video-thumbnails {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
 }
 
 /* Grands desktops */
@@ -1138,10 +1186,6 @@ footer {
     .interactive-item {
         height: 40vw;
         max-height: 450px;
-    }
-
-    .video-thumbnails {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     }
 }
 
@@ -1161,10 +1205,6 @@ footer {
 
     .video-player-wrapper {
         max-width: 100%;
-    }
-
-    .video-thumbnails {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     }
 }
 
@@ -1192,6 +1232,7 @@ footer {
         align-items: center;
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     .video-player-wrapper {
@@ -1207,10 +1248,6 @@ footer {
 
     .video-gallery h3 {
         text-align: center;
-    }
-
-    .video-thumbnails {
-        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     }
 
     .ai-content {
@@ -1470,11 +1507,6 @@ footer {
             margin-bottom: 1.2rem;
         }
 
-    .video-thumbnails {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 1rem;
-    }
-    /* Section AI */
     .ai-content {
         flex-direction: column;
     }
@@ -1540,11 +1572,6 @@ footer {
         font-size: 0.9rem;
     }
 
-    .video-thumbnails {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.8rem;
-    }
-
     .category-label {
         font-size: 0.7rem;
         padding: 0.2rem 0.5rem;
@@ -1561,10 +1588,6 @@ footer {
 
 /* Très petits smartphones */
 @media (max-width: 350px) {
-    .video-thumbnails {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .video-player-wrapper {
         width: 160px;
     }
