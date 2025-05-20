@@ -731,8 +731,26 @@ body.lightbox-open {
 
     #marketing .section-title {
         text-align: center;
-        margin-bottom: 5rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
+
+        #marketing .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+        }
+
+/* Ajout du style pour le sous-titre du paragraphe marketing */
+.marketing-subtitle {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+
 
 .marketing-container {
     display: flex;
@@ -814,20 +832,20 @@ body.lightbox-open {
 
 .video-thumbnails {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 0.8rem;
     width: 100%;
 }
 
 .thumbnail {
     position: relative;
     aspect-ratio: 9/16;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
     background-color: #000;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
     .thumbnail img {
@@ -851,6 +869,15 @@ body.lightbox-open {
         transform: translateY(-5px);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
+
+/* Ajustements responsifs pour les vignettes plus petites */
+@media (max-width: 480px) {
+    .video-thumbnails {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.6rem;
+    }
+}
+
 /*==========================================================================
   SECTION AI TOOLS
 ==========================================================================*/
@@ -1030,6 +1057,8 @@ footer {
 /*==========================================================================
   ANIMATIONS ET EFFETS
 ==========================================================================*/
+
+
 
 /* Animation Classes */
 .fade-in {
