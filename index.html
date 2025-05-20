@@ -8,18 +8,25 @@
 </head>
 
 <body>
-    <!-- Custom Cursor -->
+    <!--====================================================================
+    ÉLÉMENTS GLOBAUX
+    =====================================================================-->
+    <!-- Curseur personnalisé -->
     <div class="custom-cursor"></div>
 
-    <!-- Navigation -->
+    <!--====================================================================
+    NAVIGATION
+    =====================================================================-->
     <nav>
         <div class="nav-container">
             <a href="#home" class="logo">TYF</a>
+            <!-- Menu hamburger mobile -->
             <div class="menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+            <!-- Liens de navigation -->
             <div class="nav-links">
                 <a href="#about" class="nav-link">À propos</a>
                 <a href="#interactive" class="nav-link">Interactive</a>
@@ -31,8 +38,11 @@
         </div>
     </nav>
 
-    <!-- Home Section -->
+    <!--====================================================================
+    ACCUEIL
+    =====================================================================-->
     <section id="home">
+        <!-- Vidéo d'arrière-plan -->
         <div class="background-video">
             <div class="video-wrapper">
                 <iframe src="https://player.vimeo.com/video/1084764674?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1&controls=0&dnt=1&autopause=0"
@@ -44,59 +54,68 @@
                         title="Background Video"></iframe>
             </div>
         </div>
+        <!-- Superposition sombre -->
         <div class="overlay"></div>
 
+        <!-- Contenu principal -->
         <div class="home-content">
             <h1>THOMAS FUGIER</h1>
             <p class="baseline">Technical Creative Director</p>
         </div>
 
-        <!-- Scroll indicator -->
+        <!-- Indicateur de défilement -->
         <div class="scroll-indicator">
             <div class="scroll-line"></div>
             <span>SCROLL DOWN</span>
         </div>
 
-        <!-- Dégradé superposé -->
+        <!-- Dégradé de transition -->
         <div class="video-gradient-overlay"></div>
     </section>
 
-
+    <!--====================================================================
+    À PROPOS
+    =====================================================================-->
     <section class="about-section">
+        <!-- Image de fond avec parallaxe -->
         <div class="about-background">
             <img src="images/ThomasPortrait.png" alt="Portrait de Thomas Yvon Fugier" class="parallax-image" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:top; z-index:0;" />
         </div>
+        <!-- Contenu -->
         <div class="about-content fade-in">
             <h2>À propos</h2>
-            <p>Je suis <strong>Thomas Yvon Fugier</strong>, un explorateur créatif à la croisée de l’art, de la technologie et de l’intelligence artificielle.</p>
-            <p>Mon approche hybride donne naissance à des expériences interactives immersives, conçues pour éveiller la curiosité, provoquer l’émotion et stimuler l’innovation.</p>
+            <p>Je suis <strong>Thomas Yvon Fugier</strong>, un explorateur créatif à la croisée de l'art, de la technologie et de l'intelligence artificielle.</p>
+            <p>Mon approche hybride donne naissance à des expériences interactives immersives, conçues pour éveiller la curiosité, provoquer l'émotion et stimuler l'innovation.</p>
             <p>En cultivant une méthodologie rigoureuse et intuitive, j'accompagne les marques et les projets vers une expression authentique et mémorable.</p>
         </div>
     </section>
 
+    <!--====================================================================
+    EXPÉRIENCES INTERACTIVES
+    =====================================================================-->
     <section id="interactive" class="fullscreen-section">
         <div class="container fade-in interactive-experiences">
             <h2 class="section-title centered">Interactive Experiences</h2>
-            <div class="interactive-grid">
 
+            <!-- Grille de projets -->
+            <div class="interactive-grid">
+                <!-- Projet 1: Fitness VR -->
                 <div class="interactive-item" onclick="toggleDetails(this)">
-                    <!-- Image cliquable qui ouvre la vidéo -->
                     <div class="interactive-thumb video-clickable" onclick="openLightbox(this)" data-video="https://player.vimeo.com/video/1085499588">
                         <img src="images/fitnessvr_1.png" alt="Fitness VR Preview" />
                     </div>
-
-                    <!-- Détails affichés au survol -->
                     <div class="interactive-details">
                         <div class="interactive-summary">
                             <h3 class="details-title">Fitness VR</h3>
                         </div>
                         <div class="interactive-description">
                             <p class="details-category">Expérience Virtuelle Sportive</p>
-                            <p>Un entraînement interactif en réalité virtuelle, alliant rythme et mouvement, piloté par un coach via tablette, conçu en partenariat avec la Ville d’Angers et le Ministère des Sports.</p>
+                            <p>Un entraînement interactif en réalité virtuelle, alliant rythme et mouvement, piloté par un coach via tablette, conçu en partenariat avec la Ville d'Angers et le Ministère des Sports.</p>
                         </div>
                     </div>
                 </div>
 
+                <!-- Projet 2: Life in 2030 -->
                 <div class="interactive-item" onclick="toggleDetails(this)">
                     <img src="images/2030_1.png" alt="Life in 2030" onclick="openLightbox(this)" />
                     <div class="interactive-details">
@@ -105,47 +124,44 @@
                         </div>
                         <div class="interactive-description">
                             <p class="details-category">Expérience Virtuelle</p>
-                            <p>Conçue pour le groupe mutualiste Vyv, cette expérience VR projette l’utilisateur en 2030 dans un habitat intelligent, centré sur les innovations en santé et qualité de vie.</p>
+                            <p>Conçue pour le groupe mutualiste Vyv, cette expérience VR projette l'utilisateur en 2030 dans un habitat intelligent, centré sur les innovations en santé et qualité de vie.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Image cliquable qui ouvre la vidéo -->
+                <!-- Projet 3: Hexarena Robot Rage -->
                 <div class="interactive-item" onclick="toggleDetails(this)">
                     <div class="interactive-thumb video-clickable" onclick="openLightbox(this)" data-video="https://player.vimeo.com/video/1085794808">
-                        <img src="images/Hexarena.jpg" alt="Fitness VR Preview" />
+                        <img src="images/Hexarena.jpg" alt="Hexarena Robot Rage Preview" />
                     </div>
-
                     <div class="interactive-details">
                         <div class="interactive-summary">
                             <h3 class="details-title">Hexarena Robot Rage</h3>
                         </div>
                         <div class="interactive-description">
                             <p class="details-category">Arcade VR</p>
-                            <p>Hexarena Robot Rage est un jeu VR multijoueur développé par VR Connection, conçu pour les salles d’arcade Eydolon, où 4 joueurs défendent une base contre des vagues de robots avec des pistolets laser. Les avatars sont visibles en temps réel pour une immersion totale.</p>
+                            <p>Hexarena Robot Rage est un jeu VR multijoueur développé par VR Connection, conçu pour les salles d'arcade Eydolon, où 4 joueurs défendent une base contre des vagues de robots avec des pistolets laser. Les avatars sont visibles en temps réel pour une immersion totale.</p>
                         </div>
                     </div>
                 </div>
 
+                <!-- Projet 4: INOND'ACTION -->
                 <div class="interactive-item" onclick="toggleDetails(this)">
-                    <!-- Image cliquable qui ouvre la vidéo -->
                     <div class="interactive-thumb video-clickable" onclick="openLightbox(this)" data-video="https://player.vimeo.com/video/1085506480">
-                        <img src="images/CroixRouge.jpg" alt="INOND’ACTION" />
+                        <img src="images/CroixRouge.jpg" alt="INOND'ACTION" />
                     </div>
-
-                    <!-- Détails affichés au survol -->
                     <div class="interactive-details">
                         <div class="interactive-summary">
-                            <h3 class="details-title">INOND’ACTION</h3>
+                            <h3 class="details-title">INOND'ACTION</h3>
                         </div>
                         <div class="interactive-description">
                             <p class="details-category">Formation Sécurité</p>
-                            <p>INOND’ACTION est une simulation VR développée par VR Connection pour la Croix-Rouge, qui enseigne les gestes clés à adopter en cas d’inondation. L’utilisateur prépare un kit de survie et apprend à se mettre en sécurité dans une situation immersive.</p>
+                            <p>INOND'ACTION est une simulation VR développée par VR Connection pour la Croix-Rouge, qui enseigne les gestes clés à adopter en cas d'inondation. L'utilisateur prépare un kit de survie et apprend à se mettre en sécurité dans une situation immersive.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- ✅ NOUVELLE EXPERIENCE -->
+                <!-- Projet 5: Heineken VR -->
                 <div class="interactive-item" onclick="toggleDetails(this)">
                     <img src="images/H_1.jpg" alt="Heineken Forklift Driving & Working At Heights" onclick="openLightbox(this)" />
                     <div class="interactive-details">
@@ -154,37 +170,36 @@
                         </div>
                         <div class="interactive-description">
                             <p class="details-category">Simulation & Formation</p>
-                            <p>Heineken VR est une simulation immersive développée pour former les ouvriers aux règles de sécurité en réalité virtuelle, autour du travail en hauteur et de la conduite de chariots élévateurs. L’expérience intègre un système de free roaming intelligent et évolutif pour une immersion réaliste.</p>
+                            <p>Heineken VR est une simulation immersive développée pour former les ouvriers aux règles de sécurité en réalité virtuelle, autour du travail en hauteur et de la conduite de chariots élévateurs. L'expérience intègre un système de free roaming intelligent et évolutif pour une immersion réaliste.</p>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <!-- ✅ LIGHTBOX -->
+        <!-- Lightbox pour affichage plein écran -->
         <div id="lightbox" class="lightbox" onclick="closeLightbox()">
             <div id="lightbox-content" style="max-width: 90%; max-height: 90%;"></div>
         </div>
     </section>
 
-
-
+    <!--====================================================================
+    MARKETING
+    =====================================================================-->
     <section id="marketing" class="fullscreen-section light-section">
         <div class="container split-section reverse-on-mobile">
-
-            <!-- Colonne gauche -->
+            <!-- Colonne de texte -->
             <div class="split-left marketing-text">
                 <h2 class="section-title">Marketing Development</h2>
-                <p>Expertise en création de publicités performantes, articulée autour d’une approche data-driven, d’une exploration visuelle poussée, et d’une compréhension fine des dynamiques produit.</p>
+                <p>Expertise en création de publicités performantes, articulée autour d'une approche data-driven, d'une exploration visuelle poussée, et d'une compréhension fine des dynamiques produit.</p>
                 <p>Le processus combine la production de contenus 3D, vidéo et interactifs avec une logique de test systématique. Chaque création est pensée comme un prototype visuel, conçu pour explorer différentes pistes artistiques tout en mesurant leur efficacité via des indicateurs précis.</p>
-                <p>Cette approche repose sur une collaboration continue avec les équipes d’User Acquisition, afin d’aligner la direction créative avec les mécaniques d’optimisation, les retours terrain et les opportunités d’itération rapide. Le développement publicitaire devient ainsi un terrain d’expérimentation stratégique, où la forme, le fond et les données se rencontrent pour générer des résultats tangibles.</p>
+                <p>Cette approche repose sur une collaboration continue avec les équipes d'User Acquisition, afin d'aligner la direction créative avec les mécaniques d'optimisation, les retours terrain et les opportunités d'itération rapide. Le développement publicitaire devient ainsi un terrain d'expérimentation stratégique, où la forme, le fond et les données se rencontrent pour générer des résultats tangibles.</p>
             </div>
 
-            <!-- Colonne droite -->
+            <!-- Colonne vidéo -->
             <div class="split-right marketing-videos">
                 <div class="video-player-layout">
-                    <!-- Bloc d'infos dynamiques à gauche du player -->
+                    <!-- Informations sur la vidéo -->
                     <div class="video-info-block">
                         <h3 id="videoTitle">Block Jam 3D</h3>
                         <p id="videoDescription">Temple puzzle concept.</p>
@@ -193,7 +208,7 @@
                         </div>
                     </div>
 
-                    <!-- Player vidéo -->
+                    <!-- Lecteur vidéo principal -->
                     <div class="video-player-container">
                         <iframe id="mainVideo"
                                 src="https://player.vimeo.com/video/1084764674?autoplay=0&muted=1&title=0&byline=0&portrait=0"
@@ -206,9 +221,10 @@
             </div>
         </div>
 
-        <!-- ✅ Thumbnails en bas, hors du bloc split-section -->
+        <!-- Galerie de vignettes vidéo -->
         <div class="container video-thumbnails-container">
             <div class="video-thumbnails">
+                <!-- Vignettes vidéo (répétées pour l'exemple) -->
                 <div class="thumbnail active" data-video="https://player.vimeo.com/video/1085812153">
                     <img src="images/Y21.jpg" alt="Y21">
                 </div>
@@ -266,52 +282,60 @@
                 <div class="thumbnail" data-video="https://player.vimeo.com/video/1085812153">
                     <img src="images/Y21.jpg" alt="Y21">
                 </div>
-
-
-                <!-- Ajoute les autres thumbnails ici -->
             </div>
         </div>
     </section>
 
-    <!-- AI Tools -->
+    <!--====================================================================
+    INTELLIGENCE ARTIFICIELLE CRÉATIVE
+    =====================================================================-->
     <section id="ai" class="fullscreen-section">
         <div class="ai-content">
+            <!-- Texte explicatif -->
             <div class="ai-text fade-in">
                 <h2 class="section-title">Creative AI</h2>
-                <p>L’intelligence artificielle devient un terrain fertile pour la pensée créative. Elle n’est pas une substitution, mais une extension, une collaboration entre l’intuition humaine et les algorithmes génératifs.</p>
-                <p>Je développe des outils et systèmes où l’IA agit comme un partenaire créatif : générer, transformer, stimuler. Ensemble, nous explorons de nouvelles esthétiques, narrations et interactions, à la croisée de la technologie et du sensible.</p>
+                <p>L'intelligence artificielle devient un terrain fertile pour la pensée créative. Elle n'est pas une substitution, mais une extension, une collaboration entre l'intuition humaine et les algorithmes génératifs.</p>
+                <p>Je développe des outils et systèmes où l'IA agit comme un partenaire créatif : générer, transformer, stimuler. Ensemble, nous explorons de nouvelles esthétiques, narrations et interactions, à la croisée de la technologie et du sensible.</p>
             </div>
+            <!-- Visuel illustratif -->
             <div class="ai-carousel">
                 <img src="images/CroixRouge.jpg" alt="AI Creative Tools" />
             </div>
         </div>
     </section>
 
-
+    <!--====================================================================
+    MÉTHODOLOGIE CRÉATIVE
+    =====================================================================-->
     <section id="thinking" class="fullscreen-section">
         <div class="container fade-in">
             <h2 class="section-title">Creative Method</h2>
-            <p>Ma méthode est un écosystème d’exploration et de précision. Chaque projet est un voyage de transformation où l’idée brute devient une expérience singulière.</p>
+            <p>Ma méthode est un écosystème d'exploration et de précision. Chaque projet est un voyage de transformation où l'idée brute devient une expérience singulière.</p>
 
+            <!-- Étapes de la méthodologie -->
             <div class="methodology-steps">
+                <!-- Étape 1 -->
                 <div class="method-step">
                     <div class="step-number">01</div>
                     <h3 class="step-title">Inspiration</h3>
-                    <p>Observer, écouter, ressentir. S’ouvrir à l’inattendu, collecter des signaux faibles, capter les émotions, les tensions, les mythes modernes.</p>
+                    <p>Observer, écouter, ressentir. S'ouvrir à l'inattendu, collecter des signaux faibles, capter les émotions, les tensions, les mythes modernes.</p>
                 </div>
 
+                <!-- Étape 2 -->
                 <div class="method-step">
                     <div class="step-number">02</div>
                     <h3 class="step-title">Structuration</h3>
-                    <p>Transformer l’inspiration en système. Modéliser les enjeux, aligner les objectifs, tracer des lignes de force et poser des intentions claires.</p>
+                    <p>Transformer l'inspiration en système. Modéliser les enjeux, aligner les objectifs, tracer des lignes de force et poser des intentions claires.</p>
                 </div>
 
+                <!-- Étape 3 -->
                 <div class="method-step">
                     <div class="step-number">03</div>
                     <h3 class="step-title">Design Vivant</h3>
-                    <p>Prototyper, tester, itérer. Concevoir des objets interactifs, des récits, des espaces sensibles où l’usager devient acteur.</p>
+                    <p>Prototyper, tester, itérer. Concevoir des objets interactifs, des récits, des espaces sensibles où l'usager devient acteur.</p>
                 </div>
 
+                <!-- Étape 4 -->
                 <div class="method-step">
                     <div class="step-number">04</div>
                     <h3 class="step-title">Activation</h3>
@@ -321,13 +345,19 @@
         </div>
     </section>
 
+    <!--====================================================================
+    CONTACT
+    =====================================================================-->
     <section id="contact" class="fullscreen-section">
         <div class="container">
             <div class="contact-content fade-in">
+                <!-- Introduction -->
                 <div class="contact-left">
-                    <h2 class="section-title">Let’s Create</h2>
+                    <h2 class="section-title">Let's Create</h2>
                     <p>Une intuition, un projet, une envie ? Entrons en contact pour faire émerger de nouvelles formes, sensibles et radicales.</p>
                 </div>
+
+                <!-- Formulaire de contact -->
                 <div class="contact-form">
                     <form>
                         <div class="form-group">
@@ -349,22 +379,29 @@
         </div>
     </section>
 
+    <!--====================================================================
+    JOURNAL
+    =====================================================================-->
     <section id="journal" class="fullscreen-section light-section">
         <div class="container fade-in">
             <h2 class="section-title">Journal</h2>
-            <p>Explorations, réflexions, dérives conceptuelles — découvrez une sélection d’articles et de pensées publiés sur <strong>Medium</strong>.</p>
+            <p>Explorations, réflexions, dérives conceptuelles — découvrez une sélection d'articles et de pensées publiés sur <strong>Medium</strong>.</p>
 
+            <!-- Liste d'articles -->
             <div class="journal-articles">
+                <!-- Article 1 -->
                 <div class="journal-entry">
-                    <h3><a href="https://medium.com/@votre-lien-1">L’interface est une émotion</a></h3>
+                    <h3><a href="https://medium.com/@votre-lien-1">L'interface est une émotion</a></h3>
                     <p>Comment les dispositifs interactifs façonnent notre manière de sentir le monde.</p>
                 </div>
 
+                <!-- Article 2 -->
                 <div class="journal-entry">
-                    <h3><a href="https://medium.com/@votre-lien-2">Quand l’IA hallucine juste</a></h3>
+                    <h3><a href="https://medium.com/@votre-lien-2">Quand l'IA hallucine juste</a></h3>
                     <p>Entre surréalisme algorithmique et poésie numérique : détourner les IA génératives comme médiums artistiques.</p>
                 </div>
 
+                <!-- Article 3 -->
                 <div class="journal-entry">
                     <h3><a href="https://medium.com/@votre-lien-3">Design spéculatif & futur souhaitable</a></h3>
                     <p>Imaginer des futurs désirables à travers des narrations expérientielles.</p>
@@ -373,7 +410,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!--====================================================================
+    PIED DE PAGE
+    =====================================================================-->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -387,7 +426,10 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!--====================================================================
+    SCRIPTS
+    =====================================================================-->
+    <!-- Script pour le curseur personnalisé et la navigation -->
     <script>
         const cursor = document.querySelector('.custom-cursor');
         const links = document.querySelectorAll('a, button');
@@ -448,6 +490,7 @@
         });
     </script>
 
+    <!-- Script pour l'effet parallaxe -->
     <script>
         window.addEventListener("scroll", function () {
             const image = document.querySelector(".parallax-image");
@@ -458,6 +501,7 @@
         });
     </script>
 
+    <!-- Script pour l'overlay de dégradé -->
     <script>
         const gradientOverlay = document.querySelector('.video-gradient-overlay');
 
@@ -473,18 +517,16 @@
         });
     </script>
 
+    <!-- Script pour les animations de défilement -->
     <script>
         const gradientOverlay = document.querySelector('.video-gradient-overlay');
         const scrollIndicator = document.querySelector('.scroll-indicator');
-
-        console.log("✅ Script chargé"); // <- test simple
 
         window.addEventListener('scroll', () => {
             const maxScroll = 150;
             const scrollY = Math.min(window.scrollY, maxScroll);
             const opacity = scrollY / maxScroll;
 
-            console.log("ScrollY:", window.scrollY);
             if (gradientOverlay) gradientOverlay.style.opacity = opacity;
 
             if (scrollY > 10) {
@@ -495,6 +537,7 @@
         });
     </script>
 
+    <!-- Script pour les détails des projets interactifs -->
     <script>
         function toggleDetails(el) {
             document.querySelectorAll('.interactive-item').forEach(item => {
@@ -504,14 +547,8 @@
         }
     </script>
 
+    <!-- Script pour la lightbox -->
     <script>
-        function toggleDetails(el) {
-            document.querySelectorAll('.interactive-item').forEach(item => {
-                if (item !== el) item.classList.remove('active');
-            });
-            el.classList.toggle('active');
-        }
-
         function openLightbox(element) {
             event.stopPropagation();
             const lightbox = document.getElementById('lightbox');
@@ -538,18 +575,18 @@
             }
 
             lightbox.style.display = 'flex';
-            document.body.classList.add('lightbox-open'); // ✅ Désactive le scroll
+            document.body.classList.add('lightbox-open'); // Désactive le scroll
         }
 
         function closeLightbox() {
             const lightbox = document.getElementById('lightbox');
             lightbox.style.display = 'none';
             document.getElementById('lightbox-content').innerHTML = '';
-            document.body.classList.remove('lightbox-open'); // ✅ Réactive le scroll
+            document.body.classList.remove('lightbox-open'); // Réactive le scroll
         }
     </script>
 
-
+    <!-- Script pour les vignettes vidéo -->
     <script>
         document.querySelectorAll('.thumbnail').forEach((thumbnail, index) => {
             thumbnail.addEventListener('click', function () {
@@ -569,9 +606,10 @@
         window.addEventListener('DOMContentLoaded', () => {
             const first = document.querySelector('.thumbnail');
             if (first) first.click();
-        });</script>
+        });
+    </script>
 
-
+    <!-- API Vimeo et configuration du lecteur -->
     <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -609,7 +647,7 @@
         });
     </script>
 
-
+    <!-- Données des vidéos marketing -->
     <script>
         const videoData = [
             {
@@ -621,7 +659,7 @@
             {
                 video: "https://player.vimeo.com/video/1085499588",
                 title: "Campaign Trailer Y",
-                description: "Trailer interactif dévoilant les mécaniques de combat et d’exploration.",
+                description: "Trailer interactif dévoilant les mécaniques de combat et d'exploration.",
                 category: "Action RPG"
             },
             {
@@ -629,10 +667,9 @@
                 title: "Hyper Casual Ad Z",
                 description: "Format vertical très dynamique avec taux de rétention élevé.",
                 category: "Hyper Casual"
-            },
-            // Ajoute autant d’objets que nécessaire
+            }
+            // Ajoute autant d'objets que nécessaire
         ];
     </script>
-
 </body>
 </html>
