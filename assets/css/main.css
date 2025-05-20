@@ -190,13 +190,13 @@ nav.scrolled {
     .home-content h1 {
         margin-bottom: 2rem;
         letter-spacing: -0.03em;
-        font-size: 4vw;
-        font-weight: 300;
+        font-size: 0vw;
+        font-weight: 0;
     }
 
 .baseline {
-    font-size: 1.8rem;
-    font-weight: 300;
+    font-size: 0rem;
+    font-weight: 0;
     letter-spacing: 0.05em;
     opacity: 0.8;
     margin-bottom: 2rem;
