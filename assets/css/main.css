@@ -686,6 +686,30 @@ nav.scrolled {
     opacity: 1;
 }
 
+/* Correction pour les images dans les conteneurs interactive */
+.interactive-thumb {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+    .interactive-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+.video-clickable {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+}
+
 /* Lightbox */
 .lightbox {
     display: none;
@@ -732,7 +756,6 @@ body.lightbox-open {
     #marketing .container {
         max-width: 1200px;
         margin: 0 auto;
-
     }
 
     #marketing .section-title {
