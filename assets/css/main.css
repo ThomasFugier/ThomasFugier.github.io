@@ -62,7 +62,7 @@
     --glow-spread-lg: 8px;
     /* Variables pour les effets de glow combinés */
     --glow-light: 0 var(--glow-radius-sm) var(--glow-radius-md) var(--accent-shadow);
-    --glow-medium: 0 var(--glow-radius-md) var(--glow-radius-lg) var(--accent-shadow), 0 0 var(--glow-spread-md) var(--accent-shadow-strong);
+    --glow-medium: 0 4px 3px var(--accent-shadow);
     --glow-strong: 0 var(--glow-radius-md) var(--glow-radius-lg) var(--accent-shadow), 0 0 var(--glow-spread-lg) var(--accent-shadow-strong);
     /* Couleurs de glow personnalisables */
     --glow-color-primary: var(--accent-shadow);
@@ -201,9 +201,10 @@ section {
 }
 
     /*==========================================================================
-  TITRES FLASHY SUR FOND CLAIR
+  TITRES FLASHY
 ==========================================================================*/
 
+    /* Pour les titres sur fond clair */
     .light-section .section-title,
     #marketing .section-title,
     #journal .section-title,
@@ -216,7 +217,9 @@ section {
     }
 
 /* Pour les titres sur fond sombre */
-.dark-section .section-title {
+.dark-section .section-title,
+#interactive .section-title,
+#contact .section-title {
     color: var(--light-text);
     text-shadow: var(--glow-medium);
     font-weight: var(--heading-weight);
@@ -227,7 +230,7 @@ section {
     margin-bottom: 3rem;
     position: relative;
     display: inline-block;
-    text-shadow: var(--glow-light);
+    text-shadow: var(--glow-medium);
     padding-bottom: 1rem;
     font-weight: var(--heading-weight);
 }
