@@ -67,6 +67,10 @@
     /* Couleurs de glow personnalisables */
     --glow-color-primary: var(--accent-shadow);
     --glow-color-secondary: var(--accent-shadow-strong);
+    --glow-hover: 0 0 15px 5px var(--accent-shadow);
+    --glow-hover-white: 0 0 15px 5px var(--white-20);
+    --hover-bg: rgba(31, 193, 107, 0.15);
+    --hover-radius: 20px;
 }
 
 /* Reset */
@@ -298,20 +302,21 @@ nav.scrolled {
     font-weight: var(--font-weight-bold);
     letter-spacing: 1px;
     color: var(--white);
-    border-radius: 4px;
+    border-radius: 20px;
     padding: 0.5rem 0.8rem;
     transition: all 0.3s ease;
 }
 
-    /* Effet hover plus opaque pour nav-link et logo */
+    /* Effet hover plus diffus pour nav-link et logo */
     .nav-link:hover,
     .logo:hover {
         color: var(--light-text);
-        background-color: var(--accent-shadow-strong);
+        background-color: var(--hover-bg);
         transform: translateY(-2px);
-        box-shadow: var(--shadow-accent-strong);
+        border-radius: var(--hover-radius);
+        box-shadow: var(--glow-hover);
         cursor: pointer;
-        transition: all 0.3s;
+        transition: all 0.3s ease;
     }
 
 .nav-links {
@@ -325,7 +330,7 @@ nav.scrolled {
     padding: 0.5rem 0.8rem;
     font-weight: var(--nav-weight);
     letter-spacing: 0.05em;
-    border-radius: 4px;
+    border-radius: var(--hover-radius);
     transition: all 0.3s ease;
 }
 
@@ -333,20 +338,15 @@ nav.scrolled {
         content: none;
     }
 
-    .nav-link:hover {
-        color: var(--light-text);
-        background-color: var(--accent-shadow-strong);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-accent-strong);
-    }
-
     .nav-link.active {
         background-color: var(--accent-color);
         color: var(--white);
+        box-shadow: var(--glow-hover);
     }
 
 #home .nav-link:hover {
     background-color: var(--white-15);
+    box-shadow: var(--glow-hover-white);
 }
 
 .menu-toggle {
@@ -726,7 +726,8 @@ nav.scrolled {
 
     .interactive-item:hover {
         transform: translateY(-5px);
-        box-shadow: var(--shadow-strong);
+        box-shadow: var(--glow-hover);
+        border-radius: 12px;
     }
 
 .interactive-details {
@@ -780,7 +781,16 @@ nav.scrolled {
     color: var(--accent-color);
     font-weight: var(--nav-weight);
     text-decoration: none;
+    transition: all 0.3s ease;
 }
+
+    .interactive-description a:hover {
+        color: var(--link-hover-color);
+        background-color: var(--hover-bg);
+        padding: 0.2rem 0.5rem;
+        border-radius: var(--hover-radius);
+        box-shadow: var(--glow-hover);
+    }
 
 .interactive-item:hover .interactive-description {
     max-height: 200px;
@@ -958,12 +968,12 @@ body.lightbox-open {
     background: var(--accent-color);
     color: var(--light-text);
     font-weight: var(--button-weight);
-    border-radius: 20px;
+    border-radius: var(--hover-radius);
     padding: 5px 15px;
     font-size: 0.95em;
     letter-spacing: 0.02em;
     margin-top: 8px;
-    box-shadow: 0 3px 10px var(--accent-shadow);
+    box-shadow: var(--glow-hover);
 }
 
 .video-gallery {
@@ -1004,7 +1014,8 @@ body.lightbox-open {
 
     .thumbnail:hover {
         transform: translateY(-5px);
-        box-shadow: var(--shadow-medium);
+        box-shadow: var(--glow-hover);
+        border-radius: var(--hover-radius);
     }
 
         .thumbnail:hover img {
@@ -1014,7 +1025,7 @@ body.lightbox-open {
     .thumbnail.active {
         outline: none;
         transform: translateY(-5px);
-        box-shadow: var(--shadow-accent-strong);
+        box-shadow: var(--glow-hover);
         border: 2px solid var(--accent-color);
     }
 
@@ -1147,12 +1158,16 @@ body.lightbox-open {
     #journal a {
         color: var(--accent-color);
         text-decoration: none;
-        transition: color 0.15s;
+        transition: all 0.3s ease;
     }
 
         #journal a:hover {
             color: var(--link-hover-color);
-            text-decoration: underline;
+            text-decoration: none;
+            background-color: var(--hover-bg);
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--hover-radius);
+            box-shadow: var(--glow-hover);
         }
 
 /*==========================================================================
@@ -1209,7 +1224,7 @@ input, textarea {
     input:focus, textarea:focus {
         outline: none;
         border-bottom: 2px solid var(--accent-color);
-        box-shadow: 0 5px 15px var(--accent-shadow);
+        box-shadow: var(--glow-hover);
     }
 
 textarea {
@@ -1221,7 +1236,7 @@ button {
     background-color: transparent;
     color: var(--light-text);
     border: 2px solid var(--light-text);
-    border-radius: 30px;
+    border-radius: var(--hover-radius);
     padding: 1rem 2.5rem;
     font-size: 0.9rem;
     letter-spacing: 0.1em;
@@ -1234,7 +1249,8 @@ button {
         border-color: var(--accent-color);
         color: var(--light-text);
         transform: translateY(-3px);
-        box-shadow: var(--shadow-accent);
+        border-radius: var(--hover-radius);
+        box-shadow: var(--glow-hover);
     }
 
 /*==========================================================================
@@ -1261,6 +1277,10 @@ footer {
         color: var(--accent-color);
         transform: translateY(-2px);
         display: inline-block;
+        background-color: var(--hover-bg);
+        padding: 0.5rem 0.8rem;
+        border-radius: var(--hover-radius);
+        box-shadow: var(--glow-hover);
     }
 
 /*==========================================================================
