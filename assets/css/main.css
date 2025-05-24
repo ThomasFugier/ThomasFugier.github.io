@@ -6,13 +6,13 @@
 :root {
     --primary-color: #0a0a0a;
     --secondary-color: #f0f0f0;
-    --accent-color: #FF4D5A; /* Nouvelle couleur d'accent - rose-rouge moderne */
-    --accent-light: rgba(255, 77, 90, 0.15); /* Version légère pour fonds */
+    --accent-color: #1FC16B; /* Nouvelle couleur d'accent - vert mousse flashy */
+    --accent-light: rgba(31, 193, 107, 0.15); /* Version légère pour fonds */
     --text-color: #222222;
-    --transition-speed: 0.4s; /* Transition plus rapide */
+    --transition-speed: 0.4s;
     --dark-bg: #0a0a0a;
     --light-text: #ffffff;
-    --link-hover-color: #FF7A83; /* Version plus claire pour hover */
+    --link-hover-color: #4FE39B; /* Version plus claire pour hover */
     --light-section-text: #222222;
     --form-border-color: rgba(255, 255, 255, 0.5);
 }
