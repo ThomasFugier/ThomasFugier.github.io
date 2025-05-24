@@ -79,8 +79,10 @@
         <section class="about-section">
             <!-- Image de fond avec parallaxe -->
             <div class="about-background">
-                <img src="images/ThomasYoga.png" alt="Portrait de Thomas Fugier" class="parallax-image" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:top; z-index:0;" />
+                <img src="images/ThomasYoga.png" alt="Portrait de Thomas Fugier" class="parallax-image" />
             </div>
+            <!-- Overlay de dégradé au-dessus de l'image -->
+            <div class="about-overlay"></div>
             <!-- Contenu -->
             <div class="about-content fade-in">
                 <h2>À propos</h2>
@@ -409,7 +411,7 @@
                         <button type="submit">ENVOYER</button>
                     </form>
                 </div>
-            </div> 
+            </div>
         </div>
     </section>
 
@@ -542,13 +544,15 @@
 
     <!-- Script pour l'effet parallaxe -->
     <script>
-        window.addEventListener("scroll", function () {
-            const image = document.querySelector(".parallax-image");
-            if (image) {
-                const offset = window.pageYOffset;
-                image.style.transform = `translateY(${offset * -0.3 + 300}px)`;
-            }
-        });
+       window.addEventListener("scroll", function () {
+    const image = document.querySelector(".parallax-image");
+    if (image) {
+        const offset = window.pageYOffset;
+        const speed = 0.4; // Réduit la vitesse pour un effet plus subtil
+        const yPos = -(offset * speed) + 300;
+        image.style.transform = `translateY(${yPos}px)`;
+    }
+});
     </script>
 
     <!-- Script pour les animations et transitions -->

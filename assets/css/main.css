@@ -533,7 +533,7 @@ nav.scrolled {
 }
 
 /*==========================================================================
-  SECTION ABOUT
+  SECTION ABOUT - VERSION AMÉLIORÉE
 ==========================================================================*/
 
 .about-section {
@@ -548,14 +548,63 @@ nav.scrolled {
     overflow: hidden;
 }
 
-    .about-section::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: var(--gradient-about);
-        z-index: 1;
-        mix-blend-mode: lighten;
-    }
+.about-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.parallax-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0;
+    will-change: transform;
+    pointer-events: none;
+    transform: translateY(0);
+}
+
+/* Dégradé en haut de la section */
+.about-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, var(--dark-bg) 0%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Dégradé en bas de la section - remplace l'ancien before */
+.about-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to top, var(--secondary-color) 0%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Overlay général pour assombrir/éclaircir l'image */
+.about-overlay {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-about);
+    z-index: 1;
+    mix-blend-mode: lighten;
+    pointer-events: none;
+}
 
 .about-content {
     position: relative;
@@ -569,73 +618,15 @@ nav.scrolled {
     opacity: 0;
     transform: translateY(0px);
     transition: opacity 1s ease, transform 1s ease;
-    margin-top: 8vh;
+    margin-top: 0;
     color: var(--light-section-text);
 }
 
     .about-content.visible {
         opacity: 1;
-        transform: translateY(100px);
+        transform: translateY(0);
     }
 
-    .about-content h2 {
-        font-size: 3rem;
-        margin-bottom: 2rem;
-        position: relative;
-        color: var(--light-section-text);
-        padding-bottom: 1rem;
-        text-shadow: var(--glow-medium);
-        font-weight: var(--subheading-weight);
-    }
-
-        .about-content h2::after {
-            content: none;
-        }
-
-        .about-content h2::before {
-            content: '';
-            position: absolute;
-            width: 35px;
-            height: 6px;
-            border-radius: 3px;
-            background-color: var(--accent-color);
-            bottom: 0;
-            left: 0;
-        }
-
-    .about-content p {
-        font-size: 1.2rem;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-        color: var(--light-section-text);
-    }
-
-.about-background {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-}
-
-    .about-background img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-
-.parallax-image {
-    position: absolute;
-    top: 300;
-    left: 0;
-    width: 100%;
-    height: 120%;
-    object-fit: cover;
-    object-position: top;
-    z-index: 0;
-    will-change: transform;
-    pointer-events: none;
-}
 
 /*==========================================================================
   SECTION INTERACTIVE
