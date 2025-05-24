@@ -2,25 +2,21 @@
   CONFIGURATION GLOBALE
 ==========================================================================*/
 
-/* Variables - Toutes les couleurs centralisées */
 :root {
-    /* Couleurs principales */
+    /* Couleurs existantes */
     --primary-color: #0a0a0a;
     --secondary-color: #f0f0f0;
-    --accent-color: #1FC16B; /* Vert mousse flashy */
-    --link-hover-color: #4FE39B; /* Version plus claire pour hover */
+    --accent-color: #1FC16B;
+    --link-hover-color: #4FE39B;
     --text-color: #222222;
     --light-section-text: #222222;
     --dark-bg: #0a0a0a;
     --light-text: #ffffff;
-    /* Nuances d'accent */
     --accent-light: rgba(31, 193, 107, 0.15);
     --accent-shadow: rgba(31, 193, 107, 0.2);
     --accent-shadow-strong: rgba(31, 193, 107, 0.3);
-    /* Nuances de noir et blanc */
     --black: #000000;
     --white: #ffffff;
-    /* Transparences */
     --black-90: rgba(0, 0, 0, 0.9);
     --black-95: rgba(0, 0, 0, 0.95);
     --black-50: rgba(0, 0, 0, 0.5);
@@ -30,19 +26,47 @@
     --white-20: rgba(255, 255, 255, 0.2);
     --white-50: rgba(255, 255, 255, 0.5);
     --white-15: rgba(255, 255, 255, 0.15);
-    /* Ombres */
     --shadow-light: 0 3px 10px var(--black-10);
     --shadow-medium: 0 8px 25px var(--black-20);
     --shadow-strong: 0 15px 35px var(--black-30);
     --shadow-accent: 0 5px 15px var(--accent-shadow);
     --shadow-accent-strong: 0 8px 20px var(--accent-shadow-strong);
-    /* Dégradés */
     --gradient-video: linear-gradient(to bottom, transparent 0%, var(--secondary-color) 100%);
     --gradient-about: linear-gradient(to bottom right, rgba(240, 240, 240, 0.5), rgba(240, 240, 240, 0.95));
-    /* Bordures */
     --form-border-color: var(--white-50);
-    /* Animation */
     --transition-speed: 0.4s;
+    /* Nouvelles variables pour les poids de texte */
+    --font-weight-thin: 100;
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+    /* Poids par défaut pour les différents éléments */
+    --heading-weight: var(--font-weight-light);
+    --subheading-weight: var(--font-weight-regular);
+    --title-weight: var(--font-weight-medium);
+    --text-weight: var(--font-weight-regular);
+    --nav-weight: var(--font-weight-medium);
+    --button-weight: var(--font-weight-medium);
+    --strong-weight: var(--font-weight-bold);
+    /* Variables pour les effets de glow */
+    --glow-radius-sm: 2px;
+    --glow-radius-md: 5px;
+    --glow-radius-lg: 10px;
+    --glow-spread-sm: 0px;
+    --glow-spread-md: 4px;
+    --glow-spread-lg: 8px;
+    /* Variables pour les effets de glow combinés */
+    --glow-light: 0 var(--glow-radius-sm) var(--glow-radius-md) var(--accent-shadow);
+    --glow-medium: 0 var(--glow-radius-md) var(--glow-radius-lg) var(--accent-shadow), 0 0 var(--glow-spread-md) var(--accent-shadow-strong);
+    --glow-strong: 0 var(--glow-radius-md) var(--glow-radius-lg) var(--accent-shadow), 0 0 var(--glow-spread-lg) var(--accent-shadow-strong);
+    /* Couleurs de glow personnalisables */
+    --glow-color-primary: var(--accent-shadow);
+    --glow-color-secondary: var(--accent-shadow-strong);
 }
 
 /* Reset */
@@ -66,7 +90,7 @@ body {
 ==========================================================================*/
 
 h1, h2, h3, h4, h5 {
-    font-weight: 400;
+    font-weight: var(--heading-weight);
     margin-bottom: 1.2rem;
 }
 
@@ -99,14 +123,13 @@ a {
 
 p {
     margin-bottom: 1.2rem;
-    font-weight: 400;
+    font-weight: var(--text-weight);
     font-size: 1.1rem;
 }
 
 b, strong {
-    font-weight: 700;
+    font-weight: var(--strong-weight);
 }
-
 
 /*==========================================================================
   LAYOUT DE BASE
@@ -138,7 +161,6 @@ section {
     overflow: hidden;
 }
 
-/* Section Layouts */
 .split-section {
     display: flex;
     height: 100vh;
@@ -178,20 +200,42 @@ section {
     color: var(--light-section-text);
 }
 
+    /*==========================================================================
+  TITRES FLASHY SUR FOND CLAIR
+==========================================================================*/
+
+    .light-section .section-title,
+    #marketing .section-title,
+    #journal .section-title,
+    #ai .section-title,
+    .about-content h2 {
+        color: var(--light-section-text);
+        text-shadow: var(--glow-medium);
+        font-weight: var(--heading-weight);
+        letter-spacing: 0.01em;
+    }
+
+/* Pour les titres sur fond sombre */
+.dark-section .section-title {
+    color: var(--light-text);
+    text-shadow: var(--glow-medium);
+    font-weight: var(--heading-weight);
+}
+
 /* Section Titles - Nouveau style sans lignes */
 .section-title {
     margin-bottom: 3rem;
     position: relative;
     display: inline-block;
-    text-shadow: 0 2px 10px var(--accent-shadow);
+    text-shadow: var(--glow-light);
     padding-bottom: 1rem;
+    font-weight: var(--heading-weight);
 }
 
     .section-title::after {
-        content: none; /* Supprime l'ancien soulignement */
+        content: none;
     }
 
-    /* Nouvel élément décoratif */
     .section-title::before {
         content: '';
         position: absolute;
@@ -248,10 +292,24 @@ nav.scrolled {
 
 .logo {
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     letter-spacing: 1px;
     color: var(--white);
+    border-radius: 4px;
+    padding: 0.5rem 0.8rem;
+    transition: all 0.3s ease;
 }
+
+    /* Effet hover plus opaque pour nav-link et logo */
+    .nav-link:hover,
+    .logo:hover {
+        color: var(--light-text);
+        background-color: var(--accent-shadow-strong);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-accent-strong);
+        cursor: pointer;
+        transition: all 0.3s;
+    }
 
 .nav-links {
     display: flex;
@@ -259,34 +317,31 @@ nav.scrolled {
     color: var(--white);
 }
 
-/* Nouveau style de navigation sans lignes */
 .nav-link {
     position: relative;
     padding: 0.5rem 0.8rem;
-    font-weight: 500;
+    font-weight: var(--nav-weight);
     letter-spacing: 0.05em;
     border-radius: 4px;
     transition: all 0.3s ease;
 }
 
     .nav-link::after {
-        content: none; /* Supprime la ligne existante */
+        content: none;
     }
 
     .nav-link:hover {
         color: var(--light-text);
-        background-color: var(--accent-light);
+        background-color: var(--accent-shadow-strong);
         transform: translateY(-2px);
-        box-shadow: var(--shadow-accent);
+        box-shadow: var(--shadow-accent-strong);
     }
 
-    /* Style actif */
     .nav-link.active {
         background-color: var(--accent-color);
         color: var(--white);
     }
 
-/* Conserver le style de la section home */
 #home .nav-link:hover {
     background-color: var(--white-15);
 }
@@ -340,13 +395,13 @@ nav.scrolled {
     .home-content h1 {
         margin-bottom: 2rem;
         letter-spacing: -0.03em;
-        font-size: 0vw;
-        font-weight: 0;
+        font-size: 0rem; /* Invisible */
+        font-weight: var(--heading-weight); /* Uniformisation du poids */
     }
 
 .baseline {
-    font-size: 0rem;
-    font-weight: 0;
+    font-size: 0rem; /* Invisible */
+    font-weight: var(--text-weight);
     letter-spacing: 0.05em;
     opacity: 0.8;
     margin-bottom: 2rem;
@@ -369,7 +424,6 @@ nav.scrolled {
         opacity: 0.7;
     }
 
-/* Vidéo d'arrière-plan */
 .background-video {
     position: absolute;
     top: 0;
@@ -385,7 +439,7 @@ nav.scrolled {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 177.77vh; /* 16:9 ratio (100vh × 16 / 9) */
+    width: 177.77vh;
     height: 100vh;
     transform: translate(-50%, -50%);
 }
@@ -396,7 +450,6 @@ nav.scrolled {
         border: none;
     }
 
-/* Overlay sombre sur la vidéo */
 .overlay {
     position: absolute;
     top: 0;
@@ -407,7 +460,6 @@ nav.scrolled {
     z-index: 1;
 }
 
-/* Forcer les éléments du home en blanc */
 #home .logo,
 #home h1,
 #home .baseline,
@@ -420,7 +472,6 @@ nav.scrolled {
     background-color: var(--white);
 }
 
-/* Indicateur de défilement */
 .scroll-indicator {
     position: absolute;
     bottom: 3rem;
@@ -530,6 +581,8 @@ nav.scrolled {
         position: relative;
         color: var(--light-section-text);
         padding-bottom: 1rem;
+        text-shadow: var(--glow-medium);
+        font-weight: var(--subheading-weight);
     }
 
         .about-content h2::after {
@@ -620,7 +673,6 @@ nav.scrolled {
     align-items: center;
 }
 
-/* Grille interactive */
 .interactive-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -643,14 +695,12 @@ nav.scrolled {
     box-shadow: var(--shadow-medium);
 }
 
-    /* Ligne 1 : 3 blocs (4 + 4 + 4 = 12 colonnes) */
     .interactive-item:nth-child(1),
     .interactive-item:nth-child(2),
     .interactive-item:nth-child(3) {
         grid-column: span 4;
     }
 
-    /* Ligne 2 : 2 blocs (6 + 6 = 12 colonnes) */
     .interactive-item:nth-child(4) {
         grid-column: 1 / span 6;
     }
@@ -676,7 +726,6 @@ nav.scrolled {
         box-shadow: var(--shadow-strong);
     }
 
-/* Détails */
 .interactive-details {
     position: absolute;
     bottom: 0;
@@ -707,7 +756,7 @@ nav.scrolled {
 .details-title {
     margin: 0;
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: var(--title-weight);
 }
 
 .interactive-description {
@@ -719,14 +768,14 @@ nav.scrolled {
 
 .details-category {
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: var(--text-weight);
     margin: 0 0 0.5rem 0;
     opacity: 0.9;
 }
 
 .interactive-description a {
     color: var(--accent-color);
-    font-weight: 500;
+    font-weight: var(--nav-weight);
     text-decoration: none;
 }
 
@@ -740,7 +789,6 @@ nav.scrolled {
     opacity: 1;
 }
 
-/* Correction pour les images dans les conteneurs interactive */
 .interactive-thumb {
     width: 100%;
     height: 100%;
@@ -764,7 +812,6 @@ nav.scrolled {
     display: block;
 }
 
-/* Lightbox */
 .lightbox {
     display: none;
     position: fixed;
@@ -784,7 +831,7 @@ nav.scrolled {
         max-height: 70%;
         object-fit: contain;
         border-radius: 12px;
-        box-shadow: 0 0 40px var(--black-80);
+        box-shadow: 0 0 40px var(--black-50);
     }
 
 body.lightbox-open {
@@ -819,6 +866,8 @@ body.lightbox-open {
         margin-right: auto;
         margin-bottom: 8rem;
         color: var(--light-section-text);
+        text-shadow: var(--glow-medium);
+        font-weight: var(--title-weight);
     }
 
         #marketing .section-title::before {
@@ -826,10 +875,9 @@ body.lightbox-open {
             transform: translateX(-50%);
         }
 
-/* Ajout du style pour le sous-titre du paragraphe marketing */
 .marketing-subtitle {
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: var(--text-weight);
     margin-bottom: 1rem;
     color: var(--light-section-text);
 }
@@ -891,7 +939,7 @@ body.lightbox-open {
 
     .video-info h3 {
         font-size: 1.4rem;
-        font-weight: 500;
+        font-weight: var(--title-weight);
         margin-bottom: 0.5rem;
         color: var(--light-section-text);
     }
@@ -902,12 +950,11 @@ body.lightbox-open {
         margin-bottom: 1rem;
     }
 
-/* Style mis à jour pour les étiquettes de catégorie */
 .category-label {
     display: inline-block;
     background: var(--accent-color);
     color: var(--light-text);
-    font-weight: bold;
+    font-weight: var(--button-weight);
     border-radius: 20px;
     padding: 5px 15px;
     font-size: 0.95em;
@@ -916,13 +963,13 @@ body.lightbox-open {
     box-shadow: 0 3px 10px var(--accent-shadow);
 }
 
-/* Galerie vidéo */
 .video-gallery {
     margin-top: 5rem;
 }
 
     .video-gallery h3 {
         font-size: 1.8rem;
+        font-weight: var(--title-weight);
         margin-bottom: 2rem;
         color: var(--light-section-text);
     }
@@ -961,7 +1008,6 @@ body.lightbox-open {
             transform: scale(1.05);
         }
 
-    /* Style mis à jour pour les vignettes actives */
     .thumbnail.active {
         outline: none;
         transform: translateY(-5px);
@@ -1072,7 +1118,7 @@ body.lightbox-open {
 
 .step-number {
     font-size: 3rem;
-    font-weight: 300;
+    font-weight: var(--font-weight-light);
     position: absolute;
     top: -2rem;
     left: 0;
@@ -1082,7 +1128,7 @@ body.lightbox-open {
 
 .step-title {
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: var(--text-weight);
     margin-bottom: 1rem;
 }
 
@@ -1168,7 +1214,6 @@ textarea {
     resize: vertical;
 }
 
-/* Style des boutons mis à jour */
 button {
     background-color: transparent;
     color: var(--light-text);
@@ -1219,7 +1264,6 @@ footer {
   ANIMATIONS ET EFFETS
 ==========================================================================*/
 
-/* Animation Classes */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -1247,7 +1291,48 @@ footer {
         transform: translateY(0);
     }
 
-/* Curseur personnalisé */
+/* Classes d'effets glow facilement applicables */
+.glow-light {
+    text-shadow: var(--glow-light);
+}
+
+.glow-medium {
+    text-shadow: var(--glow-medium);
+}
+
+.glow-strong {
+    text-shadow: var(--glow-strong);
+}
+
+/* Classes de poids de texte facilement applicables */
+.weight-thin {
+    font-weight: var(--font-weight-thin);
+}
+
+.weight-light {
+    font-weight: var(--font-weight-light);
+}
+
+.weight-regular {
+    font-weight: var(--font-weight-regular);
+}
+
+.weight-medium {
+    font-weight: var(--font-weight-medium);
+}
+
+.weight-semibold {
+    font-weight: var(--font-weight-semibold);
+}
+
+.weight-bold {
+    font-weight: var(--font-weight-bold);
+}
+
+.weight-extrabold {
+    font-weight: var(--font-weight-extrabold);
+}
+
 .custom-cursor {
     position: fixed;
     width: 30px;
@@ -1271,7 +1356,6 @@ footer {
    RESPONSIVE - NOUVELLE VERSION
    ========================================================================== */
 
-/* Ajuster le responsive pour les grands écrans */
 @media (min-width: 1500px) {
     .interactive-experiences {
         width: 100%;
@@ -1284,7 +1368,6 @@ footer {
     }
 }
 
-/* Ajuster pour écrans moyens */
 @media (min-width: 1024px) and (max-width: 1499px) {
     .interactive-experiences {
         width: 90%;
@@ -1297,7 +1380,6 @@ footer {
     }
 }
 
-/* Très grands écrans */
 @media (min-width: 1500px) {
     #interactive.fullscreen-section {
         padding-top: 8vh;
@@ -1314,7 +1396,6 @@ footer {
     }
 }
 
-/* Grands desktops */
 @media (min-width: 1200px) and (max-width: 1499px) {
     .interactive-item {
         height: 40vw;
@@ -1322,7 +1403,6 @@ footer {
     }
 }
 
-/* Desktops et tablettes larges */
 @media (min-width: 1024px) and (max-width: 1199px) {
     h2 {
         font-size: 3rem;
@@ -1341,7 +1421,6 @@ footer {
     }
 }
 
-/* Tablettes et écrans moyens */
 @media (min-width: 768px) and (max-width: 1023px) {
     h2 {
         font-size: 2.8rem;
@@ -1422,7 +1501,6 @@ footer {
     }
 }
 
-/* Tablettes et petits laptops */
 @media (max-width: 1023px) {
     h1 {
         font-size: 3rem;
@@ -1467,7 +1545,6 @@ footer {
     }
 }
 
-/* Mobiles et petites tablettes */
 @media (max-width: 767px) {
     nav {
         background-color: var(--black-95);
@@ -1562,7 +1639,7 @@ footer {
         padding-top: 10vh;
         padding-bottom: 10vh;
     }
-    /* Section Interactive */
+
     #interactive {
         padding-top: 8vh;
         padding-bottom: 8vh;
@@ -1593,7 +1670,7 @@ footer {
             max-height: 200px;
             opacity: 1;
         }
-    /* Section Marketing */
+
     #marketing {
         padding: 6vh 0;
     }
@@ -1655,7 +1732,7 @@ footer {
         padding: 5vw;
         padding-top: 3rem;
     }
-    /* Section Method */
+
     .methodology-steps {
         flex-direction: column;
         gap: 3rem;
@@ -1664,11 +1741,11 @@ footer {
     .method-step {
         flex-basis: 100%;
     }
-    /* Section Contact */
+
     .contact-form {
         max-width: 100%;
     }
-    /* Footer */
+
     .footer-content {
         flex-direction: column;
         gap: 1.5rem;
@@ -1679,13 +1756,11 @@ footer {
         justify-content: center;
     }
 
-    /* Ajuster les boutons pour mobile */
     button {
         padding: 0.8rem 2rem;
     }
 }
 
-/* Smartphones */
 @media (max-width: 480px) {
     h1 {
         font-size: 2.2rem;
@@ -1722,7 +1797,6 @@ footer {
     }
 }
 
-/* Très petits smartphones */
 @media (max-width: 350px) {
     .video-player-wrapper {
         width: 160px;
