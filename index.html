@@ -27,7 +27,7 @@
             <!-- Liens de navigation -->
             <div class="nav-links">
                 <a href="#about-section" class="nav-link">À Propos</a>
-                <a href="#interactive" class="nav-link">Projets</a>
+                <a href="#interactive" class="nav-link">Réalisations</a>
                 <a href="#marketing" class="nav-link">Marketing Development</a>
                 <a href="#ai" class="nav-link">Artificial Intelligence</a>
                 <a href="#thinking" class="nav-link">Methodology</a>
@@ -90,14 +90,14 @@
             </div>
         </section>
     </section>
-   
+
 
     <!--====================================================================
     EXPÉRIENCES INTERACTIVES
     =====================================================================-->
     <section id="interactive" class="fullscreen-section">
         <div class="container fade-in interactive-experiences">
-            <h2 class="section-title centered">Interactive Experiences</h2>
+            <h2 class="section-title centered">Réalisations</h2>
 
             <!-- Grille de projets -->
             <div class="interactive-grid">
@@ -203,7 +203,7 @@
                         Publicité et gameplay se confondent. L’expérience devient claire, ciblée, engageante.
                     </p>
                     <p><b>Plus de 5000 vidéos produites.</b> Découvrez-en une sélection.</p>
-                        <!-- reste du contenu -->
+                    <!-- reste du contenu -->
                 </div>
 
                 <!-- Lecture vidéo principale -->
@@ -425,20 +425,22 @@
             <div class="journal-articles">
                 <!-- Article 1 -->
                 <div class="journal-entry">
-                    <h3><a href="https://medium.com/@votre-lien-1">L'interface est une émotion</a></h3>
-                    <p>Comment les dispositifs interactifs façonnent notre manière de sentir le monde.</p>
+                    <h3><a href="https://medium.com/voodoo-engineering/being-a-marketing-unity-developer-in-the-growth-team-38385daea75b">Being a Marketing Unity Developer in the Growth team</a></h3>
+                    <p>
+                        Plongez dans le rôle unique de Marketing Unity Developer chez Voodoo, où tech et créativité servent la performance marketing.
+                    </p>
                 </div>
 
                 <!-- Article 2 -->
                 <div class="journal-entry">
-                    <h3><a href="https://medium.com/@votre-lien-2">Quand l'IA hallucine juste</a></h3>
-                    <p>Entre surréalisme algorithmique et poésie numérique : détourner les IA génératives comme médiums artistiques.</p>
+                    <h3><a href="https://medium.com/@thomas.fugier/are-game-engines-becoming-obsolete-d4bdbd8912df">Are game engines becoming obsolete?</a></h3>
+                    <p>Une réflexion sur l’avenir des moteurs de jeu face à l’IA et aux nouveaux outils créatifs : sont-ils en train de devenir obsolètes ?</p>
                 </div>
 
                 <!-- Article 3 -->
                 <div class="journal-entry">
-                    <h3><a href="https://medium.com/@votre-lien-3">Design spéculatif & futur souhaitable</a></h3>
-                    <p>Imaginer des futurs désirables à travers des narrations expérientielles.</p>
+                    <h3><a href="https://medium.com/@thomas.fugier/comment-jai-transform%C3%A9-chatgpt-en-compositeur-de-musique-f8e51f30c500">Comment j’ai transformé ChatGPT en compositeur de musique</a></h3>
+                    <p>Découvrez comment j’ai transformé ChatGPT en véritable compositeur de musique, entre prompts créatifs et outils audio.</p>
                 </div>
             </div>
         </div>
@@ -463,52 +465,80 @@
     <!--====================================================================
     SCRIPTS
     =====================================================================-->
-    <!-- Script pour le curseur personnalisé et la navigation -->
+    <!-- Script principal : navigation, animations et comportements -->
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Menu mobile
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
 
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuToggle.classList.remove('active');
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
             });
-        });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            // Fermer le menu après clic sur un lien
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
             });
-        });
 
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const revealElements = document.querySelectorAll('.reveal-text');
+            // Navigation avec défilement fluide et ajustement par section
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    if (!targetElement) return;
+
+                    // Définir des offsets spécifiques pour chaque section au besoin
+                    const offsets = {
+                        '#interactive': 50,  // Ajustement pour Réalisations
+                        '#about-section': -50,  // Ajustement pour À Propos si nécessaire
+                        '#default': 0          // Offset par défaut
+                    };
+
+                    // Sélectionner l'offset approprié ou utiliser la valeur par défaut
+                    const offset = offsets[targetId] || offsets['#default'];
+
+                    // Calculer la position avec l'offset
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + offset;
+
+                    // Défilement fluide
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Effets d'apparition au défilement
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const revealElements = document.querySelectorAll('.reveal-text');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(element => observer.observe(element));
+            revealElements.forEach(element => observer.observe(element));
+
+            // Effet de navigation compacte au défilement
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
                 }
             });
-        }, { threshold: 0.1 });
-
-        fadeElements.forEach(element => observer.observe(element));
-        revealElements.forEach(element => observer.observe(element));
-
-        const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
         });
     </script>
 
@@ -516,61 +546,51 @@
     <script>
         window.addEventListener("scroll", function () {
             const image = document.querySelector(".parallax-image");
-            const offset = window.pageYOffset;
             if (image) {
-                image.style.transform = `translateY(${offset * -0.3 + 300}px)`; // 0.3 = vitesse plus lente que le scroll
+                const offset = window.pageYOffset;
+                image.style.transform = `translateY(${offset * -0.3 + 300}px)`;
             }
         });
     </script>
 
-    <!-- Script pour l'overlay de dégradé -->
+    <!-- Script pour les animations et transitions -->
     <script>
-        const gradientOverlay = document.querySelector('.video-gradient-overlay');
+        document.addEventListener('DOMContentLoaded', () => {
+            const gradientOverlay = document.querySelector('.video-gradient-overlay');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
 
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
+            // Animation du dégradé et de l'indicateur de défilement
+            window.addEventListener('scroll', () => {
+                const maxScroll = 150;
+                const scrollY = Math.min(window.scrollY, maxScroll);
+                const opacity = scrollY / maxScroll;
 
-            // On commence à rendre visible à partir de 10px de scroll
-            if (scrollY > 10) {
-                gradientOverlay.style.opacity = '1';
-            } else {
-                gradientOverlay.style.opacity = '0';
-            }
+                // Appliquer l'effet de fondu au dégradé
+                if (gradientOverlay) gradientOverlay.style.opacity = opacity;
+
+                // Gestion de l'indicateur de défilement
+                if (scrollIndicator) {
+                    if (scrollY > 10) {
+                        scrollIndicator.classList.add('scrolled');
+                    } else {
+                        scrollIndicator.classList.remove('scrolled');
+                    }
+                }
+            });
         });
     </script>
 
-    <!-- Script pour les animations de défilement -->
+    <!-- Script pour les interactions avec les projets -->
     <script>
-        const gradientOverlay = document.querySelector('.video-gradient-overlay');
-        const scrollIndicator = document.querySelector('.scroll-indicator');
-
-        window.addEventListener('scroll', () => {
-            const maxScroll = 150;
-            const scrollY = Math.min(window.scrollY, maxScroll);
-            const opacity = scrollY / maxScroll;
-
-            if (gradientOverlay) gradientOverlay.style.opacity = opacity;
-
-            if (scrollY > 10) {
-                scrollIndicator.classList.add('scrolled');
-            } else {
-                scrollIndicator.classList.remove('scrolled');
-            }
-        });
-    </script>
-
-    <!-- Script pour les détails des projets interactifs -->
-    <script>
+        // Gestion des détails des projets
         function toggleDetails(el) {
             document.querySelectorAll('.interactive-item').forEach(item => {
                 if (item !== el) item.classList.remove('active');
             });
             el.classList.toggle('active');
         }
-    </script>
 
-    <!-- Script pour la lightbox -->
-    <script>
+        // Gestion de la lightbox
         function openLightbox(element) {
             event.stopPropagation();
             const lightbox = document.getElementById('lightbox');
@@ -597,18 +617,18 @@
             }
 
             lightbox.style.display = 'flex';
-            document.body.classList.add('lightbox-open'); // Désactive le scroll
+            document.body.classList.add('lightbox-open');
         }
 
         function closeLightbox() {
             const lightbox = document.getElementById('lightbox');
             lightbox.style.display = 'none';
             document.getElementById('lightbox-content').innerHTML = '';
-            document.body.classList.remove('lightbox-open'); // Réactive le scroll
+            document.body.classList.remove('lightbox-open');
         }
     </script>
 
-    <!-- Script pour les vignettes vidéo -->
+    <!-- Script pour la galerie vidéo marketing -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const thumbnails = document.querySelectorAll('.thumbnail');
@@ -640,6 +660,12 @@
             thumbnails.forEach(thumbnail => {
                 thumbnail.addEventListener('click', () => {
                     updateMainVideo(thumbnail);
+
+                    // Défiler vers la section marketing
+                    const marketingSection = document.getElementById('marketing');
+                    if (marketingSection) {
+                        marketingSection.scrollIntoView({ behavior: 'smooth' });
+                    }
                 });
             });
 
@@ -662,16 +688,14 @@
 
                     // Configuration initiale du player
                     player.ready().then(() => {
-                        // S'assurer que la vidéo est muette avant de tenter la lecture
                         return player.setMuted(true);
                     }).then(() => {
-                        // Tentative de lecture automatique
                         return player.play();
                     }).catch((error) => {
                         console.warn(`Erreur lors de l'initialisation de la vidéo : ${error.name}`, error);
                     });
 
-                    // Écouter les événements du player pour un meilleur suivi
+                    // Écouter les événements du player
                     player.on('play', () => {
                         console.log('Lecture vidéo démarrée');
                     });
@@ -682,8 +706,6 @@
                 } catch (error) {
                     console.error('Impossible d\'initialiser le player Vimeo :', error);
                 }
-            } else {
-                console.warn('Élément vidéo #mainVideo non trouvé dans le document');
             }
         });
     </script>
@@ -694,7 +716,7 @@
             {
                 video: "https://player.vimeo.com/video/1085812153",
                 title: "Block Jam 3D",
-                description: "Élaboration d’un hook d’introduction dynamique avec chute de personnage. Mise en scène d’un environnement à contrainte spatiale (murs pressants) pour induire une tension immédiate. Structuration du gameplay puzzle sur des mécaniques inspirées de Royal Match, avec un accent sur la clarté visuelle et la montée en intensité.",
+                description: "Élaboration d'un hook d'introduction dynamique avec chute de personnage. Mise en scène d'un environnement à contrainte spatiale (murs pressants) pour induire une tension immédiate. Structuration du gameplay puzzle sur des mécaniques inspirées de Royal Match, avec un accent sur la clarté visuelle et la montée en intensité.",
                 category: "Puzzle Game"
             },
             {
@@ -712,5 +734,6 @@
             // Ajoute autant d'objets que nécessaire
         ];
     </script>
+
 </body>
 </html>
