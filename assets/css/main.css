@@ -546,15 +546,18 @@ nav.scrolled {
     background-color: var(--dark-bg);
     position: relative;
     z-index: 1;
+    padding-top: 10vh; /* Ajouter un padding supplémentaire en haut */
+    padding-bottom: 10vh; /* Ajouter un padding supplémentaire en bas */
 }
 
     #interactive.fullscreen-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-top: 12vh;
-        padding-bottom: 10vh;
-        min-height: 100vh;
+        padding-top: 15vh; /* Augmenter le padding en haut */
+        padding-bottom: 15vh; /* Augmenter le padding en bas */
+        min-height: 120vh; /* Augmenter la hauteur minimale à plus de 100vh */
+        height: auto; /* Permettre au contenu de définir la hauteur */
     }
 
 .interactive-header {
@@ -564,34 +567,38 @@ nav.scrolled {
     z-index: 2;
 }
 
+
 .interactive-experiences {
-    width: 100%;
-    max-width: 2500px;
+    width: 90%; /* Réduire à 90% au lieu de 100% */
+    max-width: 1800px; /* Réduire la largeur maximale */
     margin: 0 auto;
-    padding: 5vh 4vw;
+    padding: 8vh 8vw; /* Augmenter le padding horizontal */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 
 /* Grille interactive */
 .interactive-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-auto-rows: auto;
-    gap: 1.5vw;
+    gap: 2vw;
     width: 100%;
+    margin-bottom: 5vh;
 }
 
 .interactive-item {
     position: relative;
     overflow: hidden;
     border-radius: 12px;
-    height: 45vw;
-    max-height: 500px;
-    min-height: 250px;
+    height: 35vw; /* Réduire la hauteur de 40vw à 35vw */
+    max-height: 400px; /* Réduire la hauteur maximale de 450px à 400px */
+    min-height: 220px; /* Réduire la hauteur minimale de 250px à 220px */
     transition: transform 0.4s ease;
     cursor: pointer;
+    margin-bottom: 1vh;
 }
 
     /* Ligne 1 : 3 blocs (4 + 4 + 4 = 12 colonnes) */
@@ -1186,6 +1193,32 @@ footer {
 /* ==========================================================================
    RESPONSIVE - NOUVELLE VERSION
    ========================================================================== */
+
+/* Ajuster le responsive pour les grands écrans */
+@media (min-width: 1500px) {
+    .interactive-experiences {
+        width: 100%; /* Réduire encore plus pour les très grands écrans */
+        max-width: 2000px;
+    }
+
+    .interactive-item {
+        height: 30vw; /* Hauteur encore plus petite sur grands écrans */
+        max-height: 380px;
+    }
+}
+
+/* Ajuster pour écrans moyens */
+@media (min-width: 1024px) and (max-width: 1499px) {
+    .interactive-experiences {
+        width: 90%;
+        padding: 8vh 5vw;
+    }
+
+    .interactive-item {
+        height: 35vw;
+        max-height: 400px;
+    }
+}
 
 /* Très grands écrans */
 @media (min-width: 1500px) {
