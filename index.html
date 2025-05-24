@@ -10,16 +10,14 @@
 <body>
     <!--====================================================================
     ÉLÉMENTS GLOBAUX
-    =====================================================================-->
-    <!-- Curseur personnalisé -->
-    <div class="custom-cursor"></div>
+    =====================================================================--
 
     <!--====================================================================
     NAVIGATION
     =====================================================================-->
     <nav>
         <div class="nav-container">
-            <a href="#home" class="logo">TYF</a>
+            <a href="#home" class="logo">Thomas Fugier</a>
             <!-- Menu hamburger mobile -->
             <div class="menu-toggle">
                 <span></span>
@@ -463,18 +461,6 @@
     =====================================================================-->
     <!-- Script pour le curseur personnalisé et la navigation -->
     <script>
-        const cursor = document.querySelector('.custom-cursor');
-        const links = document.querySelectorAll('a, button');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        links.forEach(link => {
-            link.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-            link.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-        });
 
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
