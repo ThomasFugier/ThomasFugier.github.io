@@ -1786,6 +1786,11 @@ footer {
     button {
         padding: 0.8rem 2rem;
     }
+
+    .home-content h1,
+    .baseline {
+        display: none !important;
+    }
 }
 
 @media (max-width: 480px) {
