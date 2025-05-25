@@ -307,14 +307,13 @@ nav.scrolled {
     transition: all 0.3s ease;
 }
 
-    /* Effet hover plus diffus pour nav-link et logo */
+    /* Effet hover plus subtil pour nav-link et logo */
     .nav-link:hover,
     .logo:hover {
-        color: var(--light-text);
+        color: var(--link-hover-color);
         background-color: var(--hover-bg);
         transform: translateY(-2px);
         border-radius: var(--hover-radius);
-        box-shadow: var(--glow-hover);
         cursor: pointer;
         transition: all 0.3s ease;
     }
@@ -341,12 +340,10 @@ nav.scrolled {
     .nav-link.active {
         background-color: var(--accent-color);
         color: var(--white);
-        box-shadow: var(--glow-hover);
     }
 
 #home .nav-link:hover {
     background-color: var(--white-15);
-    box-shadow: var(--glow-hover-white);
 }
 
 .menu-toggle {
@@ -718,7 +715,7 @@ nav.scrolled {
 
     .interactive-item:hover {
         transform: translateY(-5px);
-        box-shadow: var(--glow-hover);
+        box-shadow: var(--shadow-medium);
         border-radius: 12px;
     }
 
@@ -781,7 +778,6 @@ nav.scrolled {
         background-color: var(--hover-bg);
         padding: 0.2rem 0.5rem;
         border-radius: var(--hover-radius);
-        box-shadow: var(--glow-hover);
     }
 
 .interactive-item:hover .interactive-description {
@@ -1006,7 +1002,7 @@ body.lightbox-open {
 
     .thumbnail:hover {
         transform: translateY(-5px);
-        box-shadow: var(--glow-hover);
+        box-shadow: var(--shadow-medium);
         border-radius: var(--hover-radius);
     }
 
@@ -1017,7 +1013,7 @@ body.lightbox-open {
     .thumbnail.active {
         outline: none;
         transform: translateY(-5px);
-        box-shadow: var(--glow-hover);
+        box-shadow: var(--shadow-medium);
         border: 2px solid var(--accent-color);
     }
 
@@ -1159,7 +1155,6 @@ body.lightbox-open {
             background-color: var(--hover-bg);
             padding: 0.2rem 0.5rem;
             border-radius: var(--hover-radius);
-            box-shadow: var(--glow-hover);
         }
 
 /*==========================================================================
@@ -1216,7 +1211,6 @@ input, textarea {
     input:focus, textarea:focus {
         outline: none;
         border-bottom: 2px solid var(--accent-color);
-        box-shadow: var(--glow-hover);
     }
 
 textarea {
@@ -1272,7 +1266,6 @@ footer {
         background-color: var(--hover-bg);
         padding: 0.5rem 0.8rem;
         border-radius: var(--hover-radius);
-        box-shadow: var(--glow-hover);
     }
 
 /*==========================================================================
@@ -1436,6 +1429,8 @@ footer {
     }
 }
 
+
+
 @media (min-width: 768px) and (max-width: 1023px) {
     h2 {
         font-size: 2.8rem;
@@ -1456,15 +1451,18 @@ footer {
     }
 
     .marketing-player {
-        align-items: center;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 100%;
     }
 
     .video-player-wrapper {
-        max-width: 450px;
-        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        left: 0;
+        transform: none;
     }
 
     .video-info {
@@ -1704,11 +1702,24 @@ footer {
         align-items: center;
         display: flex;
         flex-direction: column;
+        width: 100%;
+        justify-content: center;
     }
 
-    .video-player-wrapper {
-        width: 280px;
-        aspect-ratio: 9/16;
+    @media (max-width: 767px) {
+        /* ... autres styles ... */
+
+        .video-player-wrapper {
+            width: 280px;
+            aspect-ratio: 9/16;
+            position: relative;
+            left: auto; /* Supprimer le left: 50% */
+            transform: none; /* Supprimer le transform: translateX(-50%) */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ... autres styles ... */
     }
 
     .video-info {
@@ -1740,12 +1751,13 @@ footer {
 
     .ai-carousel {
         height: 40vh;
-        order: -1;
+        order: 1;
     }
 
     .ai-text {
         padding: 5vw;
         padding-top: 3rem;
+        order: 2;
     }
 
     .methodology-steps {
@@ -1805,19 +1817,33 @@ footer {
 
     .video-player-wrapper {
         width: 200px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .video-info {
         max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 @media (max-width: 350px) {
     .video-player-wrapper {
         width: 160px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .video-info {
         max-width: 160px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
