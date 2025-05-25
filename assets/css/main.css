@@ -1144,18 +1144,34 @@ body.lightbox-open {
 }
 
     #journal a {
-        color: var(--accent-color);
+        color: var(--text-color);
         text-decoration: none;
-        transition: all 0.3s ease;
+        position: relative;
+        transition: color 0.3s ease;
+        padding: 2px 0;
     }
 
-        #journal a:hover {
-            color: var(--link-hover-color);
-            text-decoration: none;
-            background-color: var(--hover-bg);
-            padding: 0.2rem 0.5rem;
-            border-radius: var(--hover-radius);
+        #journal a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            opacity: 0.5;
+            transition: all 0.3s ease;
         }
+
+        #journal a:hover {
+            color: var(--accent-color);
+            background-color: transparent;
+            padding: 2px 0;
+        }
+
+            #journal a:hover::after {
+                width: 100%;
+            }
 
 /*==========================================================================
   SECTION CONTACT
@@ -1741,6 +1757,7 @@ footer {
             margin-bottom: 1.2rem;
         }
 
+
     .ai-content {
         flex-direction: column;
     }
@@ -1751,13 +1768,13 @@ footer {
 
     .ai-carousel {
         height: 40vh;
-        order: 1;
+        order: 2; /* Changé de 1 à 2 */
     }
 
     .ai-text {
         padding: 5vw;
         padding-top: 3rem;
-        order: 2;
+        order: 1; /* Changé de 2 à 1 */
     }
 
     .methodology-steps {
