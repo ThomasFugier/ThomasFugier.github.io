@@ -221,9 +221,11 @@ section {
     }
 
 /* Pour les titres sur fond sombre */
+/* Pour les titres sur fond sombre */
 .dark-section .section-title,
 #interactive .section-title,
-#contact .section-title {
+#contact .section-title,
+#ai .section-title {
     color: var(--light-text);
     text-shadow: var(--glow-medium);
     font-weight: var(--heading-weight);
@@ -1067,8 +1069,8 @@ body.lightbox-open {
 ==========================================================================*/
 
 #ai {
-    background-color: var(--secondary-color);
-    color: var(--light-section-text);
+    background-color: var(--dark-bg);
+    color: var(--light-text);
 }
 
 .ai-content {
