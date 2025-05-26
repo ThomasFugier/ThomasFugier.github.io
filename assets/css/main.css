@@ -1096,6 +1096,7 @@ body.lightbox-open {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: none;
     }
 
 /*==========================================================================
@@ -1871,3 +1872,52 @@ footer {
         margin-right: auto;
     }
 }
+
+/*==========================================================================
+  EFFET MATRIX POUR LA SECTION AI
+==========================================================================*/
+
+.matrix-effect {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--dark-bg);
+}
+
+.matrix-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.matrix-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(31, 193, 107, 0.8) 0%, rgba(31, 193, 107, 0.4) 40%, rgba(31, 193, 107, 0) 70%);
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ai-carousel {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    /* Supprimez ou commentez cette partie qui affiche l'image */
+    .ai-carousel img {
+        display: none;
+        /* autres propriétés existantes */
+    }
