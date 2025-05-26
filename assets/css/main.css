@@ -71,16 +71,19 @@
     --glow-hover-white: 0 0 15px 5px var(--white-20);
     --hover-bg: rgba(31, 193, 107, 0.15);
     --hover-radius: 20px;
-
     --matrix-speed-slow: 1s;
     --matrix-speed-medium: 2s;
-    --matrix-speed-fast: 0s;
-    --matrix-min-speed: 5;
-    --matrix-max-speed: 50;
+    --matrix-speed-fast: 50s;
+    --matrix-min-speed: 10;
+    --matrix-max-speed: 200;
+    /* Nouvelles variables pour contrôler la densité */
+    --matrix-density: 2; /* Augmentez cette valeur pour plus de colonnes */
+    --matrix-font-size: 13px; /* Diminuez la taille pour plus de caractères */
+    --matrix-opacity: 0.03; /* Contrôle la visib
 }
 
 /* Reset */
-* {
+    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;

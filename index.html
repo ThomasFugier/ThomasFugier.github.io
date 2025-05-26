@@ -784,103 +784,105 @@
 
     <!-- Script pour l'effet Matrix dans la section AI -->
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-    const canvas = document.querySelector('.matrix-canvas');
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-    
-    // Récupération de la densité depuis CSS
-    const style = getComputedStyle(document.documentElement);
-    const matrixDensity = parseFloat(style.getPropertyValue('--matrix-density')) || 2.5;
-    
-    // Caractères utilisés
-    const characters = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789';
-    const charArray = characters.split('');
-    
-    // Taille des caractères et nombre de colonnes
-    const fontSize = 12; // Taille réduite pour augmenter la densité
-    
-    // Calcul du nombre de colonnes avec une densité accrue
-    const columns = Math.floor(canvas.width / fontSize * matrixDensity);
-    
-    // Position Y de chaque colonne
-    const drops = [];
-    const speeds = [];
-    
-    // Initialisation des tableaux
-    for (let i = 0; i < columns; i++) {
-        // Position initiale aléatoire pour éviter que toutes les lignes commencent en haut
-        drops[i] = Math.floor(Math.random() * canvas.height * 2) - canvas.height;
-        
-        // Vitesse variable pour chaque colonne
-        const minSpeed = parseFloat(style.getPropertyValue('--matrix-min-speed')) || 5;
-        const maxSpeed = parseFloat(style.getPropertyValue('--matrix-max-speed')) || 20;
-        speeds[i] = minSpeed + Math.random() * (maxSpeed - minSpeed);
-    }
-    
-    function draw() {
-        // Fond semi-transparent pour l'effet de traînée
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        ctx.font = `${fontSize}px monospace`;
-        
-        for (let i = 0; i < drops.length; i++) {
-            // Caractère aléatoire
-            const text = charArray[Math.floor(Math.random() * charArray.length)];
-            
-            // Variation de couleur pour plus de profondeur
-            const green = 100 + Math.floor(Math.random() * 155);
-            ctx.fillStyle = `rgba(31, ${green}, 107, ${0.5 + Math.random() * 0.5})`;
-            
-            // Dessiner le caractère
-            ctx.fillText(text, i * fontSize, drops[i]);
-            
-            // Déplacer le caractère vers le bas
-            drops[i] += speeds[i] / 10;
-            
-            // Réinitialiser lorsque le caractère sort de l'écran
-            if (drops[i] > canvas.height) {
-                // Certaines colonnes recommencent plus haut pour créer un effet continu
-                drops[i] = Math.random() < 0.5 ? 0 : -fontSize * Math.floor(Math.random() * 20);
-                
-                // Nouvelles vitesses aléatoires
-                const minSpeed = parseFloat(style.getPropertyValue('--matrix-min-speed')) || 5;
-                const maxSpeed = parseFloat(style.getPropertyValue('--matrix-max-speed')) || 20;
-                speeds[i] = minSpeed + Math.random() * (maxSpeed - minSpeed);
+        document.addEventListener('DOMContentLoaded', function () {
+            const canvas = document.querySelector('.matrix-canvas');
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+
+            // Récupération des variables CSS
+            const style = getComputedStyle(document.documentElement);
+            const matrixDensity = parseFloat(style.getPropertyValue('--matrix-density')) || 3.5;
+            const fontSize = parseInt(style.getPropertyValue('--matrix-font-size')) || 10;
+            const trailOpacity = parseFloat(style.getPropertyValue('--matrix-opacity')) || 0.05;
+
+            // Davantage de caractères japonais pour enrichir l'effet
+            const characters = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンガギグゲゴザジズゼゾダヂヅデド0123456789';
+            const charArray = characters.split('');
+
+            // Calcul du nombre de colonnes avec la densité spécifiée
+            const columns = Math.floor(canvas.width / fontSize * matrixDensity);
+
+            // Position Y de chaque colonne et vitesses
+            const drops = [];
+            const speeds = [];
+
+            // Initialisation avec distribution aléatoire
+            for (let i = 0; i < columns; i++) {
+                // Positions initiales variées
+                drops[i] = Math.random() * canvas.height * 2 - canvas.height;
+
+                // Vitesses variables pour chaque colonne
+                const minSpeed = parseFloat(style.getPropertyValue('--matrix-min-speed')) || 10;
+                const maxSpeed = parseFloat(style.getPropertyValue('--matrix-max-speed')) || 50;
+                speeds[i] = (minSpeed + Math.random() * (maxSpeed - minSpeed)) / 10;
             }
-        }
-    }
-    
-    // Intervalle plus court pour une animation plus fluide
-    setInterval(draw, 30);
-    
-    // Recalculer la taille et le nombre de colonnes lors du redimensionnement
-    window.addEventListener('resize', function() {
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-        
-        // Récupération de la densité actuelle
-        const matrixDensity = parseFloat(style.getPropertyValue('--matrix-density')) || 2.5;
-        
-        // Recalculer le nombre de colonnes avec la nouvelle densité
-        const newColumns = Math.floor(canvas.width / fontSize * matrixDensity);
-        
-        // Ajuster les tableaux si nécessaire
-        if (newColumns > columns) {
-            for (let i = drops.length; i < newColumns; i++) {
-                drops[i] = Math.floor(Math.random() * canvas.height * 2) - canvas.height;
-                
-                const minSpeed = parseFloat(style.getPropertyValue('--matrix-min-speed')) || 5;
-                const maxSpeed = parseFloat(style.getPropertyValue('--matrix-max-speed')) || 20;
-                speeds[i] = minSpeed + Math.random() * (maxSpeed - minSpeed);
+
+            function draw() {
+                // Fond semi-transparent pour l'effet de traînée
+                ctx.fillStyle = `rgba(0, 0, 0, ${trailOpacity})`;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.font = `${fontSize}px monospace`;
+
+                for (let i = 0; i < drops.length; i++) {
+                    // Variation de caractères
+                    const text = charArray[Math.floor(Math.random() * charArray.length)];
+
+                    // Variation de couleur verte pour plus de profondeur
+                    const green = 100 + Math.floor(Math.random() * 155);
+                    const opacity = 0.5 + Math.random() * 0.5;
+                    ctx.fillStyle = `rgba(31, ${green}, 107, ${opacity})`;
+
+                    // Dessin du caractère - espacé horizontalement selon fontSize
+                    ctx.fillText(text, i * (fontSize / matrixDensity * 1.8), drops[i]);
+
+                    // Déplacement vertical
+                    drops[i] += speeds[i];
+
+                    // Réinitialisation lorsque sorti de l'écran
+                    if (drops[i] > canvas.height) {
+                        // Distribution aléatoire des redémarrages
+                        if (Math.random() > 0.975) {
+                            drops[i] = -fontSize * Math.random() * 20;
+
+                            // Nouvelle vitesse aléatoire
+                            const minSpeed = parseFloat(style.getPropertyValue('--matrix-min-speed')) || 10;
+                            const maxSpeed = parseFloat(style.getPropertyValue('--matrix-max-speed')) || 50;
+                            speeds[i] = (minSpeed + Math.random() * (maxSpeed - minSpeed)) / 10;
+                        } else {
+                            drops[i] = 0;
+                        }
+                    }
+                }
             }
-        }
-    });
-});
+
+            // Animation avec intervalle adaptable
+            const intervalId = setInterval(draw, 20);
+
+            // Ajustement lors du redimensionnement
+            window.addEventListener('resize', function () {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+
+                // Recalcul du nombre de colonnes
+                const newColumns = Math.floor(canvas.width / fontSize * matrixDensity);
+
+                // Ajout de nouvelles colonnes si nécessaire
+                if (newColumns > columns) {
+                    for (let i = drops.length; i < newColumns; i++) {
+                        drops[i] = Math.random() * canvas.height * 2 - canvas.height;
+
+                        const minSpeed = parseFloat(style.getPropertyValue('--matrix-min-speed')) || 10;
+                        const maxSpeed = parseFloat(style.getPropertyValue('--matrix-max-speed')) || 50;
+                        speeds[i] = (minSpeed + Math.random() * (maxSpeed - minSpeed)) / 10;
+                    }
+                }
+            });
+        });
+
     </script>
 
 </body>
