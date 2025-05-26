@@ -326,27 +326,25 @@
     INTELLIGENCE ARTIFICIELLE CRÉATIVE
     =====================================================================-->
     <section id="ai" class="fullscreen-section">
-        <div class="ai-content">
-            <!-- Texte explicatif -->
-            <div class="ai-text fade-in">
-                <h2 class="section-title">Intelligence Artificielle</h2>
-                <p>L'intelligence artificielle devient un terrain fertile pour la pensée créative. Elle n'est pas une substitution, mais une extension, une collaboration entre l'intuition humaine et les algorithmes génératifs.</p>
-                <p>Je développe des outils et systèmes où l'IA agit comme un partenaire créatif : générer, transformer, stimuler. Ensemble, nous explorons de nouvelles esthétiques, narrations et interactions, à la croisée de la technologie et du sensible.</p>
-            </div>
-            <!-- Visuel illustratif -->
-            <!-- Visuel illustratif - Matrix Effect -->
-            <div class="ai-carousel">
-                <div class="matrix-effect">
-                    <canvas class="matrix-canvas"></canvas>
-                    <div class="matrix-glow"></div>
+        <!-- Effet Matrix en arrière-plan prenant toute la largeur -->
+        <div class="matrix-effect full-width">
+            <canvas class="matrix-canvas"></canvas>
+            <div class="matrix-glow"></div>
+        </div>
+
+        <!-- Nouvelle div pour le gradient radial -->
+        <div class="ai-gradient-background"></div>
+
+        <!-- Contenu centré -->
+        <div class="container">
+            <div class="ai-content fade-in">
+                <!-- Texte explicatif -->
+                <div class="ai-text">
+                    <h2 class="section-title">Intelligence Artificielle</h2>
+                    <p>L'intelligence artificielle devient un terrain fertile pour la pensée créative. Elle n'est pas une substitution, mais une extension, une collaboration entre l'intuition humaine et les algorithmes génératifs.</p>
+                    <p>Je développe des outils et systèmes où l'IA agit comme un partenaire créatif : générer, transformer, stimuler. Ensemble, nous explorons de nouvelles esthétiques, narrations et interactions, à la croisée de la technologie et du sensible.</p>
                 </div>
             </div>
-
-            <!--
-            <div class="ai-carousel">
-                <img src="images/Vortex.png" alt="AI Creative Tools" />
-            </div> -->
-
         </div>
     </section>
 
@@ -786,123 +784,103 @@
 
     <!-- Script pour l'effet Matrix dans la section AI -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Sélectionner le canvas pour l'effet Matrix
-            const canvas = document.querySelector('.matrix-canvas');
-            const matrixEffect = document.querySelector('.matrix-effect');
-            const matrixGlow = document.querySelector('.matrix-glow');
-
-            if (!canvas || !matrixEffect) return;
-
-            const ctx = canvas.getContext('2d');
-            let width, height;
-
-            // Caractères pour l'effet Matrix (incluant des chiffres et symboles technologiques)
-            const chars = '10ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz{}<>?/+-*&^%$#@!~;:[]()_=|\\';
-            const charSize = 14;
-            const columns = [];
-            let animationId;
-
-            // Fonction pour redimensionner le canvas
-            function resizeCanvas() {
-                width = matrixEffect.clientWidth;
-                height = matrixEffect.clientHeight;
-
-                canvas.width = width;
-                canvas.height = height;
-
-                // Calculer le nombre de colonnes en fonction de la taille du canvas et des caractères
-                const columnCount = Math.floor(width / charSize);
-
-                // Réinitialiser les colonnes
-                columns.length = 0;
-                for (let i = 0; i < columnCount; i++) {
-                    columns[i] = Math.random() * -100; // Position Y initiale aléatoire pour chaque colonne
-                }
+      document.addEventListener('DOMContentLoaded', function() {
+    const canvas = document.querySelector('.matrix-canvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    
+    // Récupération de la densité depuis CSS
+    const style = getComputedStyle(document.documentElement);
+    const matrixDensity = parseFloat(style.getPropertyValue('--matrix-density')) || 2.5;
+    
+    // Caractères utilisés
+    const characters = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789';
+    const charArray = characters.split('');
+    
+    // Taille des caractères et nombre de colonnes
+    const fontSize = 12; // Taille réduite pour augmenter la densité
+    
+    // Calcul du nombre de colonnes avec une densité accrue
+    const columns = Math.floor(canvas.width / fontSize * matrixDensity);
+    
+    // Position Y de chaque colonne
+    const drops = [];
+    const speeds = [];
+    
+    // Initialisation des tableaux
+    for (let i = 0; i < columns; i++) {
+        // Position initiale aléatoire pour éviter que toutes les lignes commencent en haut
+        drops[i] = Math.floor(Math.random() * canvas.height * 2) - canvas.height;
+        
+        // Vitesse variable pour chaque colonne
+        const minSpeed = parseFloat(style.getPropertyValue('--matrix-min-speed')) || 5;
+        const maxSpeed = parseFloat(style.getPropertyValue('--matrix-max-speed')) || 20;
+        speeds[i] = minSpeed + Math.random() * (maxSpeed - minSpeed);
+    }
+    
+    function draw() {
+        // Fond semi-transparent pour l'effet de traînée
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.font = `${fontSize}px monospace`;
+        
+        for (let i = 0; i < drops.length; i++) {
+            // Caractère aléatoire
+            const text = charArray[Math.floor(Math.random() * charArray.length)];
+            
+            // Variation de couleur pour plus de profondeur
+            const green = 100 + Math.floor(Math.random() * 155);
+            ctx.fillStyle = `rgba(31, ${green}, 107, ${0.5 + Math.random() * 0.5})`;
+            
+            // Dessiner le caractère
+            ctx.fillText(text, i * fontSize, drops[i]);
+            
+            // Déplacer le caractère vers le bas
+            drops[i] += speeds[i] / 10;
+            
+            // Réinitialiser lorsque le caractère sort de l'écran
+            if (drops[i] > canvas.height) {
+                // Certaines colonnes recommencent plus haut pour créer un effet continu
+                drops[i] = Math.random() < 0.5 ? 0 : -fontSize * Math.floor(Math.random() * 20);
+                
+                // Nouvelles vitesses aléatoires
+                const minSpeed = parseFloat(style.getPropertyValue('--matrix-min-speed')) || 5;
+                const maxSpeed = parseFloat(style.getPropertyValue('--matrix-max-speed')) || 20;
+                speeds[i] = minSpeed + Math.random() * (maxSpeed - minSpeed);
             }
-
-            // Animation de l'effet Matrix
-            function drawMatrix() {
-                // Appliquer un effet de fondu pour la traînée
-                ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
-                ctx.fillRect(0, 0, width, height);
-
-                // Dessiner les caractères
-                ctx.fillStyle = 'rgba(31, 193, 107, 0.8)'; // Couleur d'accent
-                ctx.font = `${charSize}px monospace`;
-
-                for (let i = 0; i < columns.length; i++) {
-                    // Choisir un caractère aléatoire
-                    const char = chars[Math.floor(Math.random() * chars.length)];
-
-                    // Position x pour cette colonne
-                    const x = i * charSize;
-
-                    // Position y pour cette colonne (avancer progressivement)
-                    const y = columns[i] * charSize;
-
-                    // Dessiner le caractère
-                    ctx.fillText(char, x, y);
-
-                    // Réinitialiser la position si le caractère atteint le bas
-                    if (y > height && Math.random() > 0.975) {
-                        columns[i] = 0;
-                    } else {
-                        columns[i]++;
-                    }
-                }
-
-                animationId = requestAnimationFrame(drawMatrix);
+        }
+    }
+    
+    // Intervalle plus court pour une animation plus fluide
+    setInterval(draw, 30);
+    
+    // Recalculer la taille et le nombre de colonnes lors du redimensionnement
+    window.addEventListener('resize', function() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        
+        // Récupération de la densité actuelle
+        const matrixDensity = parseFloat(style.getPropertyValue('--matrix-density')) || 2.5;
+        
+        // Recalculer le nombre de colonnes avec la nouvelle densité
+        const newColumns = Math.floor(canvas.width / fontSize * matrixDensity);
+        
+        // Ajuster les tableaux si nécessaire
+        if (newColumns > columns) {
+            for (let i = drops.length; i < newColumns; i++) {
+                drops[i] = Math.floor(Math.random() * canvas.height * 2) - canvas.height;
+                
+                const minSpeed = parseFloat(style.getPropertyValue('--matrix-min-speed')) || 5;
+                const maxSpeed = parseFloat(style.getPropertyValue('--matrix-max-speed')) || 20;
+                speeds[i] = minSpeed + Math.random() * (maxSpeed - minSpeed);
             }
-
-            // Gestion des événements de la souris pour l'effet de lueur
-            matrixEffect.addEventListener('mousemove', (e) => {
-                const rect = matrixEffect.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-
-                matrixGlow.style.left = `${x - 75}px`;
-                matrixGlow.style.top = `${y - 75}px`;
-                matrixGlow.style.opacity = '1';
-
-                // Modifier légèrement la vitesse des colonnes sous la souris
-                const columnIndex = Math.floor(x / charSize);
-                if (columnIndex >= 0 && columnIndex < columns.length) {
-                    columns[columnIndex] += 0.5; // Accélérer la colonne sous le curseur
-                }
-            });
-
-            matrixEffect.addEventListener('mouseleave', () => {
-                matrixGlow.style.opacity = '0';
-            });
-
-            // Initialisation
-            resizeCanvas();
-            drawMatrix();
-
-            // Redimensionner le canvas si la taille de la fenêtre change
-            window.addEventListener('resize', () => {
-                cancelAnimationFrame(animationId);
-                resizeCanvas();
-                drawMatrix();
-            });
-
-            // Observer la section AI pour démarrer/arrêter l'animation quand elle est visible
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Démarrer l'animation quand la section est visible
-                        resizeCanvas();
-                        drawMatrix();
-                    } else {
-                        // Arrêter l'animation quand la section n'est pas visible
-                        cancelAnimationFrame(animationId);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            observer.observe(document.querySelector('#ai'));
-        });
+        }
+    });
+});
     </script>
 
 </body>

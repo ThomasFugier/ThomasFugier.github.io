@@ -71,6 +71,12 @@
     --glow-hover-white: 0 0 15px 5px var(--white-20);
     --hover-bg: rgba(31, 193, 107, 0.15);
     --hover-radius: 20px;
+
+    --matrix-speed-slow: 1s;
+    --matrix-speed-medium: 2s;
+    --matrix-speed-fast: 0s;
+    --matrix-min-speed: 5;
+    --matrix-max-speed: 50;
 }
 
 /* Reset */
@@ -1068,9 +1074,10 @@ body.lightbox-open {
   SECTION AI TOOLS
 ==========================================================================*/
 
+/* Style pour l'effet matrix pleine largeur */
 #ai {
-    background-color: var(--dark-bg);
-    color: var(--light-text);
+    position: relative;
+    overflow: hidden;
 }
 
 .ai-content {
@@ -1098,6 +1105,90 @@ body.lightbox-open {
         object-fit: cover;
         display: none;
     }
+
+.matrix-effect.full-width {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.matrix-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.matrix-glow {
+    position: absolute; /* Changez fixed à absolute */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(31, 193, 107, 0.8) 0%, rgba(31, 193, 107, 0.4) 40%, rgba(31, 193, 107, 0) 70%);
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#ai .container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+#ai .ai-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ai .section-title {
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+    #ai .section-title::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+#ai .ai-text {
+    background-color: transparent; /* Retrait de la couleur de fond */
+    padding: 30px;
+    border-radius: 50px;
+    box-shadow: none; /* Retrait de l'ombre */
+    backdrop-filter: none; /* Retrait de l'effet de flou */
+    position: relative;
+    z-index: 3; /* Augmentation pour être au-dessus du gradient */
+}
+
+#ai .section-title,
+#ai p {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(31, 193, 107, 0.5);
+    position: relative;
+    z-index: 3;
+
+}
+
+.ai-gradient-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: 1; /* En dessous du contenu mais au-dessus de la matrice */
+    pointer-events: none;
+}
 
 /*==========================================================================
   SECTION THINKING
@@ -1878,12 +1969,16 @@ footer {
 ==========================================================================*/
 
 .matrix-effect {
-    position: relative;
+    position: absolute; /* Changez de relative à absolute */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
     background-color: var(--dark-bg);
+    z-index: 0; /* Assurez-vous qu'il est derrière le contenu */
 }
+
 
 .matrix-canvas {
     position: absolute;
@@ -1892,19 +1987,6 @@ footer {
     width: 100%;
     height: 100%;
     z-index: 1;
-}
-
-.matrix-glow {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(31, 193, 107, 0.8) 0%, rgba(31, 193, 107, 0.4) 40%, rgba(31, 193, 107, 0) 70%);
-    pointer-events: none;
-    mix-blend-mode: screen;
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
 .ai-carousel {
