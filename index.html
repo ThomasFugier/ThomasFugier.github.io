@@ -539,7 +539,8 @@
     SCRIPTS
     =====================================================================-->
     <!-- Script principal : navigation, animations et comportements -->
-    <script>// Script de changement de langue
+    <script>
+        // Modifiez la partie du script de changement de langue
         document.addEventListener('DOMContentLoaded', () => {
             const languageToggle = document.getElementById('language-toggle');
             if (!languageToggle) return;
@@ -580,22 +581,22 @@
                     'projects-title': 'Réalisations',
                     'fitness-vr-title': 'Fitness VR',
                     'fitness-vr-category': 'Expérience Virtuelle Sportive',
-                    'fitness-vr-desc': 'Un entraînement interactif en réalité virtuelle, alliant rythme et mouvement, piloté par un coach via tablette, conçu en partenariat avec la Ville d'Angers et le Ministère des Sports.',
-'life-2030-title': 'Life in 2030',
+                    'fitness-vr-desc': 'Un entraînement interactif en réalité virtuelle, alliant rythme et mouvement, piloté par un coach via tablette, conçu en partenariat avec la Ville d\'Angers et le Ministère des Sports.',
+                    'life-2030-title': 'Life in 2030',
                     'life-2030-category': 'Expérience Virtuelle',
-                    'life-2030-desc': 'Conçue pour le groupe mutualiste Vyv, cette expérience VR projette l'utilisateur en 2030 dans un habitat intelligent, centré sur les innovations en santé et qualité de vie.',
-'hexarena-title': 'Hexarena Robot Rage',
+                    'life-2030-desc': 'Conçue pour le groupe mutualiste Vyv, cette expérience VR projette l\'utilisateur en 2030 dans un habitat intelligent, centré sur les innovations en santé et qualité de vie.',
+                    'hexarena-title': 'Hexarena Robot Rage',
                     'hexarena-category': 'Arcade VR',
-                    'hexarena-desc': 'Hexarena Robot Rage est un jeu VR multijoueur développé par VR Connection, conçu pour les salles d'arcade Eydolon, où 4 joueurs défendent une base contre des vagues de robots avec des pistolets laser.Les avatars sont visibles en temps réel pour une immersion totale.',
-'inondaction-title': 'INOND\'ACTION',
+                    'hexarena-desc': 'Hexarena Robot Rage est un jeu VR multijoueur développé par VR Connection, conçu pour les salles d\'arcade Eydolon, où 4 joueurs défendent une base contre des vagues de robots avec des pistolets laser. Les avatars sont visibles en temps réel pour une immersion totale.',
+                    'inondaction-title': 'INOND\'ACTION',
                     'inondaction-category': 'Formation Sécurité',
-                    'inondaction-desc': 'INOND\'ACTION est une simulation VR développée par VR Connection pour la Croix-Rouge, qui enseigne les gestes clés à adopter en cas d'inondation.L'utilisateur prépare un kit de survie et apprend à se mettre en sécurité dans une situation immersive.',
+                    'inondaction-desc': 'INOND\'ACTION est une simulation VR développée par VR Connection pour la Croix-Rouge, qui enseigne les gestes clés à adopter en cas d\'inondation. L\'utilisateur prépare un kit de survie et apprend à se mettre en sécurité dans une situation immersive.',
                     'heineken-title': 'Heineken Forklift Driving & Working At Heights',
                     'heineken-category': 'Simulation & Formation',
-                    'heineken-desc': 'Heineken VR est une simulation immersive développée pour former les ouvriers aux règles de sécurité en réalité virtuelle, autour du travail en hauteur et de la conduite de chariots élévateurs. L'expérience intègre un système de free roaming intelligent et évolutif pour une immersion réaliste.',
+                    'heineken-desc': 'Heineken VR est une simulation immersive développée pour former les ouvriers aux règles de sécurité en réalité virtuelle, autour du travail en hauteur et de la conduite de chariots élévateurs. L\'expérience intègre un système de free roaming intelligent et évolutif pour une immersion réaliste.',
 
-// Section Marketing
-'marketing-title': 'Marketing Development',
+                    // Section Marketing
+                    'marketing-title': 'Marketing Development',
                     'marketing-subtitle': 'Créer l\'impact à partir du jeu',
                     'marketing-p1': 'Quand la technique s\'efface au profit de l\'intention, chaque jeu devient un terrain d\'expression. À partir de projets sources interactifs, les expériences sont repensées, simplifiées, adaptées pour révéler tout leur potentiel publicitaire. Le gameplay s\'ajuste, les visuels s\'alignent, le rythme se redessine. Rien n\'est laissé au hasard.',
                     'marketing-p2': 'Pensés en étroite collaboration avec les équipes User Acquisition et Creative, ces contenus traduisent une vision commune : capter l\'attention, transmettre une émotion, servir une stratégie. Publicité et gameplay se confondent. L\'expérience devient claire, ciblée, engageante.',
@@ -732,31 +733,94 @@
 
             // Ajouter les attributs data-i18n à tous les éléments à traduire
             function setupTranslationAttributes() {
-                // Navigation
-                document.querySelector('a[href="#about-section"].nav-link').setAttribute('data-i18n', 'nav-about');
-                document.querySelector('a[href="#interactive"].nav-link').setAttribute('data-i18n', 'nav-projects');
-                document.querySelector('a[href="#marketing"].nav-link').setAttribute('data-i18n', 'nav-marketing');
-                document.querySelector('a[href="#ai"].nav-link').setAttribute('data-i18n', 'nav-ai');
-                document.querySelector('a[href="#thinking"].nav-link').setAttribute('data-i18n', 'nav-methodology');
-                document.querySelector('a[href="#contact"].nav-link').setAttribute('data-i18n', 'nav-contact');
-                document.querySelector('a[href="#journal"].nav-link').setAttribute('data-i18n', 'nav-journal');
+                try {
+                    // Navigation
+                    document.querySelector('a[href="#about-section"].nav-link').setAttribute('data-i18n', 'nav-about');
+                    document.querySelector('a[href="#interactive"].nav-link').setAttribute('data-i18n', 'nav-projects');
+                    document.querySelector('a[href="#marketing"].nav-link').setAttribute('data-i18n', 'nav-marketing');
+                    document.querySelector('a[href="#ai"].nav-link').setAttribute('data-i18n', 'nav-ai');
+                    document.querySelector('a[href="#thinking"].nav-link').setAttribute('data-i18n', 'nav-methodology');
+                    document.querySelector('a[href="#contact"].nav-link').setAttribute('data-i18n', 'nav-contact');
+                    document.querySelector('a[href="#journal"].nav-link').setAttribute('data-i18n', 'nav-journal');
 
-                // Section Accueil
-                document.querySelector('.scroll-indicator span').setAttribute('data-i18n', 'scroll-text');
-                document.querySelector('.baseline').setAttribute('data-i18n', 'baseline');
+                    // Section Accueil
+                    document.querySelector('.scroll-indicator span').setAttribute('data-i18n', 'scroll-text');
+                    document.querySelector('.baseline').setAttribute('data-i18n', 'baseline');
 
-                // Section À Propos
-                document.querySelector('.about-title').setAttribute('data-i18n', 'about-title');
-                document.querySelector('.about-quote').setAttribute('data-i18n', 'about-quote');
+                    // Section À Propos
+                    document.querySelector('.about-title').setAttribute('data-i18n', 'about-title');
+                    document.querySelector('.about-quote').setAttribute('data-i18n', 'about-quote');
 
-                // Et ainsi de suite pour tous vos éléments...
+                    // Ajouter les paragraphes de la section À Propos
+                    const aboutParagraphs = document.querySelectorAll('.about-text p');
+                    if (aboutParagraphs.length >= 3) {
+                        aboutParagraphs[0].setAttribute('data-i18n', 'about-p1');
+                        aboutParagraphs[1].setAttribute('data-i18n', 'about-p2');
+                        aboutParagraphs[2].setAttribute('data-i18n', 'about-p3');
+                    }
+
+                    // Ajouter les compétences
+                    const expertiseItems = document.querySelectorAll('.expertise-label');
+                    if (expertiseItems && expertiseItems.length >= 6) {
+                        for (let i = 0; i < 6; i++) {
+                            expertiseItems[i].setAttribute('data-i18n', `expertise-${i + 1}`);
+                        }
+                    } else {
+                        // Si les expertise-label n'existent pas, essayez les éléments dans .expertise-item
+                        const expertiseAlternatives = document.querySelectorAll('.expertise-item div:nth-child(2)');
+                        if (expertiseAlternatives && expertiseAlternatives.length >= 6) {
+                            for (let i = 0; i < 6; i++) {
+                                expertiseAlternatives[i].setAttribute('data-i18n', `expertise-${i + 1}`);
+                            }
+                        }
+                    }
+
+                    // Ajouter les mots-clés
+                    const keywords = document.querySelectorAll('.keyword');
+                    if (keywords.length >= 3) {
+                        for (let i = 0; i < 3; i++) {
+                            keywords[i].setAttribute('data-i18n', `keyword-${i + 1}`);
+                        }
+                    }
+
+                    // Section Réalisations
+                    const projectsTitle = document.querySelector('#interactive .section-title');
+                    if (projectsTitle) {
+                        projectsTitle.setAttribute('data-i18n', 'projects-title');
+                    }
+
+                    // Section Marketing
+                    const marketingTitle = document.querySelector('#marketing .section-title');
+                    if (marketingTitle) {
+                        marketingTitle.setAttribute('data-i18n', 'marketing-title');
+                    }
+
+                    const marketingSubtitle = document.querySelector('.marketing-subtitle');
+                    if (marketingSubtitle) {
+                        marketingSubtitle.setAttribute('data-i18n', 'marketing-subtitle');
+                    }
+
+                    // Paragraphes du marketing
+                    const marketingParagraphs = document.querySelectorAll('.marketing-text p');
+                    if (marketingParagraphs && marketingParagraphs.length >= 2) {
+                        marketingParagraphs[0].setAttribute('data-i18n', 'marketing-p1');
+                        marketingParagraphs[1].setAttribute('data-i18n', 'marketing-p2');
+                    }
+
+                    console.log("Attributs de traduction configurés avec succès");
+                } catch (error) {
+                    console.error("Erreur lors de la configuration des attributs de traduction:", error);
+                }
             }
 
             // Fonction pour traduire la page
             function translatePage(language) {
+                console.log("Traduction vers:", language);
                 document.documentElement.lang = language;
 
                 const elements = document.querySelectorAll('[data-i18n]');
+                console.log("Éléments à traduire:", elements.length);
+
                 elements.forEach(element => {
                     const key = element.getAttribute('data-i18n');
                     if (translations[language] && translations[language][key]) {
@@ -773,6 +837,7 @@
                 const langTextElement = languageToggle.querySelector('.lang-text');
                 langTextElement.textContent = language === 'fr' ? 'EN' : 'FR';
                 languageToggle.setAttribute('data-lang', language);
+                console.log("Traduction terminée");
             }
 
             // Initialisation des attributs de traduction
@@ -780,13 +845,14 @@
 
             // Gestion du clic sur le bouton
             languageToggle.addEventListener('click', () => {
+                console.log("Bouton langue cliqué");
                 const currentLang = languageToggle.getAttribute('data-lang');
                 const newLang = currentLang === 'fr' ? 'en' : 'fr';
                 translatePage(newLang);
             });
-        });</script>
+        });
+    </script>
 
-</script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Menu mobile
