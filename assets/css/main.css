@@ -435,6 +435,29 @@ nav.scrolled {
         opacity: 0.7;
     }
 
+/* Nouveaux dégradés pour le header */
+.header-gradient-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Hauteur du dégradé du haut */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    z-index: 1; /* Doit être au-dessus de la vidéo (z-index 0) mais sous le contenu (z-index 2) */
+    pointer-events: none;
+}
+
+.header-gradient-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Hauteur du dégradé du bas */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+    z-index: 1; /* Même z-index que le dégradé du haut */
+    pointer-events: none;
+}
+
 .background-video {
     position: absolute;
     top: 0;
