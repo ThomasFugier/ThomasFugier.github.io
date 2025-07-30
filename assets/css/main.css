@@ -98,6 +98,27 @@ body {
     overflow-x: hidden;
 }
 
+/* Style du bouton de changement de langue */
+.language-switcher {
+    margin-left: 20px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+    .lang-btn:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+    }
+
 /*==========================================================================
   TYPOGRAPHIE
 ==========================================================================*/

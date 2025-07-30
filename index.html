@@ -33,6 +33,11 @@
                 <a href="#thinking" class="nav-link">Méthodologie</a>
                 <a href="#contact" class="nav-link">Contact</a>
                 <a href="#journal" class="nav-link">Journal</a>
+                <div class="language-switcher">
+                    <button id="language-toggle" class="lang-btn" data-lang="fr">
+                        <span class="lang-text">EN</span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -534,6 +539,270 @@
     SCRIPTS
     =====================================================================-->
     <!-- Script principal : navigation, animations et comportements -->
+    <script>// Script de changement de langue
+        document.addEventListener('DOMContentLoaded', () => {
+            const languageToggle = document.getElementById('language-toggle');
+            if (!languageToggle) return;
+
+            // Stockage des traductions
+            const translations = {
+                fr: {
+                    // Navigation
+                    'nav-about': 'À Propos',
+                    'nav-projects': 'Réalisations',
+                    'nav-marketing': 'Marketing Development',
+                    'nav-ai': 'Intelligence Artificielle',
+                    'nav-methodology': 'Méthodologie',
+                    'nav-contact': 'Contact',
+                    'nav-journal': 'Journal',
+
+                    // Section Accueil
+                    'scroll-text': 'DÉFILER',
+                    'baseline': 'Technical Creative Director',
+
+                    // Section À Propos
+                    'about-title': 'CRÉATIVITÉ <span class="about-accent">&</span><br>TECHNIQUE',
+                    'about-quote': '« Je donne forme à des idées multiples. »',
+                    'about-p1': 'Explorer les territoires où l\'art rencontre la technologie est ma passion. Je crée des ponts entre la conceptualisation pure et l\'exécution technique, transformant les idées en expériences immersives et mémorables.',
+                    'about-p2': 'Mon parcours hybride m\'a permis de développer une approche où l\'intuition créative dialogue constamment avec la rigueur technique. Cette dualité nourrit ma capacité à concevoir des univers interactifs qui éveillent la curiosité et génèrent l\'engagement.',
+                    'about-p3': 'Qu\'il s\'agisse d\'expériences numériques, d\'installations interactives ou de narrations visuelles, je réalise chaque projet comme une partition où technique et émotion s\'harmonisent au service d\'une vision singulière.',
+                    'expertise-1': 'Direction artistique & créative',
+                    'expertise-2': 'Expériences immersives',
+                    'expertise-3': 'Intelligence artificielle',
+                    'expertise-4': 'Développement Unity',
+                    'expertise-5': 'Concéption & animation 3D',
+                    'expertise-6': 'Sound Design',
+                    'keyword-1': 'Innovation',
+                    'keyword-2': 'Interactivité',
+                    'keyword-3': 'Intelligence',
+
+                    // Section Réalisations
+                    'projects-title': 'Réalisations',
+                    'fitness-vr-title': 'Fitness VR',
+                    'fitness-vr-category': 'Expérience Virtuelle Sportive',
+                    'fitness-vr-desc': 'Un entraînement interactif en réalité virtuelle, alliant rythme et mouvement, piloté par un coach via tablette, conçu en partenariat avec la Ville d'Angers et le Ministère des Sports.',
+        'life-2030-title': 'Life in 2030',
+                    'life-2030-category': 'Expérience Virtuelle',
+                    'life-2030-desc': 'Conçue pour le groupe mutualiste Vyv, cette expérience VR projette l'utilisateur en 2030 dans un habitat intelligent, centré sur les innovations en santé et qualité de vie.',
+        'hexarena-title': 'Hexarena Robot Rage',
+                    'hexarena-category': 'Arcade VR',
+                    'hexarena-desc': 'Hexarena Robot Rage est un jeu VR multijoueur développé par VR Connection, conçu pour les salles d'arcade Eydolon, où 4 joueurs défendent une base contre des vagues de robots avec des pistolets laser.Les avatars sont visibles en temps réel pour une immersion totale.',
+        'inondaction-title': 'INOND\'ACTION',
+                    'inondaction-category': 'Formation Sécurité',
+                    'inondaction-desc': 'INOND\'ACTION est une simulation VR développée par VR Connection pour la Croix-Rouge, qui enseigne les gestes clés à adopter en cas d'inondation.L'utilisateur prépare un kit de survie et apprend à se mettre en sécurité dans une situation immersive.',
+                    'heineken-title': 'Heineken Forklift Driving & Working At Heights',
+                    'heineken-category': 'Simulation & Formation',
+                    'heineken-desc': 'Heineken VR est une simulation immersive développée pour former les ouvriers aux règles de sécurité en réalité virtuelle, autour du travail en hauteur et de la conduite de chariots élévateurs. L'expérience intègre un système de free roaming intelligent et évolutif pour une immersion réaliste.',
+
+        // Section Marketing
+        'marketing-title': 'Marketing Development',
+                    'marketing-subtitle': 'Créer l\'impact à partir du jeu',
+                    'marketing-p1': 'Quand la technique s\'efface au profit de l\'intention, chaque jeu devient un terrain d\'expression. À partir de projets sources interactifs, les expériences sont repensées, simplifiées, adaptées pour révéler tout leur potentiel publicitaire. Le gameplay s\'ajuste, les visuels s\'alignent, le rythme se redessine. Rien n\'est laissé au hasard.',
+                    'marketing-p2': 'Pensés en étroite collaboration avec les équipes User Acquisition et Creative, ces contenus traduisent une vision commune : capter l\'attention, transmettre une émotion, servir une stratégie. Publicité et gameplay se confondent. L\'expérience devient claire, ciblée, engageante.',
+                    'marketing-count': 'Plus de 5000 vidéos produites. Découvrez-en une sélection.',
+                    'marketing-gallery': 'Aperçu de réalisations',
+
+                    // Section AI
+                    'ai-title': 'Intelligence Artificielle',
+                    'ai-subtitle': 'L\'intelligence artificielle devient un terrain fertile pour la pensée créative. Elle n\'est pas une substitution, mais une extension, une collaboration entre l\'intuition humaine et les algorithmes génératifs.',
+                    'ai-text': 'Le monde de la création est en pleine mutation, et notre manière de consommer les œuvres artistiques s\'en trouve profondément bouleversée. J\'aborde cette transformation avec curiosité et enthousiasme, en explorant ce que l\'intelligence artificielle peut apporter à mon propre processus créatif. Mon objectif est de rester en phase avec les nouvelles technologies, d\'adapter ma pratique avec réactivité, tout en nourrissant ma sensibilité artistique. Je suis convaincu que les dix prochaines années seront le théâtre d\'une révolution majeure sur le plan créatif et esthétique, et j\'ai envie d\'en faire partie.',
+
+                    // Section Méthodologie
+                    'methodology-title': 'Méthodologie Créative',
+                    'methodology-intro': 'Ma méthode est un écosystème d\'exploration et de précision. Chaque projet est un voyage de transformation où l\'idée brute devient une expérience singulière.',
+                    'step1-title': 'Inspiration',
+                    'step1-text': 'Observer, écouter, ressentir. S\'ouvrir à l\'inattendu, collecter des signaux faibles, capter les émotions, les tensions, les mythes modernes.',
+                    'step2-title': 'Structuration',
+                    'step2-text': 'Transformer l\'inspiration en système. Modéliser les enjeux, aligner les objectifs, tracer des lignes de force et poser des intentions claires.',
+                    'step3-title': 'Design Vivant',
+                    'step3-text': 'Prototyper, tester, itérer. Concevoir des objets interactifs, des récits, des espaces sensibles où l\'usager devient acteur.',
+                    'step4-title': 'Activation',
+                    'step4-text': 'Déployer avec soin, mesurer les résonances, ajuster les frictions. Créer du lien, du sens, de la mémoire.',
+
+                    // Section Contact
+                    'contact-title': 'Let\'s Create',
+                    'contact-text': 'Une intuition, un projet, une envie ? Entrons en contact pour faire émerger de nouvelles formes, sensibles et radicales.',
+                    'contact-name': 'Nom',
+                    'contact-email': 'Email',
+                    'contact-message': 'Message',
+                    'contact-send': 'ENVOYER',
+
+                    // Section Journal
+                    'journal-title': 'Journal',
+                    'journal-intro': 'Explorations, réflexions, dérives conceptuelles — découvrez une sélection d\'articles et de pensées publiés sur <strong>Medium</strong>.',
+                    'journal-article1-desc': 'Plongez dans le rôle unique de Marketing Unity Developer chez Voodoo, où tech et créativité servent la performance marketing.',
+                    'journal-article2-desc': 'Une réflexion sur l\'avenir des moteurs de jeu face à l\'IA et aux nouveaux outils créatifs : sont-ils en train de devenir obsolètes ?',
+                    'journal-article3-desc': 'Découvrez comment j\'ai transformé ChatGPT en véritable compositeur de musique, entre prompts créatifs et outils audio.',
+
+                    // Footer
+                    'footer-copyright': '© 2025 Thomas Fugier – Creative Thinker'
+                },
+                en: {
+                    // Navigation
+                    'nav-about': 'About',
+                    'nav-projects': 'Projects',
+                    'nav-marketing': 'Marketing Development',
+                    'nav-ai': 'Artificial Intelligence',
+                    'nav-methodology': 'Methodology',
+                    'nav-contact': 'Contact',
+                    'nav-journal': 'Journal',
+
+                    // Section Accueil
+                    'scroll-text': 'SCROLL DOWN',
+                    'baseline': 'Technical Creative Director',
+
+                    // Section À Propos
+                    'about-title': 'CREATIVITY <span class="about-accent">&</span><br>TECHNIQUE',
+                    'about-quote': '"I give shape to multiple ideas."',
+                    'about-p1': 'Exploring territories where art meets technology is my passion. I create bridges between pure conceptualization and technical execution, transforming ideas into immersive and memorable experiences.',
+                    'about-p2': 'My hybrid background has allowed me to develop an approach where creative intuition constantly dialogues with technical rigor. This duality fuels my ability to design interactive universes that awaken curiosity and generate engagement.',
+                    'about-p3': 'Whether it\'s digital experiences, interactive installations or visual narratives, I create each project as a score where technique and emotion harmonize in service of a singular vision.',
+                    'expertise-1': 'Creative & Art Direction',
+                    'expertise-2': 'Immersive Experiences',
+                    'expertise-3': 'Artificial Intelligence',
+                    'expertise-4': 'Unity Development',
+                    'expertise-5': '3D Design & Animation',
+                    'expertise-6': 'Sound Design',
+                    'keyword-1': 'Innovation',
+                    'keyword-2': 'Interactivity',
+                    'keyword-3': 'Intelligence',
+
+                    // Section Réalisations
+                    'projects-title': 'Projects',
+                    'fitness-vr-title': 'Fitness VR',
+                    'fitness-vr-category': 'Virtual Sports Experience',
+                    'fitness-vr-desc': 'An interactive virtual reality workout, combining rhythm and movement, guided by a coach via tablet, designed in partnership with the City of Angers and the Ministry of Sports.',
+                    'life-2030-title': 'Life in 2030',
+                    'life-2030-category': 'Virtual Experience',
+                    'life-2030-desc': 'Designed for the Vyv mutual group, this VR experience projects the user into 2030 in a smart habitat, focused on health and quality of life innovations.',
+                    'hexarena-title': 'Hexarena Robot Rage',
+                    'hexarena-category': 'VR Arcade',
+                    'hexarena-desc': 'Hexarena Robot Rage is a multiplayer VR game developed by VR Connection, designed for Eydolon arcades, where 4 players defend a base against waves of robots with laser guns. Avatars are visible in real-time for total immersion.',
+                    'inondaction-title': 'INOND\'ACTION',
+                    'inondaction-category': 'Safety Training',
+                    'inondaction-desc': 'INOND\'ACTION is a VR simulation developed by VR Connection for the Red Cross, which teaches key actions to take in case of flooding. The user prepares a survival kit and learns how to get to safety in an immersive situation.',
+                    'heineken-title': 'Heineken Forklift Driving & Working At Heights',
+                    'heineken-category': 'Simulation & Training',
+                    'heineken-desc': 'Heineken VR is an immersive simulation developed to train workers on safety rules in virtual reality, around working at heights and forklift driving. The experience integrates an intelligent and evolving free roaming system for realistic immersion.',
+
+                    // Section Marketing
+                    'marketing-title': 'Marketing Development',
+                    'marketing-subtitle': 'Creating impact from gameplay',
+                    'marketing-p1': 'When technique fades in favor of intention, each game becomes a field of expression. From interactive source projects, experiences are rethought, simplified, adapted to reveal their full advertising potential. Gameplay adjusts, visuals align, rhythm redesigns itself. Nothing is left to chance.',
+                    'marketing-p2': 'Conceived in close collaboration with User Acquisition and Creative teams, these contents translate a common vision: capture attention, convey emotion, serve a strategy. Advertising and gameplay merge. The experience becomes clear, targeted, engaging.',
+                    'marketing-count': 'Over 5,000 videos produced. Discover a selection.',
+                    'marketing-gallery': 'Overview of achievements',
+
+                    // Section AI
+                    'ai-title': 'Artificial Intelligence',
+                    'ai-subtitle': 'Artificial intelligence becomes a fertile ground for creative thinking. It is not a substitution, but an extension, a collaboration between human intuition and generative algorithms.',
+                    'ai-text': 'The world of creation is undergoing profound change, and our way of consuming artistic works is being deeply transformed. I approach this transformation with curiosity and enthusiasm, exploring what artificial intelligence can bring to my own creative process. My goal is to stay in tune with new technologies, to adapt my practice with responsiveness, while nurturing my artistic sensibility. I am convinced that the next ten years will be the scene of a major revolution in creative and aesthetic terms, and I want to be part of it.',
+
+                    // Section Méthodologie
+                    'methodology-title': 'Creative Methodology',
+                    'methodology-intro': 'My method is an ecosystem of exploration and precision. Each project is a transformation journey where the raw idea becomes a singular experience.',
+                    'step1-title': 'Inspiration',
+                    'step1-text': 'Observe, listen, feel. Open up to the unexpected, collect weak signals, capture emotions, tensions, modern myths.',
+                    'step2-title': 'Structuring',
+                    'step2-text': 'Transform inspiration into a system. Model the challenges, align the objectives, trace lines of force and set clear intentions.',
+                    'step3-title': 'Living Design',
+                    'step3-text': 'Prototype, test, iterate. Design interactive objects, narratives, sensitive spaces where the user becomes an actor.',
+                    'step4-title': 'Activation',
+                    'step4-text': 'Deploy with care, measure resonances, adjust frictions. Create connection, meaning, memory.',
+
+                    // Section Contact
+                    'contact-title': 'Let\'s Create',
+                    'contact-text': 'An intuition, a project, a desire? Let\'s get in touch to bring new forms to life, sensitive and radical.',
+                    'contact-name': 'Name',
+                    'contact-email': 'Email',
+                    'contact-message': 'Message',
+                    'contact-send': 'SEND',
+
+                    // Section Journal
+                    'journal-title': 'Journal',
+                    'journal-intro': 'Explorations, reflections, conceptual drifts — discover a selection of articles and thoughts published on <strong>Medium</strong>.',
+                    'journal-article1-desc': 'Dive into the unique role of Marketing Unity Developer at Voodoo, where tech and creativity serve marketing performance.',
+                    'journal-article2-desc': 'A reflection on the future of game engines facing AI and new creative tools: are they becoming obsolete?',
+                    'journal-article3-desc': 'Discover how I transformed ChatGPT into a real music composer, between creative prompts and audio tools.',
+
+                    // Footer
+                    'footer-copyright': '© 2025 Thomas Fugier – Creative Thinker'
+                }
+            };
+
+
+            // Ajouter les attributs data-i18n à tous les éléments à traduire
+            function setupTranslationAttributes() {
+                // Navigation
+                document.querySelector('a[href="#about-section"].nav-link').setAttribute('data-i18n', 'nav-about');
+                document.querySelector('a[href="#interactive"].nav-link').setAttribute('data-i18n', 'nav-projects');
+                document.querySelector('a[href="#marketing"].nav-link').setAttribute('data-i18n', 'nav-marketing');
+                document.querySelector('a[href="#ai"].nav-link').setAttribute('data-i18n', 'nav-ai');
+                document.querySelector('a[href="#thinking"].nav-link').setAttribute('data-i18n', 'nav-methodology');
+                document.querySelector('a[href="#contact"].nav-link').setAttribute('data-i18n', 'nav-contact');
+                document.querySelector('a[href="#journal"].nav-link').setAttribute('data-i18n', 'nav-journal');
+
+                // Section Accueil
+                document.querySelector('.scroll-indicator span').setAttribute('data-i18n', 'scroll-text');
+
+                // Section À Propos
+                document.querySelector('.about-title').setAttribute('data-i18n', 'about-title');
+                document.querySelector('.about-quote').setAttribute('data-i18n', 'about-quote');
+
+                // Paragraphes de la section À Propos
+                const aboutParagraphs = document.querySelectorAll('.about-text p');
+                if (aboutParagraphs.length >= 3) {
+                    aboutParagraphs[0].setAttribute('data-i18n', 'about-p1');
+                    aboutParagraphs[1].setAttribute('data-i18n', 'about-p2');
+                    aboutParagraphs[2].setAttribute('data-i18n', 'about-p3');
+                }
+
+                // Expertise items
+                const expertiseItems = document.querySelectorAll('.expertise-label');
+                for (let i = 0; i < expertiseItems.length; i++) {
+                    expertiseItems[i].setAttribute('data-i18n', `expertise-${i + 1}`);
+                }
+
+                // Titre de la section Réalisations
+                document.querySelector('#interactive .section-title').setAttribute('data-i18n', 'projects-title');
+
+                // Continuer avec tous les autres éléments de texte
+                // ...
+            }
+
+            // Fonction pour traduire la page
+            function translatePage(language) {
+                document.documentElement.lang = language;
+
+                const elements = document.querySelectorAll('[data-i18n]');
+                elements.forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    if (translations[language] && translations[language][key]) {
+                        // Si le contenu contient du HTML, utilisez innerHTML
+                        if (translations[language][key].includes('<')) {
+                            element.innerHTML = translations[language][key];
+                        } else {
+                            element.textContent = translations[language][key];
+                        }
+                    }
+                });
+
+                // Mise à jour du bouton
+                languageToggle.textContent = language === 'fr' ? 'EN' : 'FR';
+                languageToggle.setAttribute('data-lang', language);
+            }
+
+            // Initialisation des attributs de traduction
+            setupTranslationAttributes();
+
+            // Gestion du clic sur le bouton
+            languageToggle.addEventListener('click', () => {
+                const currentLang = languageToggle.getAttribute('data-lang');
+                const newLang = currentLang === 'fr' ? 'en' : 'fr';
+                translatePage(newLang);
+            });
+        });
+</script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Menu mobile
