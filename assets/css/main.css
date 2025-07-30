@@ -98,26 +98,35 @@ body {
     overflow-x: hidden;
 }
 
-/* Style du bouton de changement de langue */
-.language-switcher {
-    margin-left: 20px;
+/* Ajoutez ces règles au fichier main.css */
+.nav-links .language-switcher {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
 }
 
-.lang-btn {
+.nav-links .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: inherit; /* Hérite la couleur du parent */
+    border: 1px solid var(--accent-color);
     border-radius: 4px;
-    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
     cursor: pointer;
-    font-size: 0.9rem;
-    padding: 5px 10px;
     transition: all 0.3s ease;
 }
 
-    .lang-btn:hover {
-        background: rgba(255, 255, 255, 0.1);
-        transform: translateY(-2px);
-    }
+#home .lang-btn {
+    color: var(--white); /* Force le blanc sur la section home */
+}
+
+.nav-links .lang-btn:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
 
 /*==========================================================================
   TYPOGRAPHIE

@@ -581,21 +581,21 @@
                     'fitness-vr-title': 'Fitness VR',
                     'fitness-vr-category': 'Expérience Virtuelle Sportive',
                     'fitness-vr-desc': 'Un entraînement interactif en réalité virtuelle, alliant rythme et mouvement, piloté par un coach via tablette, conçu en partenariat avec la Ville d'Angers et le Ministère des Sports.',
-        'life-2030-title': 'Life in 2030',
+'life-2030-title': 'Life in 2030',
                     'life-2030-category': 'Expérience Virtuelle',
                     'life-2030-desc': 'Conçue pour le groupe mutualiste Vyv, cette expérience VR projette l'utilisateur en 2030 dans un habitat intelligent, centré sur les innovations en santé et qualité de vie.',
-        'hexarena-title': 'Hexarena Robot Rage',
+'hexarena-title': 'Hexarena Robot Rage',
                     'hexarena-category': 'Arcade VR',
                     'hexarena-desc': 'Hexarena Robot Rage est un jeu VR multijoueur développé par VR Connection, conçu pour les salles d'arcade Eydolon, où 4 joueurs défendent une base contre des vagues de robots avec des pistolets laser.Les avatars sont visibles en temps réel pour une immersion totale.',
-        'inondaction-title': 'INOND\'ACTION',
+'inondaction-title': 'INOND\'ACTION',
                     'inondaction-category': 'Formation Sécurité',
                     'inondaction-desc': 'INOND\'ACTION est une simulation VR développée par VR Connection pour la Croix-Rouge, qui enseigne les gestes clés à adopter en cas d'inondation.L'utilisateur prépare un kit de survie et apprend à se mettre en sécurité dans une situation immersive.',
                     'heineken-title': 'Heineken Forklift Driving & Working At Heights',
                     'heineken-category': 'Simulation & Formation',
                     'heineken-desc': 'Heineken VR est une simulation immersive développée pour former les ouvriers aux règles de sécurité en réalité virtuelle, autour du travail en hauteur et de la conduite de chariots élévateurs. L'expérience intègre un système de free roaming intelligent et évolutif pour une immersion réaliste.',
 
-        // Section Marketing
-        'marketing-title': 'Marketing Development',
+// Section Marketing
+'marketing-title': 'Marketing Development',
                     'marketing-subtitle': 'Créer l\'impact à partir du jeu',
                     'marketing-p1': 'Quand la technique s\'efface au profit de l\'intention, chaque jeu devient un terrain d\'expression. À partir de projets sources interactifs, les expériences sont repensées, simplifiées, adaptées pour révéler tout leur potentiel publicitaire. Le gameplay s\'ajuste, les visuels s\'alignent, le rythme se redessine. Rien n\'est laissé au hasard.',
                     'marketing-p2': 'Pensés en étroite collaboration avec les équipes User Acquisition et Creative, ces contenus traduisent une vision commune : capter l\'attention, transmettre une émotion, servir une stratégie. Publicité et gameplay se confondent. L\'expérience devient claire, ciblée, engageante.',
@@ -730,7 +730,6 @@
                 }
             };
 
-
             // Ajouter les attributs data-i18n à tous les éléments à traduire
             function setupTranslationAttributes() {
                 // Navigation
@@ -744,30 +743,13 @@
 
                 // Section Accueil
                 document.querySelector('.scroll-indicator span').setAttribute('data-i18n', 'scroll-text');
+                document.querySelector('.baseline').setAttribute('data-i18n', 'baseline');
 
                 // Section À Propos
                 document.querySelector('.about-title').setAttribute('data-i18n', 'about-title');
                 document.querySelector('.about-quote').setAttribute('data-i18n', 'about-quote');
 
-                // Paragraphes de la section À Propos
-                const aboutParagraphs = document.querySelectorAll('.about-text p');
-                if (aboutParagraphs.length >= 3) {
-                    aboutParagraphs[0].setAttribute('data-i18n', 'about-p1');
-                    aboutParagraphs[1].setAttribute('data-i18n', 'about-p2');
-                    aboutParagraphs[2].setAttribute('data-i18n', 'about-p3');
-                }
-
-                // Expertise items
-                const expertiseItems = document.querySelectorAll('.expertise-label');
-                for (let i = 0; i < expertiseItems.length; i++) {
-                    expertiseItems[i].setAttribute('data-i18n', `expertise-${i + 1}`);
-                }
-
-                // Titre de la section Réalisations
-                document.querySelector('#interactive .section-title').setAttribute('data-i18n', 'projects-title');
-
-                // Continuer avec tous les autres éléments de texte
-                // ...
+                // Et ainsi de suite pour tous vos éléments...
             }
 
             // Fonction pour traduire la page
@@ -788,7 +770,8 @@
                 });
 
                 // Mise à jour du bouton
-                languageToggle.textContent = language === 'fr' ? 'EN' : 'FR';
+                const langTextElement = languageToggle.querySelector('.lang-text');
+                langTextElement.textContent = language === 'fr' ? 'EN' : 'FR';
                 languageToggle.setAttribute('data-lang', language);
             }
 
@@ -801,7 +784,8 @@
                 const newLang = currentLang === 'fr' ? 'en' : 'fr';
                 translatePage(newLang);
             });
-        });
+        });</script>
+
 </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
