@@ -35,8 +35,8 @@
                 <p class="eyebrow">Hook</p>
                 <h2>The first second decides everything.</h2>
                 <p>I design openings that make people stop: one clear promise, one strong visual action, one reason to keep watching.</p>
-                <a class="scene-cta content-cta" href="#intro">What I do</a>
             </div>
+            <a class="scene-cta content-cta" href="#intro">What I do</a>
         </section>
 
         <section id="intro" class="section intro-section chapter" data-accent="#2947ff" data-watermark="Signal">
@@ -65,9 +65,9 @@
                             <span>production toolkit</span>
                         </div>
                     </div>
-                    <a class="scene-cta content-cta" href="#mobile-work">See mobile ads</a>
                 </div>
             </div>
+            <a class="scene-cta content-cta" href="#mobile-work">See mobile ads</a>
             <div class="kinetic-strip" aria-hidden="true">
                 <span>Hook design / Marketing ads / Unity prototypes / AI workflows / 3D art direction / Sound design / </span>
                 <span>Hook design / Marketing ads / Unity prototypes / AI workflows / 3D art direction / Sound design / </span>
@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="cinema-info">
-                    <p class="panel-index" id="sceneIndex">01 / 01</p>
+                    <p class="panel-index" id="sceneIndex">01 / 05</p>
                     <h3 id="videoTitle">Block Jam 3D</h3>
                     <p id="videoDescription">Falling character plus closing walls: immediate tension, clear read, puzzle-mobile pacing.</p>
                     <span id="videoCategory" class="category-pill">Puzzle Game</span>
@@ -204,13 +204,18 @@
 
         <section id="experience-vr" class="section vr-section chapter" data-accent="#2947ff" data-watermark="VR">
             <div class="vr-heading">
-                <p class="eyebrow">Immersive production</p>
-                <h2>I directed and produced real-time VR experiences.</h2>
+                <p class="eyebrow">Real-time 3D experiences</p>
+                <h2>Playable worlds for complex ideas.</h2>
                 <p>
-                    Before Voodoo, I worked in a studio producing VR experiences for sport, training, industry and
-                    gamified simulation. These projects show my ability to turn a 3D idea into a playable, understandable
-                    and well-produced experience.
+                    VR, training, industrial simulation, sport and gamified learning. I shape the concept, the 3D direction,
+                    the interaction loop and the production logic so every experience feels clear, tactile and memorable.
                 </p>
+                <div class="vr-skillline">
+                    <span>Unity production</span>
+                    <span>3D direction</span>
+                    <span>Game feel</span>
+                    <span>Training design</span>
+                </div>
             </div>
 
             <div class="vr-grid">
@@ -220,14 +225,14 @@
                          aria-label="Open Fitness VR project"
                          data-title="Fitness VR"
                          data-meta="Immersive sport / Unity production"
-                         data-description="A VR fitness prototype built around physical engagement, readable body movement and satisfying real-time feedback. My role was to shape the experience as both a game loop and a directed immersive product."
+                         data-description="A VR fitness prototype built around physical engagement, readable body movement and satisfying real-time feedback. The challenge: make sport feel like a clear, directed and playable immersive loop."
                          data-media="images/fitnessvr_3.gif"
                          data-poster="images/fitnessvr_1.png">
                     <img src="images/fitnessvr_1.png" alt="Fitness VR" />
                     <div>
                         <span>01 / Immersive sport</span>
                         <h3>Fitness VR</h3>
-                        <p>Sport, movement and feedback designed as a playable full-body loop.</p>
+                        <p>Movement, feedback and rhythm designed as a full-body game loop.</p>
                     </div>
                 </article>
                 <article class="vr-card"
@@ -236,7 +241,7 @@
                          aria-label="Open Life in 2030 project"
                          data-title="Life in 2030"
                          data-meta="Speculative UX / connected home"
-                         data-description="A near-future Unity experience exploring smart homes, connected health and everyday interaction design. The goal was to make abstract technology feel tangible, spatial and easy to understand."
+                         data-description="A near-future Unity experience exploring smart homes, connected health and everyday interaction design. Abstract technology becomes tangible through spatial scenes and simple interactive moments."
                          data-media="images/2030_2.png"
                          data-poster="images/2030_1.png">
                     <img src="images/2030_1.png" alt="Life in 2030" />
@@ -252,7 +257,7 @@
                          aria-label="Open Hexarena project"
                          data-title="Hexarena"
                          data-meta="Multiplayer arcade / game feel"
-                         data-description="A multiplayer VR arcade prototype with robots, base defense and immediate arena readability. It highlights my producer mindset: fast onboarding, clear objectives, readable action and strong moment-to-moment feedback."
+                         data-description="A multiplayer VR arcade prototype with robots, base defense and immediate arena readability. The focus is fast onboarding, clear objectives, readable action and strong moment-to-moment feedback."
                          data-media="images/Hexarena_2.gif"
                          data-poster="images/Hexarena.jpg">
                     <img src="images/Hexarena.jpg" alt="Hexarena Robot Rage" />
@@ -268,7 +273,7 @@
                          aria-label="Open INOND'ACTION project"
                          data-title="INOND'ACTION"
                          data-meta="Training simulation / French Red Cross"
-                         data-description="A training simulation for the French Red Cross focused on decision-making during flood scenarios. The experience uses gamification to make procedures, urgency and consequences easier to understand."
+                         data-description="A training simulation for the French Red Cross focused on decision-making during flood scenarios. Gamification makes procedures, urgency and consequences easier to understand and remember."
                          data-media="images/CroixRouge.jpg"
                          data-poster="images/CroixRouge.jpg">
                     <img src="images/CroixRouge.jpg" alt="INOND'ACTION" />
@@ -406,15 +411,15 @@
                 scrollMeter.style.transform = `scaleX(${progress})`;
             }
 
-            root.style.setProperty('--hero-shift', `${heroProgress * 24}px`);
-            root.style.setProperty('--hero-zoom', `${1 + heroProgress * 0.07}`);
+            root.style.setProperty('--hero-shift', '0px');
+            root.style.setProperty('--hero-zoom', '1');
 
             const reel = document.querySelector('.reel-section');
             if (reel) {
                 const reelRect = reel.getBoundingClientRect();
                 const reelProgress = Math.max(-1, Math.min(1, -reelRect.top / Math.max(1, window.innerHeight)));
-                root.style.setProperty('--reel-shift', `${reelProgress * 74}px`);
-                root.style.setProperty('--reel-zoom', `${1.04 + Math.abs(reelProgress) * 0.035}`);
+                root.style.setProperty('--reel-shift', '0px');
+                root.style.setProperty('--reel-zoom', '1');
             }
 
         }
@@ -621,7 +626,7 @@
 
             activeVariantIndex = variantIndex;
 
-            if (sceneIndex) sceneIndex.textContent = `${document.querySelector('.story-step.active')?.dataset.index || '01'} / ${String(variantIndex + 1).padStart(2, '0')}`;
+            if (sceneIndex) sceneIndex.textContent = `${document.querySelector('.story-step.active')?.dataset.index || '01'} / ${String(scenes.length).padStart(2, '0')}`;
             if (videoTitle) videoTitle.textContent = game.title;
             if (videoDescription) videoDescription.textContent = variant.description;
             if (videoCategory) videoCategory.textContent = game.category;
